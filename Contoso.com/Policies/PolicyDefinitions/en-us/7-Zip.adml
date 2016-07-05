@@ -1,0 +1,762 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns=
+   "http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions"
+   revision="1.2" schemaVersion="1.0">
+  <displayName>7-Zip policies file</displayName>
+  <description>This file contains the 7-Zip policies.</description>
+  <resources>
+    <stringTable>
+	  <string id="7-Zip">7-Zip</string>
+	  <string id="7-Zip_Help">Contains 7-Zip software specific configuration settings.</string>
+	  <string id="Compression">Compression</string>
+	  <string id="Compression_Help">Contains compression specific configuration settings.</string>
+	  <string id="Compression_7-Zip">7-Zip</string>
+	  <string id="Compression_7-Zip_Help">Contains 7-Zip format compression specific configuration settings.</string>
+	  <string id="Compression_bzip2">bzip2</string>
+	  <string id="Compression_bzip2_Help">Contains bzip2 format compression specific configuration settings.</string>
+	  <string id="Compression_gzip">gzip</string>
+	  <string id="Compression_gzip_Help">Contains gzip format compression specific configuration settings.</string>
+	  <string id="Compression_tar">tar</string>
+	  <string id="Compression_tar_Help">Contains tar format compression specific configuration settings.</string>
+	  <string id="Compression_wim">wim</string>
+	  <string id="Compression_wim_Help">Contains wim format compression specific configuration settings.</string>
+	  <string id="Compression_xz">xz</string>
+	  <string id="Compression_xz_Help">Contains xz format compression specific configuration settings.</string>
+	  <string id="Compression_Zip">Zip</string>
+	  <string id="Compression_Zip_Help">Contains Zip format compression specific configuration settings.</string>
+	  <string id="Extraction">Extraction</string>
+	  <string id="Extraction_Help">Contains extraction specific configuration settings.</string>
+	  <string id="System_Integration">System Integration</string>
+	  <string id="System_Integration_Help">Contains system integration specific configuration settings.</string>
+	  <string id="File_Manager">File Manager</string>
+	  <string id="File_Manager_Help">Contains file manager specific configuration settings.</string>
+	  <string id="File_Manager_Editor">Editor</string>
+	  <string id="File_Manager_Editor_Help">Allows you to specify settings for the editor.</string>
+	  <string id="File_Manager_Settings">Settings</string>
+	  <string id="File_Manager_Settings_Help">Allows you to specify some settings.</string>
+	  <string id="File_Manager_View">File Manager View</string>
+	  <string id="File_Manager_View_Help">Contains file manager view specific configuration settings.</string>
+	  <string id="SUPPORTED_7-Zip_v9b20">At least 7-Zip v9.20</string>
+	  <string id="Archive_Format">Archive format </string>
+	  <string id="Archive_Format_Help">Specifies a format of created archive. Some formats (gzip and bzip2) do not support compressing more the one file per archive.
+
+7-Zip supports following formats for compression:
+Format: File extension
+7z: 7z 
+XZ: xz 
+ZIP: zip 
+GZIP: gz, gzip, tgz 
+BZIP2: bz2, bzip2, tbz2, tbz 
+TAR: tar 
+WIM: wim, swm 
+</string>
+	  <string id="Archive_Format_7z">7z</string>
+	  <string id="Archive_Format_bzip2">bzip2</string>
+	  <string id="Archive_Format_gzip">gzip</string>
+	  <string id="Archive_Format_tar">tar</string>
+	  <string id="Archive_Format_wim">wim</string>
+	  <string id="Archive_Format_xz">xz</string>
+	  <string id="Archive_Format_zip">zip</string>
+	  <string id="Encrypt_File_Names">Encrypt File Names</string>
+	  <string id="Encrypt_File_Names_Help">Enables archive header encryption, including file name encryption. 
+
+Note: effective only with 7z archiver.</string>
+	  <string id="Compression_Show_Password">Show Password</string>
+	  <string id="Compression_Show_Password_Help">Show password while entering it.</string>
+	  <string id="7z_Compression_Level">Compression Level</string>
+	  <string id="7z_Compression_Level_Help">Specifies compression level. There are 6 levels of compression:
+
+Store: Files will be copied to archive without compression.
+Fastest: Fastest compression.
+Fast: Fast compression.
+Normal: Compression with balanced settings.
+Maximum: Can give a higher compression ratio than Normal level. But it can be slower, and it can require more memory.
+Ultra: Can give a higher compression ratio than Maximum level. But it can be slower, and it can require more memory.</string>
+	  <string id="7z_Compression_Level_Store">Store</string>
+	  <string id="7z_Compression_Level_Fastest">Fastest</string>
+	  <string id="7z_Compression_Level_Fast">Fast</string>
+	  <string id="7z_Compression_Level_Normal">Normal</string>
+	  <string id="7z_Compression_Level_Maximum">Maximum</string>
+	  <string id="7z_Compression_Level_Ultra">Ultra</string>
+	  <string id="7z_Compression_Method">Compression Method</string>
+	  <string id="7z_Compression_Method_Help">Specifies compression method. Available:
+
+LZMA: Default compression method of 7z format. It provides high compression ratio and very fast decompression. 
+LZMA2: LZMA-based compression method. It provides better multithreading support than LZMA. But compression ratio can be worse in some cases. For best compression ratio with LZMA2 use 1 or 2 CPU threads. If you use LZMA2 with more than 2 threads, 7-zip splits data to chunks and compresses these chunks independently (2 threads per each chunk). 
+PPMd: Dmitry Shkarin's PPMdH algorithm with small changes. Usually it provides high compression ratio and high speed for text files. 
+BZip2: Standard compression method based on BWT algorithm. Usually it provides high speed and pretty good compression ratio for text files. 
+</string>
+	  <string id="7z_Compression_Method_LZMA">LZMA</string>
+	  <string id="7z_Compression_Method_LZMA2">LZMA2</string>
+	  <string id="7z_Compression_Method_PPMd">PPMd</string>
+	  <string id="7z_Compression_Method_BZip2">BZip2</string>
+	  <string id="7z_Dictionary_Size">Dictionary Size</string>
+	  <string id="7z_Dictionary_Size_Help">Specifies Dictionary size for compression method.
+
+Usually, a higher Dictionary size gives a higher compression ratio. But compressing can be slower and it can require more memory.
+
+Memory (RAM) usage for LZMA compressing is about 11 times more than dictionary size. Memory usage for LZMA decompressing is close to value of dictionary size. Memory usage for PPMd compressing and decompressing is almost equal to dictionary size.
+
+Supported dictionary size depends on compression method:
+LZMA or LZMA2: 64 KB, 1 MB, 2 MB, 3 MB, 4 MB, 6 MB, 8 MB, 12 MB, 16 MB, 24 MB, 32 MB, 48 MB, 64 MB
+PPMd: 1 MB, 2 MB, 3 MB, 4MB, 6 MB, 8 MB, 12 MB, 16 MB, 24 MB, 32 MB, 48 MB, 64 MB, 96 MB, 128 MB, 256 MB, 384 MB, 512 MB
+BZIP2: 100 KB, 200 KB, 300 KB, 400 KB, 500 KB, 600 KB, 700 KB, 800 KB, 900 KB
+
+Note: Dictionary size is entered in bytes. 1 KB = 1024 bytes, 1 MB = 1024 KB</string>
+	  <string id="7z_Word_Size">Word Size</string>
+	  <string id="7z_Word_Size_Help">Specifies the length of words, which will be used to find identical sequences of bytes for compression.
+
+Usually for LZMA and Deflate, big Word size gives a little bit better compression ratio and slower compression process. A big Word size parameter can significantly increase compression ratio for files which contain long identical sequences of bytes. For PPMd, the Word size strongly affects both compression ratio and compression/decompression speed.
+
+Supported word size depends on compression method:
+LZMA or LZMA2: 8, 12, 16, 24, 32, 48, 64, 96, 128, 192, 256, 273
+PPMd: 2, 3, 4, 5, 6, 7, 8, 10, 12, 14, 16, 20, 24, 28, 32
+BZIP2: not supported</string>
+	  <string id="7z_Solid_Block_Size">Solid Block Size</string>
+	  <string id="7z_Solid_Block_Size_Help">Specifies the size of a solid block. You can also disable solid mode. In solid mode all files will be compressed as continuous data blocks. Usually compressing to a solid archive improves the compression ratio. You can use this option only for 7z archives. The updating of solid .7z archives can be slow, since it can require some recompression.</string>
+	  <string id="7z_Solid_Block_Size_Non-solid">Non-solid</string>
+	  <string id="7z_Solid_Block_Size_1_MB">1 MB</string>
+	  <string id="7z_Solid_Block_Size_2_MB">2 MB</string>
+	  <string id="7z_Solid_Block_Size_4_MB">4 MB</string>
+	  <string id="7z_Solid_Block_Size_8_MB">8 MB</string>
+	  <string id="7z_Solid_Block_Size_16_MB">16 MB</string>
+	  <string id="7z_Solid_Block_Size_32_MB">32 MB</string>
+	  <string id="7z_Solid_Block_Size_64_MB">64 MB</string>
+	  <string id="7z_Solid_Block_Size_128_MB">128 MB</string>
+	  <string id="7z_Solid_Block_Size_256_MB">256 MB</string>
+	  <string id="7z_Solid_Block_Size_512_MB">512 MB</string>
+	  <string id="7z_Solid_Block_Size_1_GB">1 GB</string>
+	  <string id="7z_Solid_Block_Size_2_GB">2 GB</string>
+	  <string id="7z_Solid_Block_Size_4_GB">4 GB</string>
+	  <string id="7z_Solid_Block_Size_8_GB">8 GB</string>
+	  <string id="7z_Solid_Block_Size_16_GB">16 GB</string>
+	  <string id="7z_Solid_Block_Size_32_GB">32 GB</string>
+	  <string id="7z_Solid_Block_Size_64_GB">64 GB</string>
+	  <string id="7z_Solid_Block_Size_Solid">Solid</string>
+	  <string id="7z_Number_of_CPU_Threads">Number of CPU Threads</string>
+	  <string id="7z_Number_of_CPU_Threads_Help">Specifies the number of threads for compressing. A big number of threads can speed up compression speed on Multi-Processor systems. Sometimes it can increase speed even on single-core CPU.</string>
+	  <string id="7z_Parameters">Options</string>
+	  <string id="7z_Parameters_Help">Allows you to specify parameters for compression. See the -m (Method) switch description for more details. Omit the -m prefix (as in -m switch) when using this dialog box.
+
+
+Examples
+
+      0=PPMd
+uses PPMd method for compressing files.
+
+      0=bcj2 1=lzma:d23 2=lzma 3=lzma b0:1 b0s1:2 b0s2:3
+uses BCJ2 filter (for x86 executables) and LZMA.</string>
+	  <string id="bzip2_Compression_Level">Compression Level</string>
+	  <string id="bzip2_Compression_Level_Help">Specifies compression level. There are 6 levels of compression:
+
+Fastest: Fastest compression.
+Fast: Fast compression.
+Normal: Compression with balanced settings.
+Maximum: Can give a higher compression ratio than Normal level. But it can be slower, and it can require more memory.
+Ultra: Can give a higher compression ratio than Maximum level. But it can be slower, and it can require more memory.</string>
+	  <string id="bzip2_Compression_Level_Fastest">Fastest</string>
+	  <string id="bzip2_Compression_Level_Fast">Fast</string>
+	  <string id="bzip2_Compression_Level_Normal">Normal</string>
+	  <string id="bzip2_Compression_Level_Maximum">Maximum</string>
+	  <string id="bzip2_Compression_Level_Ultra">Ultra</string>
+	  <string id="bzip2_Dictionary_Size">Dictionary Size</string>
+	  <string id="bzip2_Dictionary_Size_Help">Specifies Dictionary size for compression method.
+
+Usually, a higher Dictionary size gives a higher compression ratio. But compressing can be slower and it can require more memory.
+
+Memory (RAM) usage for LZMA compressing is about 11 times more than dictionary size. Memory usage for LZMA decompressing is close to value of dictionary size. Memory usage for PPMd compressing and decompressing is almost equal to dictionary size.</string>
+	  <string id="bzip2_Dictionary_Size_100_KB">100 KB</string>
+	  <string id="bzip2_Dictionary_Size_200_KB">200 KB</string>
+	  <string id="bzip2_Dictionary_Size_300_KB">300 KB</string>
+	  <string id="bzip2_Dictionary_Size_400_KB">400 KB</string>
+	  <string id="bzip2_Dictionary_Size_500_KB">500 KB</string>
+	  <string id="bzip2_Dictionary_Size_600_KB">600 KB</string>
+	  <string id="bzip2_Dictionary_Size_700_KB">700 KB</string>
+	  <string id="bzip2_Dictionary_Size_800_KB">800 KB</string>
+	  <string id="bzip2_Dictionary_Size_900_KB">900 KB</string>
+	  <string id="bzip2_Number_of_CPU_Threads">Number of CPU Threads</string>
+	  <string id="bzip2_Number_of_CPU_Threads_Help">Specifies the number of threads for compressing. A big number of threads can speed up compression speed on Multi-Processor systems. Sometimes it can increase speed even on single-core CPU.</string>
+	  <string id="bzip2_Parameters">Options</string>
+	  <string id="bzip2_Parameters_Help">Allows you to specify parameters for compression. See the -m (Method) switch description for more details. Omit the -m prefix (as in -m switch) when using this dialog box.
+
+Examples
+
+      0=PPMd
+uses PPMd method for compressing files.
+
+      0=bcj2 1=lzma:d23 2=lzma 3=lzma b0:1 b0s1:2 b0s2:3
+uses BCJ2 filter (for x86 executables) and LZMA.</string>
+	  <string id="gzip_Compression_Level">Compression Level</string>
+	  <string id="gzip_Compression_Level_Help">Specifies compression level. There are 6 levels of compression:
+
+Fastest: Fastest compression.
+Fast: Fast compression.
+Normal: Compression with balanced settings.
+Maximum: Can give a higher compression ratio than Normal level. But it can be slower, and it can require more memory.
+Ultra: Can give a higher compression ratio than Maximum level. But it can be slower, and it can require more memory.</string>
+	  <string id="gzip_Compression_Level_Fastest">Fastest</string>
+	  <string id="gzip_Compression_Level_Fast">Fast</string>
+	  <string id="gzip_Compression_Level_Normal">Normal</string>
+	  <string id="gzip_Compression_Level_Maximum">Maximum</string>
+	  <string id="gzip_Compression_Level_Ultra">Ultra</string>
+	  <string id="gzip_Word_Size">Word Size</string>
+	  <string id="gzip_Word_Size_Help">Specifies the length of words, which will be used to find identical sequences of bytes for compression.
+
+Usually for LZMA and Deflate, big Word size gives a little bit better compression ratio and slower compression process. A big Word size parameter can significantly increase compression ratio for files which contain long identical sequences of bytes. For PPMd, the Word size strongly affects both compression ratio and compression/decompression speed.</string>
+	  <string id="gzip_Word_Size_8">8</string>
+	  <string id="gzip_Word_Size_12">12</string>
+	  <string id="gzip_Word_Size_16">16</string>
+	  <string id="gzip_Word_Size_24">24</string>
+	  <string id="gzip_Word_Size_32">32</string>
+	  <string id="gzip_Word_Size_48">48</string>
+	  <string id="gzip_Word_Size_64">64</string>
+	  <string id="gzip_Word_Size_96">96</string>
+	  <string id="gzip_Word_Size_128">128</string>
+	  <string id="gzip_Word_Size_192">192</string>
+	  <string id="gzip_Word_Size_256">256</string>
+	  <string id="gzip_Word_Size_258">258</string>
+	  <string id="gzip_Parameters">Options</string>
+	  <string id="gzip_Parameters_Help">Allows you to specify parameters for compression. See the -m (Method) switch description for more details. Omit the -m prefix (as in -m switch) when using this dialog box.
+
+Examples
+
+      0=PPMd
+uses PPMd method for compressing files.
+
+      0=bcj2 1=lzma:d23 2=lzma 3=lzma b0:1 b0s1:2 b0s2:3
+uses BCJ2 filter (for x86 executables) and LZMA.</string>
+	  <string id="tar_Parameters">Options</string>
+	  <string id="tar_Parameters_Help">Allows you to specify parameters for compression. See the -m (Method) switch description for more details. Omit the -m prefix (as in -m switch) when using this dialog box.
+
+Examples
+
+      0=PPMd
+uses PPMd method for compressing files.
+
+      0=bcj2 1=lzma:d23 2=lzma 3=lzma b0:1 b0s1:2 b0s2:3
+uses BCJ2 filter (for x86 executables) and LZMA.</string>
+	  <string id="wim_Parameters">Options</string>
+	  <string id="wim_Parameters_Help">Allows you to specify parameters for compression. See the -m (Method) switch description for more details. Omit the -m prefix (as in -m switch) when using this dialog box.
+
+Examples
+
+      0=PPMd
+uses PPMd method for compressing files.
+
+      0=bcj2 1=lzma:d23 2=lzma 3=lzma b0:1 b0s1:2 b0s2:3
+uses BCJ2 filter (for x86 executables) and LZMA.</string>
+	  <string id="xz_Compression_Level">Compression Level</string>
+	  <string id="xz_Compression_Level_Help">Specifies compression level. There are 6 levels of compression:
+
+Fastest: Fastest compression.
+Fast: Fast compression.
+Normal: Compression with balanced settings.
+Maximum: Can give a higher compression ratio than Normal level. But it can be slower, and it can require more memory.
+Ultra: Can give a higher compression ratio than Maximum level. But it can be slower, and it can require more memory.</string>
+	  <string id="xz_Compression_Level_Fastest">Fastest</string>
+	  <string id="xz_Compression_Level_Fast">Fast</string>
+	  <string id="xz_Compression_Level_Normal">Normal</string>
+	  <string id="xz_Compression_Level_Maximum">Maximum</string>
+	  <string id="xz_Compression_Level_Ultra">Ultra</string>
+	  <string id="xz_Dictionary_Size">Dictionary Size</string>
+	  <string id="xz_Dictionary_Size_Help">Specifies Dictionary size for compression method.
+
+Usually, a higher Dictionary size gives a higher compression ratio. But compressing can be slower and it can require more memory.
+
+Memory (RAM) usage for LZMA compressing is about 11 times more than dictionary size. Memory usage for LZMA decompressing is close to value of dictionary size. Memory usage for PPMd compressing and decompressing is almost equal to dictionary size.</string>
+	  <string id="xz_Dictionary_Size_64_KB">64 KB</string>
+	  <string id="xz_Dictionary_Size_1_MB">1 MB</string>
+	  <string id="xz_Dictionary_Size_2_MB">2 MB</string>
+	  <string id="xz_Dictionary_Size_3_MB">3 MB</string>
+	  <string id="xz_Dictionary_Size_4_MB">4 MB</string>
+	  <string id="xz_Dictionary_Size_6_MB">6 MB</string>
+	  <string id="xz_Dictionary_Size_8_MB">8 MB</string>
+	  <string id="xz_Dictionary_Size_12_MB">12 MB</string>
+	  <string id="xz_Dictionary_Size_16_MB">16 MB</string>
+	  <string id="xz_Dictionary_Size_24_MB">24 MB</string>
+	  <string id="xz_Dictionary_Size_32_MB">32 MB</string>
+	  <string id="xz_Dictionary_Size_48_MB">48 MB</string>
+	  <string id="xz_Dictionary_Size_64_MB">64 MB</string>
+	  <string id="xz_Word_Size">Word Size</string>
+	  <string id="xz_Word_Size_Help">Specifies the length of words, which will be used to find identical sequences of bytes for compression.
+
+Usually for LZMA and Deflate, big Word size gives a little bit better compression ratio and slower compression process. A big Word size parameter can significantly increase compression ratio for files which contain long identical sequences of bytes. For PPMd, the Word size strongly affects both compression ratio and compression/decompression speed.</string>
+	  <string id="xz_Word_Size_8">8</string>
+	  <string id="xz_Word_Size_12">12</string>
+	  <string id="xz_Word_Size_16">16</string>
+	  <string id="xz_Word_Size_24">24</string>
+	  <string id="xz_Word_Size_32">32</string>
+	  <string id="xz_Word_Size_48">48</string>
+	  <string id="xz_Word_Size_64">64</string>
+	  <string id="xz_Word_Size_96">96</string>
+	  <string id="xz_Word_Size_128">128</string>
+	  <string id="xz_Word_Size_192">192</string>
+	  <string id="xz_Word_Size_256">256</string>
+	  <string id="xz_Word_Size_273">273</string>
+	  <string id="xz_Number_of_CPU_Threads">Number of CPU Threads</string>
+	  <string id="xz_Number_of_CPU_Threads_Help">Specifies the number of threads for compressing. A big number of threads can speed up compression speed on Multi-Processor systems. Sometimes it can increase speed even on single-core CPU.</string>
+	  <string id="xz_Parameters">Options</string>
+	  <string id="xz_Parameters_Help">Allows you to specify parameters for compression. See the -m (Method) switch description for more details. Omit the -m prefix (as in -m switch) when using this dialog box.
+
+
+Examples
+
+      0=PPMd
+uses PPMd method for compressing files.
+
+      0=bcj2 1=lzma:d23 2=lzma 3=lzma b0:1 b0s1:2 b0s2:3
+uses BCJ2 filter (for x86 executables) and LZMA.</string>
+	  <string id="zip_Compression_Level">Compression Level</string>
+	  <string id="zip_Compression_Level_Help">Specifies compression level. There are 6 levels of compression:
+
+Store: Files will be copied to archive without compression.
+Fastest: Fastest compression.
+Fast: Fast compression.
+Normal: Compression with balanced settings.
+Maximum: Can give a higher compression ratio than Normal level. But it can be slower, and it can require more memory.
+Ultra: Can give a higher compression ratio than Maximum level. But it can be slower, and it can require more memory.</string>
+	  <string id="zip_Compression_Level_Store">Store</string>
+	  <string id="zip_Compression_Level_Fastest">Fastest</string>
+	  <string id="zip_Compression_Level_Fast">Fast</string>
+	  <string id="zip_Compression_Level_Normal">Normal</string>
+	  <string id="zip_Compression_Level_Maximum">Maximum</string>
+	  <string id="zip_Compression_Level_Ultra">Ultra</string>
+	  <string id="zip_Compression_Method">Compression Method</string>
+	  <string id="zip_Compression_Method_Help">Specifies compression method. Available:
+
+LZMA: Default compression method of 7z format. It provides high compression ratio and very fast decompression. 
+LZMA2: LZMA-based compression method. It provides better multithreading support than LZMA. But compression ratio can be worse in some cases. For best compression ratio with LZMA2 use 1 or 2 CPU threads. If you use LZMA2 with more than 2 threads, 7-zip splits data to chunks and compresses these chunks independently (2 threads per each chunk).
+PPMd: Dmitry Shkarin's PPMdH algorithm with small changes. Usually it provides high compression ratio and high speed for text files. 
+BZip2: Standard compression method based on BWT algorithm. Usually it provides high speed and pretty good compression ratio for text files.
+Deflate: Standard compression method of ZIP and GZip formats. Compression ratio is not too high. But it provides pretty fast compressing and decompressing. Deflate method supports only 32 KB dictionary.
+Deflate64: Modified version of Deflate algorithm with bigger dictionary (64KB).</string>
+	  <string id="zip_Compression_Method_Deflate">Deflate</string>
+	  <string id="zip_Compression_Method_Deflate64">Deflate64</string>
+	  <string id="zip_Compression_Method_BZip2">BZip2</string>
+	  <string id="zip_Compression_Method_LZMA">LZMA</string>
+	  <string id="zip_Compression_Method_PPMd">PPMd</string>
+	  <string id="zip_Dictionary_Size">Dictionary Size</string>
+	  <string id="zip_Dictionary_Size_Help">Specifies Dictionary size for compression method.
+
+Usually, a higher Dictionary size gives a higher compression ratio. But compressing can be slower and it can require more memory.
+
+Memory (RAM) usage for LZMA compressing is about 11 times more than dictionary size. Memory usage for LZMA decompressing is close to value of dictionary size. Memory usage for PPMd compressing and decompressing is almost equal to dictionary size.
+
+Supported dictionary size depends on compression method:
+Deflate: 32 KB
+Deflate64: 64 KB
+BZIP2: 100 KB, 200 KB, 300 KB, 400 KB, 500 KB, 600 KB, 700 KB, 800 KB, 900 KB
+LZMA: 64 KB, 1 MB, 2 MB, 3 MB, 4 MB, 6 MB, 8 MB, 12 MB, 16 MB, 24 MB, 32 MB, 48 MB, 64 MB
+PPMd: 1 MB, 2 MB, 4MB, 8 MB, 16 MB, 32 MB, 64 MB, 128 MB, 256 MB
+
+
+Note: Dictionary size is entered in bytes. 1 KB = 1024 bytes, 1 MB = 1024 KB</string>
+	  <string id="zip_Word_Size">Word Size</string>
+	  <string id="zip_Word_Size_Help">Specifies the length of words, which will be used to find identical sequences of bytes for compression.
+
+Usually for LZMA and Deflate, big Word size gives a little bit better compression ratio and slower compression process. A big Word size parameter can significantly increase compression ratio for files which contain long identical sequences of bytes. For PPMd, the Word size strongly affects both compression ratio and compression/decompression speed.
+
+Supported word size depends on compression method:
+Deflate: 8, 12, 16, 24, 32, 48, 64, 96, 128, 192, 256, 258
+Deflate64: 8, 12, 16, 24, 32, 48, 64, 96, 128, 192, 256, 257
+BZIP2: not supported
+LZMA: 8, 12, 16, 24, 32, 48, 64, 96, 128, 192, 256, 273
+PPMd: 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16</string>
+	  <string id="zip_Number_of_CPU_Threads">Number of CPU Threads</string>
+	  <string id="zip_Number_of_CPU_Threads_Help">Specifies the number of threads for compressing. A big number of threads can speed up compression speed on Multi-Processor systems. Sometimes it can increase speed even on single-core CPU.</string>
+	  <string id="zip_Parameters">Options</string>
+	  <string id="zip_Parameters_Help">Allows you to specify parameters for compression. See the -m (Method) switch description for more details. Omit the -m prefix (as in -m switch) when using this dialog box.
+
+
+Examples
+
+      0=PPMd
+uses PPMd method for compressing files.
+
+      0=bcj2 1=lzma:d23 2=lzma 3=lzma b0:1 b0s1:2 b0s2:3
+uses BCJ2 filter (for x86 executables) and LZMA.</string>
+	  <string id="zip_Encryption_Method">Encryption Method</string>
+	  <string id="zip_Encryption_Method_Help">Specifies the encryption method. For 7z format, it can be only AES-256. For ZIP format you can select ZipCrypto or AES-256. Use ZipCrypto, if you want to get archive compatible with most of the ZIP archivers. AES-256 provides stronger encryption, but now AES-256 is supported only by 7-Zip, WinZip and some other ZIP archivers.</string>
+	  <string id="zip_Encryption_Method_ZipCrypto">ZipCrypto</string>
+	  <string id="zip_Encryption_Method_AES-256">AES-256</string>
+	  <string id="Path_Mode">Path Mode</string>
+	  <string id="Path_Mode_Help">Specify extract mode:
+
+Full pathnames Extract files with full pathnames. 
+No pathnmes Extract files without folder paths.</string>
+	  <string id="Path_Mode_Full_Pathnames">Full Pathnames</string>
+	  <string id="Path_Mode_No_Pathnames">No Pathnames</string>
+	  <string id="Overwrite_Mode">Overwrite Mode</string>
+	  <string id="Overwrite_Mode_Help">Specify overwrite mode for files that already present on disk:
+
+Ask before overwrite: Ask before overwriting existing files.
+Overwrite without prompt: Overwrite existing files without prompt.
+Skip existing files: Skip extracting of existing files.
+Auto rename: Rename extracted files, if a file with the same name already exists. For example, file document.txt will be renamed to document_1.txt.
+Auto rename existing files: Rename existing files, if a file with the same name already exists. For example, file document.txt will be renamed to document_1.txt.</string>
+	  <string id="Overwrite_Mode_Ask_befor_Overwriting">Ask before overwrite</string>
+	  <string id="Overwrite_Mode_Overwrite_without_Prompt">Overwrite without prompt</string>
+	  <string id="Overwrite_Mode_Skip_Existing_Files">Skip existing files</string>
+	  <string id="Overwrite_Mode_Auto_Rename">Auto rename</string>
+	  <string id="Overwrite_Mode_Auto_Rename_Existing_Files">Auto rename existing files</string>
+	  <string id="Extraction_Show_Password">Show Password</string>
+	  <string id="Extraction_Show_Password_Help">Show password while entering it.</string>
+	  <string id="Cascaded_Context_Menu">Cascaded Context Menu</string>
+      <string id="Cascaded_Context_Menu_Help">Select this check box to group 7-Zip context menu items to one 7-Zip submenu.</string>
+	  <string id="Context_Menu_Items">Context Menu Items</string>
+      <string id="Context_Menu_Items_Help">When enabled, enter the sum of enabled context menu items.
+
+Context menu items values:
+Open Archive = 32
+Open Archive > = 64
+Extract Files... = 1
+Extract Here = 2
+Extract to "Folder" = 4
+Test archive = 16
+Add to archive... = 256
+Add to "Archive".7z = 512
+Add to "Archive".zip = 4096
+Compress and email... = 1024
+Compress to "Archive".7z and email = 2048
+Compress to "Archive".zip and email = 8192
+
+Example: "Open Archive", "Extract Here" and "Add to archive..." need to be enabled in 7-Zip context menu.
+"Open Archive" = 32
+"Extract Here" = 2
+"Add to archive..." = 256
+
+To enable this three context menu items the sum of their values need to be entered.
+32 + 2 + 256 = 290.
+
+Enter 290 to enable "Open Archive", "Extract Here" and "Add to archive..." conext menu items.
+
+When disabled or not specified, users are able to change this setting.</string>
+	  <string id="Working_Folder">Working Folder</string>
+	  <string id="Working_Folder_Help">When enabled, following options are available:
+"System Temp Folder" - system temp folder will be used by 7-Zip for temporary archive files.
+"Current" - folder containing target archive will be used by 7-Zip for temporary archive files.
+"Specified" - specified folder will be used by 7-Zip for temporary archive files.
+
+When disabled or not specified, users are able to change this setting.
+
+Note: specified folder is defined in "Specified Working Folder" policy.
+7-Zip uses temporary archive files for all update operations. So, for speed reasons, it is recommended that you select the System Temp Folder option.</string>
+      <string id="Working_Folder_System_Temp_Folder">System Temp Folder</string>
+      <string id="Working_Folder_Current">Current</string>
+      <string id="Working_Folder_Specified">Specified</string>
+	  <string id="Specified_Working_Folder">Specified Working Folder</string>
+      <string id="Specified_Working_Folder_Help">Specify a folder 7-Zip will use as working folder for temporary files.</string>
+	  <string id="Use_for_Removable_Drives_Only">Use for Removable Drives Only</string>
+      <string id="Use_for_Removable_Drives_Only_Help">Specifies whether 7-Zip should use the specified folder settings only for removable drives; for other drives, 7-Zip will create temporary archives in the folder containing the target archive. If you clear this check box, 7-Zip always will use the specified folder settings mode always.</string>
+	  <string id="Editor_Path">Editor Path</string>
+	  <string id="Editor_Path_Help">Specifies the path to the editor that will be used for "Edit" command (F4).</string>
+	  <string id="Diff_Path">Diff Path</string>
+	  <string id="Diff_Path_Help">Specifies the path to a file comparison utility that shows the differences between two files.</string>
+	  <string id="Show_Dots_Item">Show ".." Item</string>
+	  <string id="Show_Dots_Item_Help">Shows ".." item in file list.</string>
+	  <string id="Show_Real_File_Icons">Show Real File Icons</string>
+	  <string id="Show_Real_File_Icons_Help">Shows real file icons in file list. If this option is enabled, listing updates can be slower.</string>
+	  <string id="Show_System_Menu">Show System Menu</string>
+	  <string id="Show_System_Menu_Help">Shows a system context sub-menu in the File menu.</string>
+	  <string id="Full_Row_Select">Full Row Select</string>
+	  <string id="Full_Row_Select_Help">When an item is selected, the item and all its subitems are highlighted.</string>
+	  <string id="Show_Grid_Lines">Show Grid Lines</string>
+	  <string id="Show_Grid_Lines_Help">Displays gridlines around items and subitems.</string>
+	  <string id="Single-click_to_Open_an_Item">Single-click to Open an Item</string>
+	  <string id="Single-click_to_Open_an_Item_Help">If enabled, File Manager opens files and folders by single-clicking them.</string>
+	  <string id="Alternate_Selection_Mode">Alternate Selection Mode</string>
+	  <string id="Alternate_Selection_Mode_Help">If enabled, File Manager keeps selection mark when you move cursor.</string>
+	  <string id="Use_Large_Memory_Pages">Use Large Memory Pages</string>
+	  <string id="Use_Large_Memory_Pages_Help">If enabled, 7-Zip will try to use large pages. This feature allows an increase in speed of compression. This may cause 7-Zip to pause when starting compression, because of allocation of the large pages. Also, the Windows Task Manager doesn't show the real memory usage of the program, if 7-Zip uses large pages. This feature works only on Windows 2003 / XP x64. Also you must have administrator's rights for your system. Recommended size of RAM: 1 GB or more. To install this feature you must run 7-Zip File Manager at least once, close it and reboot the system.</string>
+	  <string id="Language">Language</string>
+	  <string id="Language_Help">Allows you to change the default language.</string>
+	  <string id="Language_Afrikaans">Afrikaans</string>
+      <string id="Language_Albanian">Albanian</string>
+      <string id="Language_Arabic">Arabic</string>
+      <string id="Language_Armenian">Armenian</string>
+      <string id="Language_Asturian">Asturian</string>
+      <string id="Language_Azeri">Azeri</string>
+      <string id="Language_Bangla">Bangla</string>
+      <string id="Language_Bashkir">Bashkir</string>
+      <string id="Language_Basque">Basque</string>
+      <string id="Language_Belarusian">Belarusian</string>
+      <string id="Language_Breton">Breton</string>
+      <string id="Language_Bulgarian">Bulgarian</string>
+      <string id="Language_Catalan">Catalan</string>
+      <string id="Language_Chinese_Simplified">Chinese Simplified</string>
+      <string id="Language_Chinese_Traditional">Chinese Traditional</string>
+      <string id="Language_Croatian">Croatian</string>
+      <string id="Language_Czech">Czech</string>
+      <string id="Language_Danish">Danish</string>
+      <string id="Language_Dutch">Dutch</string>
+      <string id="Language_English">English</string>
+      <string id="Language_Esperanto">Esperanto</string>
+      <string id="Language_Estonian">Estonian</string>
+      <string id="Language_Extremaduran">Extremaduran</string>
+      <string id="Language_Farsi">Farsi</string>
+      <string id="Language_Finnish">Finnish</string>
+      <string id="Language_French">French</string>
+      <string id="Language_Frisian">Frisian</string>
+      <string id="Language_Friulian">Friulian</string>
+      <string id="Language_Galician">Galician</string>
+      <string id="Language_Georgian">Georgian</string>
+      <string id="Language_German">German</string>
+      <string id="Language_Greek">Greek</string>
+      <string id="Language_Gujarati_Indian">Gujarati, Indian</string>
+      <string id="Language_Hebrew">Hebrew</string>
+      <string id="Language_Hindi_Indian">Hindi, Indian</string>
+      <string id="Language_Hungarian">Hungarian</string>
+      <string id="Language_Icelandic">Icelandic</string>
+      <string id="Language_Ido">Ido</string>
+      <string id="Language_Indonesian">Indonesian</string>
+      <string id="Language_Italian">Italian</string>
+      <string id="Language_Japanese">Japanese</string>
+      <string id="Language_Kazakh">Kazakh</string>
+      <string id="Language_Korean">Korean</string>
+      <string id="Language_Kurdish_-_Sorani">Kurdish - Sorani</string>
+      <string id="Language_Kurdish">Kurdish</string>
+      <string id="Language_Latvian">Latvian</string>
+      <string id="Language_Lithuanian">Lithuanian</string>
+      <string id="Language_Macedonian">Macedonian</string>
+      <string id="Language_Malay">Malay</string>
+      <string id="Language_Marathi">Marathi</string>
+      <string id="Language_Mongolian">Mongolian</string>
+      <string id="Language_Nepali">Nepali</string>
+      <string id="Language_Norwegian_Bokmal">Norwegian Bokmal</string>
+      <string id="Language_Norwegian_Nynorsk">Norwegian_Nynorsk</string>
+      <string id="Language_Pashto">Pashto</string>
+      <string id="Language_Polish">Polish</string>
+      <string id="Language_Portuguese_Brazil">Portuguese_Brazil</string>
+      <string id="Language_Portuguese_Standard">Portuguese_Standard</string>
+      <string id="Language_Punjabi_Indian">Punjabi, Indian</string>
+      <string id="Language_Romanian">Romanian</string>
+      <string id="Language_Russian">Russian</string>
+      <string id="Language_Sanskrit_Indian">Sanskrit, Indian</string>
+      <string id="Language_Serbian_-_Cyrillic">Serbian - Cyrillic</string>
+      <string id="Language_Serbian_-_Latin">Serbian - Latin</string>
+      <string id="Language_Sinhala">Sinhala</string>
+      <string id="Language_Slovak">Slovak</string>
+      <string id="Language_Slovenian">Slovenian</string>
+      <string id="Language_Spanish">Spanish</string>
+      <string id="Language_Swedish">Swedish</string>
+      <string id="Language_Tamil">Tamil</string>
+      <string id="Language_Tatar">Tatar</string>
+      <string id="Language_Thai">Thai</string>
+      <string id="Language_Turkish">Turkish</string>
+      <string id="Language_Ukrainian">Ukrainian</string>
+      <string id="Language_Uyghur">Uyghur</string>
+      <string id="Language_Uzbek">Uzbek</string>
+      <string id="Language_Valencian">Valencian</string>
+      <string id="Language_Vietnamese">Vietnamese</string>
+      <string id="Language_Welsh">Welsh</string>
+	  <string id="List_Mode">List Mode</string>
+	  <string id="List_Mode_Help">Changes list mode. Possible options:
+
+Large Icons: Displays items by using large icons
+Small Icons: Displays items by using small icons
+List: Displays items in a list
+Details: Displays items in a list with detailed information about each item</string>
+	  <string id="List_Mode_Large_Icons">Large Icons</string>
+	  <string id="List_Mode_Small_Icons">Small Icons</string>
+	  <string id="List_Mode_List">List</string>
+	  <string id="List_Mode_Details">Details</string>
+	</stringTable>
+	<presentationTable>
+	  <presentation id="Archive_Format">
+        <dropdownList refId="Archive_Format"
+		              defaultItem="0"
+					  noSort="true">Archive format:</dropdownList>
+      </presentation>
+	  <presentation id="7z_Compression_Level">
+        <dropdownList refId="7z_Compression_Level"
+		              defaultItem="3"
+					  noSort="true">Compression level:</dropdownList>
+      </presentation>
+	  <presentation id="7z_Compression_Method">
+        <dropdownList refId="7z_Compression_Method"
+		              defaultItem="0"
+					  noSort="true">Compression method:</dropdownList>
+      </presentation>
+	  <presentation id="7z_Dictionary_Size">
+	  <text>Dictionary size is entered in bytes. 1 KB = 1024 bytes, 1MB = 1024 KB</text>
+        <decimalTextBox refId="7z_Dictionary_Size"
+		                required="true">Dictionary size:</decimalTextBox>
+      </presentation>
+	  <presentation id="7z_Word_Size">
+        <decimalTextBox refId="7z_Word_Size"
+		                required="true">Word size:</decimalTextBox>
+      </presentation>
+	  <presentation id="7z_Solid_Block_Size">
+        <dropdownList refId="7z_Solid_Block_Size"
+		              defaultItem="12"
+					  noSort="true">Solid block size:</dropdownList>
+      </presentation>
+	  <presentation id="7z_Number_of_CPU_Threads">
+        <decimalTextBox refId="7z_Number_of_CPU_Threads"
+		                defaultValue="2"
+                        spin="true"
+		                required="true">Number of CPU threads:</decimalTextBox>
+	  </presentation>
+	  <presentation id="7z_Parameters">
+        <textBox refId="7z_Parameters">
+          <label>Parameters:</label>
+        </textBox>
+      </presentation>
+	  <presentation id="bzip2_Compression_Level">
+        <dropdownList refId="bzip2_Compression_Level"
+		              defaultItem="3"
+					  noSort="true">Compression level:</dropdownList>
+      </presentation>
+	   <presentation id="bzip2_Dictionary_Size">
+        <dropdownList refId="bzip2_Dictionary_Size"
+		              defaultItem="8"
+					  noSort="true">Compression level:</dropdownList>
+      </presentation>
+	  <presentation id="bzip2_Number_of_CPU_Threads">
+        <decimalTextBox refId="bzip2_Number_of_CPU_Threads"
+		                defaultValue="2"
+                        spin="true"
+		                required="true">Number of CPU threads:</decimalTextBox>
+	  </presentation>
+	  <presentation id="bzip2_Parameters">
+        <textBox refId="bzip2_Parameters">
+          <label>Parameters:</label>
+        </textBox>
+      </presentation>
+	  <presentation id="gzip_Compression_Level">
+        <dropdownList refId="gzip_Compression_Level"
+		              defaultItem="3"
+					  noSort="true">Compression level:</dropdownList>
+      </presentation>
+	  <presentation id="gzip_Word_Size">
+        <dropdownList refId="gzip_Word_Size"
+		              defaultItem="4"
+					  noSort="true">Word size:</dropdownList>
+      </presentation>
+	  <presentation id="gzip_Parameters">
+        <textBox refId="gzip_Parameters">
+          <label>Parameters:</label>
+        </textBox>
+      </presentation>
+	  <presentation id="tar_Parameters">
+        <textBox refId="tar_Parameters">
+          <label>Parameters:</label>
+        </textBox>
+      </presentation>
+	  <presentation id="wim_Parameters">
+        <textBox refId="wim_Parameters">
+          <label>Parameters:</label>
+        </textBox>
+      </presentation>
+	  <presentation id="xz_Compression_Level">
+        <dropdownList refId="xz_Compression_Level"
+		              defaultItem="3"
+					  noSort="true">Compression level:</dropdownList>
+      </presentation>
+	  <presentation id="xz_Dictionary_Size">
+        <dropdownList refId="xz_Dictionary_Size"
+		              defaultItem="8"
+					  noSort="true">Dictionary size:</dropdownList>
+      </presentation>
+	  <presentation id="xz_Word_Size">
+        <dropdownList refId="xz_Word_Size"
+		              defaultItem="4"
+					  noSort="true">Word size:</dropdownList>
+      </presentation>
+	  <presentation id="xz_Number_of_CPU_Threads">
+        <decimalTextBox refId="xz_Number_of_CPU_Threads"
+		                defaultValue="2"
+                        spin="true"
+		                required="true">Number of CPU threads:</decimalTextBox>
+	  </presentation>
+	  <presentation id="xz_Parameters">
+        <textBox refId="xz_Parameters">
+          <label>Parameters:</label>
+        </textBox>
+      </presentation>
+	  <presentation id="zip_Compression_Level">
+        <dropdownList refId="zip_Compression_Level"
+		              defaultItem="3"
+					  noSort="true">Compression level:</dropdownList>
+      </presentation>
+	  <presentation id="zip_Compression_Method">
+        <dropdownList refId="zip_Compression_Method"
+		              defaultItem="0"
+					  noSort="true">Compression method:</dropdownList>
+      </presentation>
+	  <presentation id="zip_Dictionary_Size">
+	  <text>Dictionary size is entered in bytes. 1 KB = 1024 bytes, 1MB = 1024 KB</text>
+        <decimalTextBox refId="zip_Dictionary_Size"
+		                required="true">Dictionary size:</decimalTextBox>
+      </presentation>
+	  <presentation id="zip_Word_Size">
+       <decimalTextBox refId="zip_Word_Size"
+		                required="true">Word size:</decimalTextBox>
+      </presentation>
+	  <presentation id="zip_Number_of_CPU_Threads">
+        <decimalTextBox refId="zip_Number_of_CPU_Threads"
+		                defaultValue="2"
+                        spin="true"
+		                required="true">Number of CPU threads:</decimalTextBox>
+	  </presentation>
+	  <presentation id="zip_Parameters">
+        <textBox refId="zip_Parameters">
+          <label>Parameters:</label>
+        </textBox>
+      </presentation>
+	  <presentation id="zip_Encryption_Method">
+        <dropdownList refId="zip_Encryption_Method"
+		              defaultItem="0"
+					  noSort="true">Encryption method:</dropdownList>
+      </presentation>
+	  <presentation id="Path_Mode">
+        <dropdownList refId="Path_Mode"
+		              defaultItem="0"
+					  noSort="true">Path mode:</dropdownList>
+      </presentation>
+	  <presentation id="Overwrite_Mode">
+        <dropdownList refId="Overwrite_Mode"
+		              defaultItem="0"
+					  noSort="true">Overwrite mode:</dropdownList>
+      </presentation>
+	  <presentation id="Context_Menu_Items">
+        <decimalTextBox refId="Context_Menu_Items"
+                        defaultValue="16247"
+                        spin="false"
+						required="true">Enabled context menu items values sum:</decimalTextBox>
+      </presentation>
+	  <presentation id="Working_Folder">
+        <dropdownList refId="Working_Folder"
+		              defaultItem="0"
+					  noSort="true">Working folder:</dropdownList>
+      </presentation>
+	  <presentation id="Specified_Working_Folder">
+       <textBox refId="Specified_Working_Folder">
+         <label>Specified working folder:</label>
+       </textBox>
+      </presentation>
+	  <presentation id="Editor_Path">
+        <textBox refId="Editor_Path">
+          <label>Editor path:</label>
+        </textBox>
+      </presentation>
+	  <presentation id="Diff_Path">
+        <textBox refId="Diff_Path">
+          <label>Diff path:</label>
+        </textBox>
+      </presentation>
+	  <presentation id="Language">
+        <dropdownList refId="Language"
+		              defaultItem="19"
+					  noSort="true">Language:</dropdownList>
+      </presentation>
+	  <presentation id="List_Mode">
+        <dropdownList refId="List_Mode"
+		              defaultItem="0"
+					  noSort="true">List mode:</dropdownList>
+      </presentation>
+	</presentationTable>
+  </resources>
+</policyDefinitionResources>

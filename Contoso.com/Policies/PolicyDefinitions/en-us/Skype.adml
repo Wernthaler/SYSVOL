@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns=
+   "http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions"
+   revision="1.3" schemaVersion="1.0">
+  <displayName>Skype policies file</displayName>
+  <description>This file contains the Skype policies.</description>
+  <resources>
+    <stringTable>
+      <string id="Skype">Skype</string>
+      <string id="Skype_Help">Contains Skype software specific configuration settings.</string>
+	  <string id="Phone">Phone</string>
+	  <string id="Phone_Help">Contains Skype software specific phone configuration settings.</string>
+	  <string id="Functionality">Functionality</string>
+	  <string id="Functionality_Help">Contains Skype software specific phone functionality configuration settings.</string>
+	  <string id="miscellaneous">miscellaneous</string>
+	  <string id="miscellaneous_Help">Contains Skype software specific phone miscellaneous configuration settings.</string>
+	  <string id="Network">Network</string>
+	  <string id="Network_Help">Contains Skype software specific phone network configuration settings.</string>
+	  <string id="supported_skype_1b0">At least Skype 1.0</string>
+	  <string id="supported_skype_2b5">At least Skype 2.5</string>
+	  <string id="supported_skype_3b0">At least Skype 3.0</string>
+	  <string id="supported_skype_3b1">At least Skype 3.1</string>
+	  <string id="supported_skype_3b5">At least Skype 3.5</string>
+	  <string id="supported_skype_4b0">At least Skype 4.0</string>
+	  <string id="supported_skype_5b0">At least Skype 5.0</string>
+	  <string id="Disable_Skype_Public_API">Disable Skype Public API</string>
+	  <string id="Disable_Skype_Public_API_Help">Quote: "If third-party applications are not allowed to use Skype, then viruses and worms will be prevented from using it as a transmission and attack vector." http://security.utexas.edu/consensus/skype.html
+
+When enabled, Skype public API is disabled. Third-party applications are not able to access Skype functionality.
+
+When disabled or not specified, Skype public API is enabled. Third-party applications are able to access Skype functionality. Users are able to change third-party software options.</string>
+	  <string id="Disable_File_Transfer">Disable File Transfer</string>
+	  <string id="Disable_File_Transfer_Help">Quote: "This setting makes sense for most managed deployments and will reduce the risk of data exfiltration. When file transfer is enabled, Skype users can transmit files of up to 2GB in size directly to and from each other." http://security.utexas.edu/consensus/skype.html
+
+When enabled, file transfer is disabled. Users are not able to send and receive files using Skype.
+
+When disabled, file transfer is enabled. Users are able to send and recieve files using Skype.
+
+When not specified, file transfer is enabled by default. Users are able to change this setting.</string>
+	  <string id="Run_in_Memory-only_Mode">Run in Memory-only Mode</string>
+	  <string id="Run_in_Memory-only_Mode_Help">When enabled, Skype runs in memory-only mode. Skype does not store any data on the local disk.
+
+When disabled, Skype runs in normall mode. Skype stores data on the local disk.
+
+When not specified, Skype runs in normal mode by default. Users are able to change this setting.</string>
+	  <string id="Disable_Contacts_Backup_and_Restore_from_File">Disable Contacts Backup and Restore from File</string>
+	  <string id="Disable_Contacts_Backup_and_Restore_from_File_Help">When enabled, contacts backup and restore from file is disabled. Users are not able to backup and restore contacts from file.
+
+When disabled or not specified, contacts import is enabled. User are able to import contacts.</string>
+	  <string id="Disable_New_Version_Checking">Disable New Version Checking</string>
+	  <string id="Disable_New_Version_Checking_Help">When enabled, new version checking is disabled. Skype is not able to detect new versions and updates.
+
+When disabled, new version checking is enabled. Skype is able to detect new versions and updates.
+
+When not specified, new version checking is enabled by default. Users are able to change this setting.</string>
+	  <string id="Disable_Sounds_Import">Disable Sounds Import</string>
+	  <string id="Disable_Sounds_Import_Help">When enabled, sounds import is disabled. Users are not able to import custom sounds to change default Skype sounds.
+
+When disabled or not specified, sounds import is enabled. Users are able to import custom sounds to change default Skype sounds.</string>
+	  <string id="Disable_Language_Editing">Disable Language Editing</string>
+	  <string id="Disable_Language_Editing_Help">When enabled, language editing is disabled. Users are not able to edit language strings.
+
+When disabled or not specified, language editing is enabled. Users are able to edit language strings.</string>
+	  <string id="Port_Number_for_Incoming_Connections">Port Number for Incoming Connections</string>
+	  <string id="Port_Number_for_Incoming_Connections_Help">When enabled, specified port number is used for incoming connections.
+
+When disabled or not specified, users are able to change port number for incoming connections. By default random port number generated at installation is used.
+
+Note: port number from range 1024-65535 is recommended.
+WARNING: this policy conflicts with "Port Range for Incoming Connections" policy. Do not enable both policies at the same time. Enabling both policies causes Skype not to use any port for incoming connections.</string>
+	  <string id="Use_HTTP_and_HTTPS_as_Alternatives_for_Incoming_Connections">Use HTTP and HTTPS as Alternatives for Incoming Connections</string>
+	  <string id="Use_HTTP_and_HTTPS_as_Alternatives_for_Incoming_Connections_Help">Quote: "This will stop Skype from listening on TCP ports 80 and 443 and will assist in keeping bandwidth consumption by your Skype client low. Not listening on these ports will make it less likely that your Skype client becomes a super node or relay host." http://security.utexas.edu/consensus/skype.html
+
+When enabled, HTTP (port 80) and HTTPS (port 443) ports are used as alternatives for incoming connections.
+
+When disabled, HTTP (port 80) and HTTPS (port 443) ports are not used as alternatives for incoming connections.
+
+When not specified, HTTP (port 80) and HTTPS (port 443) ports are not used as alternatives for incoming connections by default. Users are able to change this setting.</string>
+	  <string id="Disable_TCP_Incoming_Connections">Disable TCP Incoming Connections</string>
+	  <string id="Disable_TCP_Incoming_Connections_Help">Quote: "A Skype client that has a public IP address and enough spare CPU cycles, RAM, and bandwidth to relay Skype content for other Skype users who are behind restrictive firewalls or are otherwise unable to communicate with each other directly. Although it is theoretically possible for a relay host to relay communications traffic for more than one session at a time, Skype claims that this is not commonly seen in practice. The Skype application places limits on how much bandwidth can be consumed by a relay host (Skype, 2006):
+– File Transfer: 3KBps
+– Voice Call: 4KBps
+– Video Call: 10KBps"
+http://security.utexas.edu/consensus/skype.html
+
+When enabled, incoming TCP connections are disabled. Skype does not receive incoming TCP connections.
+
+When disabled or not specified, incoming TCP connections are enabled. Skype receives incoming TCP connections.</string>
+	  <string id="Disable_UDP_Incoming_Connections">Disable UDP Incoming Connections</string>
+	  <string id="Disable_UDP_Incoming_Connections_Help">Quote: "A Skype client that has a public IP address and enough spare CPU cycles, RAM, and bandwidth to relay Skype content for other Skype users who are behind restrictive firewalls or are otherwise unable to communicate with each other directly. Although it is theoretically possible for a relay host to relay communications traffic for more than one session at a time, Skype claims that this is not commonly seen in practice. The Skype application places limits on how much bandwidth can be consumed by a relay host (Skype, 2006):
+– File Transfer: 3KBps
+– Voice Call: 4KBps
+– Video Call: 10KBps"
+http://security.utexas.edu/consensus/skype.html
+
+When enabled, UDP incoming connections are disabled. Skype does not recieve incoming TCP connections.
+
+When disabled or not specified, UDP incoming connections are enabled. Skype receives incoming TCP connections.</string>
+	  <string id="Prevent_Skype_to_Become_a_Supernode">Prevent Skype Client to Become a Supernode</string>
+	  <string id="Prevent_Skype_to_Become_a_Supernode_Help">Quote: "A Skype client that has a public IP address and enough spare CPU cycles, RAM, and bandwidth to take on additional duties for the Skype P2P network. Super nodes hold a portion (up to several hundred users) of the distributed Skype directory. Although they accept and reply to directory queries from other Skype users, super nodes do not actually relay communications content (voice, video, chat, etc.) for other users. According to the Skype Guide for Network Administrators (Skype, 2006) super nodes are restricted from using more than 5KBps (kilobytes per second) of bandwidth. ...Super nodes don’t consume as much bandwidth as relay hosts, but they still handle a significant chunk of Skype’s P2P signaling traffic." http://security.utexas.edu/consensus/skype.html
+
+When enabled, Skype does not become a supernode.
+
+When disabled, Skype becomes a supernode.
+
+When not specified, Skype becomes a supernode by default. Users are able to change this setting.</string>
+	  <string id="Proxy_Server_Type">Proxy Server Type</string>
+	  <string id="Proxy_Server_Type_Help">When enabled, specified proxy server type is used. Following options are available:
+"Automatic proxy detection" - Skype automatically detects proxy server settings.
+"Disabled" - Skype does not use proxy server.
+"HTTPS" - Skype uses HTTPS proxy server. Proxy server must be specified in "Proxy Server Address" policy.
+"SOCKS5" - Skype uses SOCKS5 proxy server. Proxy server must be specified in "Proxy Server Address" policy.
+
+When disabled or not specified, proxy server type is set to "Automatic proxy detection" by default. Users are able to change this setting.</string>
+	  <string id="Proxy_Server_Type_Automatic_proxy_detection">Automatic proxy detection</string>
+	  <string id="Proxy_Server_Type_Disabled">Disabled</string>
+	  <string id="Proxy_Server_Type_HTTPS">HTTPS</string>
+	  <string id="Proxy_Server_Type_SOCKS5">SOCKS5</string>
+	  <string id="Proxy_Server_Address">Proxy Server Address</string>
+	  <string id="Proxy_Server_Address_Help">When enabled, specified proxy server will be used.
+Proxy server must be specified as follows:
+host:port
+"host" - server name of proxy server. FQDN, Netbios name or IP address can be used.
+"port" - port number of proxy server.
+
+Examples:
+1) host: 192.168.1.100; port: 8080
+Must be entered: 192.168.1.100:8080
+
+2) host: proxy; port: 3128
+Must be entered: proxy:3128
+
+3) host: proxy.domain.local; port: 8080
+Must be entered: server.domain.local:8080
+
+When disabled or not specified, users are able to change this setting.</string>
+	  <string id="Proxy_Server_Credentials">Proxy Server Credentials</string>
+	  <string id="Proxy_Server_Credentials_Help">When enabled, specified credentials are used by Skype for authorisation on proxy server.
+
+When disabled or not specified, users are able to change this setting.
+
+WARNING: specified credentials are stored on workstations in plain text.</string>
+	  <string id="Web_Status">Web Status</string>
+	  <string id="Web_Status_Help">When enabled, Skype publishes the user's status on the web as Skype buttons.
+
+When disabled, users are not able to publish status on the web.
+
+When not specified, users can change this setting.</string>
+      <string id="Disable_Dragonfly">Disable Dragonfly</string>
+	  <string id="Disable_Dragonfly_Help">Dragonfly is responsible for mood video messages. Disabling Dragonfly disables the "Add Video to Your Mood..." item in "Personalize" menu and corresponding icon in the mood textbox</string>
+	  <string id="Disable_Sign_Out_Menu_Item">Disable "Sign Out" Menu Item</string>
+	  <string id="Disable_Sign_Out_Menu_Item_Help">When enabled, "Sign Out" item in "Skype" menu is disabled.
+
+"Sign Out" deletes cached Skype Name and Password for automatic sign in.</string>
+	  <string id="Disable_Premium_Services">Disable Premium Services</string>
+	  <string id="Disable_Premium_Services_Help">When enabled, premium services (Skype Prime) are disabled. Users are not able to use premium services as both service provider and service consumer.
+
+When disabled or not specified, premium services (Skype Prime) are enabled. Users are able to use premium services as both service provider and service consumer.</string>
+	  <string id="Disable_Screen_Sharing">Disable Screen Sharing</string>
+	  <string id="Disable_Screen_Sharing_Help">Allows callers on Skype to easily share what is on their screen, simply by calling another Skype contact and showing all or part of their screen to the other person.
+
+When enabled, Screen Sharing is disabled. Users are not able to use Screen Sharing.
+
+When disabled, Screen Sharing is enabled. Users are able to use Screen Sharing.
+
+When not specified, Screen Sharing is enabled by default. Users are able to change this setting.</string>
+	  <string id="Disable_Skype_Access">Disable Skype Access</string>
+	  <string id="Disable_Skype_Access_Help">Skype Access allows to pay for WiFi access in commercial hotspots using Skype credit.
+
+When enabled, Skype Access is disabled. Users are not able to use Skype Access.
+
+When disabled or not specified, Skype Access is enabled by default. Users are able to change this setting.</string>
+	  <string id="Disable_Facebook_Integration">Disable Facebook Integration</string>
+	  <string id="Disable_Facebook_Integration_Help">When enabled, Facebook integration is disabled.
+
+When disabled or not specified, Facebook integration is enabled by default. Users are able to change this setting.</string>
+      <string id="Port_Range_for_Incoming_Connections">Port Range for Incoming Connections</string>
+	  <string id="Port_Range_for_Incoming_Connections_Help">When enabled, available port from specified port range is used for incoming connections.
+
+When disabled or not specified, users are able to change port number for incoming connections. By default random port number generated at installation is used.
+
+Note: port range from range 1024-65535 is recommended.
+WARNING: this policy conflicts with "Port Number for Incoming Connections" policy. Do not enable both policies at the same time. Enabling both policies causes Skype not to use any port for incoming connections.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="Proxy_Server_Type">
+        <dropdownList refId="Proxy_Server_Type"
+		              defaultItem="0"
+					  noSort="true">Proxy server type:</dropdownList>
+      </presentation>
+	  <presentation id="Proxy_Server_Address">
+        <textBox refId="Proxy_Server_Address">
+          <label>Proxy server address:</label>
+          <defaultValue>host:port</defaultValue>
+        </textBox>
+      </presentation>
+	  <presentation id="Proxy_Server_Credentials">
+        <textBox refId="Proxy_Server_Credentials_Username">
+          <label>Username:</label>
+          <defaultValue>username</defaultValue>
+        </textBox>
+		<textBox refId="Proxy_Server_Credentials_Password">
+          <label>Password:</label>
+          <defaultValue>password</defaultValue>
+        </textBox>
+      </presentation>
+	  <presentation id="Port_Number_for_Incoming_Connections">
+	    <text>Port number from range 1024-65535 is recommended.
+		WARNING: do not enable this policy if "Port Range for Incoming Connections" policy is enabled.</text>
+        <decimalTextBox refId="Port_Number_for_Incoming_Connections"
+                        spin="true"
+		                required="true">Use port:</decimalTextBox>
+      </presentation>
+	  <presentation id="Port_Range_for_Incoming_Connections">
+	    <text>Port range from range 1024-65535 is recommended.
+		Port range begin value must be lesser then prot range end value.
+		WARNING: do not enable this policy if "Port Number for Incoming Connections" policy is enabled.</text>
+        <decimalTextBox refId="Port_Range_for_Incoming_Connections_Begin"
+                        spin="true"
+		                required="true">Port range begin:</decimalTextBox>
+		<decimalTextBox refId="Port_Range_for_Incoming_Connections_End"
+                        spin="true"
+		                required="true">Port range end:</decimalTextBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

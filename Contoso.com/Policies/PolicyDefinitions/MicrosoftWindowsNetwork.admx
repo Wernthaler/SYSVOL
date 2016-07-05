@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+Microsoft Windows Network settings policies.
+Version history:
+30.01.2012: Initial version
+
+https://sourceforge.net/projects/customadmx/
+Created by Nov.
+Managed by Nov.-->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  revision="1.0" schemaVersion="1.0" 
+  xmlns=
+  "http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="Microsoft_Windows_Network" namespace="Custom.Policies.Custom.Microsoft_Corp.Microsoft_Windows.Microsoft_Windows_Network" />
+    <using prefix="Microsoft_Windows" namespace="Custom.Policies.Custom.Microsoft_Corp.Microsoft_Windows" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_At_least_Windows_Vista"
+                  displayName="$(string.SUPPORTED_At_least_Windows_Vista)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="Microsoft_Windows_Network"
+              displayName="$(string.Microsoft_Windows_Network)"
+              explainText="$(string.Microsoft_Windows_Network_Help)">
+       <parentCategory ref="Microsoft_Windows:Microsoft_Windows" />
+    </category>
+	<category name="Offline_Files"
+              displayName="$(string.Offline_Files)"
+              explainText="$(string.Offline_Files_Help)">
+       <parentCategory ref="Microsoft_Windows_Network" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="Offline_Files_Conflicts_Auto_Resolving_Policy"
+	        class="Machine"
+			displayName="$(string.Offline_Files_Conflicts_Auto_Resolving_Policy)"
+			explainText="$(string.Offline_Files_Conflicts_Auto_Resolving_Policy_Help)"
+			presentation="$(presentation.Offline_Files_Conflicts_Auto_Resolving_Policy)"
+			key="Software\Microsoft\Windows\CurrentVersion\NetCache">
+      <parentCategory ref="Offline_Files" />
+      <supportedOn ref="SUPPORTED_At_least_Windows_Vista" />
+      <elements>
+        <list id="Offline_Files_Conflicts_Auto_Resolving_Policy"
+		 key="Software\Microsoft\Windows\CurrentVersion\NetCache"
+		 additive="true"
+		 explicitValue="true" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

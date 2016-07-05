@@ -1,0 +1,65 @@
+{
+  "cckVersion": "2.1.2",
+  "name": "Contoso GmbH",
+  "description": "Anpassungen Mozilla Firefox fuer Firma Contoso GmbH",
+  "version": "20160101",
+  "outputDirectory": "C:\\Dokumente und Einstellungen\\Admin\\Eigene Dateien",
+  "homePage": "http://www.contoso.com",
+  "titlemodifier": "Contoso GmbH",
+  "extension": {
+    "id": "contoso-cck@extensions.edv-wernthaler.de",
+    "name": "Contoso GmbH",
+    "description": "Anpassungen Mozilla Firefox fuer Firma Contoso GmbH",
+    "homepageURL": "http://www.contoso.com",
+    "filename": "contoso-cck@extensions.edv-wernthaler.de"
+  },
+  "lockHomePage": true,
+  "noWelcomePage": true,
+  "noUpgradePage": true,
+  "removeDeveloperTools": true,
+  "disableSearchEngineInstall": true,
+  "displayBookmarksToolbar": true,
+  "removeSmartBookmarks": true,
+  "removeDefaultBookmarks": true,
+  "dontCheckDefaultBrowser": true,
+  "disableCrashReporter": true,
+  "disableTelemetry": true,
+  "disableFirefoxHealthReportUpload": true,
+  "disableFirefoxHealthReport": true,
+  "disableFirefoxUpdates": true,
+  "network": {
+    "proxyAutologin": true,
+    "proxyType": 5
+  },
+  "dontShowRights": true,
+  "disablePDFjs": true,
+  "disableWebApps": true,
+  "disableHello": true,
+  "disableSharePage": true,
+  "disableHeartbeat": true,
+  "disablePocket": true,
+  "id": "Contoso",
+  "addons": [
+    "Z:\\GitHub\\SYSVOL\\(FQDN)\\Firefox\\extensions\\gpo@extensions.org.xpi"
+  ],
+  "defaultSearchEngine": "Google",
+  "bookmarks": {
+    "toolbar": [
+      {
+        "name": "Contoso GmbH",
+        "location": "http://www.contoso.com"
+      }
+    ],
+    "menu": [
+      {
+        "name": "Contoso GmbH",
+        "location": "http://www.contoso.com"
+      }
+    ]
+  },
+  "certs": {
+    "override": [
+      "Contoso.com"
+    ]
+  }
+}

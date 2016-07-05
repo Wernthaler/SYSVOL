@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Anzeigenamen hier eingeben</displayName>
+  <description>Beschreibung hier eingeben</description>
+  <resources>
+    <stringTable>
+      <string id="PERF">Systemsteuerung - Leistung</string>
+      <string id="PerfCpl">Zugriff auf den Leistungscenter-Kernbereich deaktivieren</string>
+      <string id="PerfCplEnabledDescription_Help">Entfernt den Zugriff auf die Leistungscenter-Systemsteuerungsseite. 
+
+Wenn Sie diese Einstellung aktivieren, werden einige Einstellungen auf der Leistungscenter-Systemsteuerungsseite nicht angezeigt. Dies hat keine Auswirkungen auf die Verwaltung. 
+
+Wenn Sie diese Einstellung deaktivieren oder nicht konfigurieren, wird Benutzern der Kernbereich der Leistungscenter-Systemsteuerungsseite angezeigt.</string>
+      <string id="PerfSolutions">Zugriff auf den Bereich "Lösungen zu Leistungsproblemen" deaktivieren</string>
+      <string id="PerfSolutionsEnabledDescription_Help">Entfernt den Zugriff auf Lösungen für Leistungsprobleme auf der Leistungscenter-Systemsteuerungsseite.
+
+Wenn Sie diese Einstellung aktivieren, wird der Bereich mit Lösungen und Problemen auf der Leistungscenter-Systemsteuerungsseite nicht angezeigt. Dies hat keine Auswirkungen auf die Verwaltung. 
+
+Wenn Sie diese Einstellung deaktivieren oder nicht konfigurieren, wird Benutzern die Leistungscenter-Systemsteuerungsseite mit Lösungen für Leistungsprobleme angezeigt.</string>
+      <string id="Upsell">Zugriff auf den OEM- und Microsoft-Brandingbereich deaktivieren</string>
+      <string id="UpsellEnabledDescription_Help">Entfernt den Zugriff auf die Systemsteuerungsseite mit OEM- und Microsoft-Brandinglinks.
+
+Wenn Sie diese Einstellung aktivieren, werden die OEM- und Microsoft-Weblinks auf der Leistungscenter-Systemsteuerungsseite nicht angezeigt. Dies hat keine Auswirkungen auf die Verwaltung. 
+
+Wenn Sie diese Einstellung deaktivieren oder nicht konfigurieren, werden Benutzern OEM- und Microsoft-Brandinglinks auf der Leistungscenter-Systemsteuerungsseite angezeigt.</string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>

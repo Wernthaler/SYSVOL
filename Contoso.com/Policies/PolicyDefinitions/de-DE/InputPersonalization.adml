@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Anzeigenamen hier eingeben</displayName>
+  <description>Beschreibung hier eingeben</description>
+  <resources>
+    <stringTable>
+      <string id="ImplicitDataCollectionOff">Automatisches Lernen deaktivieren</string>
+      <string id="ImplicitDataCollectionOff_Help">Deaktiviert die Komponente für das automatischen Lernen der Handschrifterkennungsanpassung. 
+
+Automatisches Lernen ermöglicht dem Benutzer das Sammeln und Speichern von Text und/oder Freihandeingaben, um die Handschrifterkennung an das Vokabular und die Handschrift des Benutzers anzupassen. 
+
+Zu den gesammelten Texten gehören alle ausgehenden Nachrichten in Windows Mail und in MAPI-E-Mail-Clients sowie die URLs aus dem Browserverlauf von Internet Explorer. Gespeichert werden Informationen wie Worthäufigkeit und Wörter, die den Handschrifterkennungsmodulen noch unbekannt sind (beispielsweise Eigennamen und Akronyme). Durch das Löschen von E-Mail-Inhalten oder des Browserverlaufs werden die gespeicherten Anpassungsdaten nicht gelöscht. Über den Eingabebereich vorgenommene Freihandeingaben werden gesammelt und gespeichert.  
+
+Hinweis: Möglicherweise ist das automatische Lernen von Text und Freihandeingaben nicht für alle Sprachen verfügbar, selbst wenn die Handschriftanpassung verfügbar ist. Weitere Informationen finden Sie in der Tablet PC-Hilfe.
+
+Wenn diese Richtlinie aktiviert wird, wird das automatische Lernen beendet, und alle gespeicherten Daten werden gelöscht. Benutzer können diese Einstellung nicht in der Systemsteuerung konfigurieren.
+
+Wenn diese Richtlinie deaktiviert wird, wird das automatische Lernen aktiviert. Benutzer können diese Einstellung nicht in der Systemsteuerung konfigurieren. Gesammelte Daten werden nur bei aktivierter Handschriftanpassung für die Handschrifterkennung verwendet.
+
+Wenn diese Richtlinie nicht konfiguriert wird, können Benutzer wählen, ob sie das automatische Lernen aktivieren oder deaktivieren möchten. Dies kann entweder in der Systemsteuerung unter "Tabletteinstellungen" auf der Registerkarte "Handschrift" erfolgen oder im Anmeldedialog.
+
+Verwandt mit der Richtlinie "Handschriftanpassung deaktivieren".
+
+Hinweis: Der für Freihandeingaben reservierte Speicherplatz ist auf 50 MB begrenzt, der für Textinformationen auf ungefähr 5 MB. Werden diese Grenzwerte erreicht und neue Daten gesammelt, werden alte Daten gelöscht, um Platz für die neueren Daten zu schaffen.
+
+Hinweis: Die Handschriftanpassung in Microsoft Windows Vista™ funktioniert nur mit Handschrifterkennungen von Microsoft, nicht mit Erkennungen von Drittanbietern.</string>
+      <string id="InputPersonalization">Handschriftanpassung</string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>

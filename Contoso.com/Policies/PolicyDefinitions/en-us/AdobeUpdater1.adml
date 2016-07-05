@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns=
+   "http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions"
+   revision="1.1" schemaVersion="1.0">
+  <displayName>Adobe Reader X policies file</displayName>
+  <description>This file contains the Adobe Reader X policies.</description>
+  <resources>
+    <stringTable>
+	  <string id="Adobe_Updater_1">Adobe Updater 1.0</string>
+	  <string id="Adobe_Updater_1_Help">Contains Aboe Updater 1.0 specific configuration settings.
+
+These preferences control how the Updater works for the Acrobat family of products 9.2 and 8.1.7 and later. Earlier product versions used the Adobe Update Manager (AUM).
+
+Based on Administrator's Information Manager that can be found here: http://learn.adobe.com/wiki/display/security/Application+Security+Library.</string>
+	  <string id="Updater_Logging">Updater Logging</string>
+	  <string id="Updater_Logging_Help">The log file is a file generated and appended to at runtime with status, operational, and error information describing what the Updater is doing. This information helps diagnose runtime problems and should be included with any support requests. Logging behaves as follows:
+Logging cannot be disabled.
+Log file size is not limited during an update.
+Log files are appended to each time the Updater runs, there is a 1MB limit on old logs.
+Log files are only backed up once; therefore, there should never be more than two logs on the system.</string>
+	  <string id="Updater_Configuration">Updater Configuration</string>
+	  <string id="Updater_Configuration_Help">These preferences control when the Updater is invoked, how and when a check for updates should be made, and other behaviors.</string>
+	  <string id="SUPPORTED_Adobe_Updater_1b0">At least Adobe Updater 1.0</string>
+	  <string id="SUPPORTED_Adobe_Updater_1b0_and_at_least_Adobe_Reader_10_1">At least Adobe Updater 1.0 and Adobe Reader 10.1</string>
+	  <string id="SUPPORTED_Adobe_Updater_1b0_and_at_least_Adobe_Reader_10_1_2">At least Adobe Updater 1.0 and Adobe Reader 10.1.2</string>
+	  <string id="Log_Level">Log Level</string>
+	  <string id="Log_Level_Help">Sets the log level to either brief (0) or verbose (1).
+
+Log file size is not limited during an update. However, since log files are appended to each time the Updater runs, there is a 1MB limit on old logs. Size limit behavior is as follows: If an existing log size is bigger than 1 MB, the Updater truncates the log. Old log files are backed up once as AdobeARM-backup. 
+
+Logs reside at:
+Vista (64 bit systems) %USERPROFILE%\AppData\Local\Temp\AdobeARM.log
+XP (32bit systems) %USERPROFILE%\Local Settings\Temp\AdobeARM.log
+Set the log level as follows:
+0: Brief
+1: Verbose</string>
+	  <string id="Log_Level_Brief">Brief</string>
+	  <string id="Log_Level_Verbose">Verbose</string>
+	  <string id="Time_that_Can_Elapse_without_a_Successful_Update_before_the_Watchdog_Dialog_Appears_Suggesting_the_User_Manually_Update">Time that Can Elapse without a Successful Update before the Watchdog Dialog Appears Suggesting the User Manually Update. x32</string>
+	  <string id="Time_that_Can_Elapse_without_a_Successful_Update_before_the_Watchdog_Dialog_Appears_Suggesting_the_User_Manually_Update_Help">Sets the time that can elapse without a successful update before the Watchdog dialog appears suggesting the user manually update.
+
+This is an internal key that is not visible unless the admin creates it manually. When the Updater successfully obtains a manifest it records the download date. iInterval specifies the time interval that is allowed to pass from that download date to a a successful update. The default is 135 days. If the time has elapsed, a dialog appears suggesting the user might want to manually get an update from adobe.com.</string>
+	  <string id="Update_Mode">Update Mode</string>
+	  <string id="Update_Mode_Help">Specifies the Updater's update mode; for example, manual or semi-automatic
+
+The update mode is a machine level setting that cannot be set on a per user basis. This setting configures both Acrobat and Reader until 10.1. After 10.1, use iCheck for Acrobat and iCheckReader for Reader. Possible values include:
+0: Do not download or install updates automatically.
+1: Unused.
+2: Automatically download updates but let the user choose when to install them.
+3: Automatically download and install updates.
+
+GUI mapping: Preferences > Updater > Check for Updates panel</string>
+	  <string id="Update_Mode_Automatic">Automatic</string>
+	  <string id="Update_Mode_Semi-automatic">Semi-automatic</string>
+	  <string id="Update_Mode_Manual">Manual</string>
+	  <string id="Update_Mode_Adobe_Reader">Adobe Reader Update Mode</string>
+	  <string id="Update_Mode_Adobe_Reader_Help">Specifies the Updater's update mode for Adobe Reader 10.1 and later; for example, manual or semi-automatic.
+
+The update mode is a machine level setting that cannot be set on a per user basis. This setting configures Reader since 10.1, but note that the key is not created until a value is specified via the UI. Before 10.1, use iCheck. Possible values include:
+0: Do not download or install updates automatically.
+1: Unused
+2: Automatically download updates but let the user choose when to install them.
+3: Automatically download and install updates.
+
+GUI mapping: Preferences > Updater > Check for Updates panel</string>
+	  <string id="Update_Mode_Adobe_Reader_Automatic">Automatic</string>
+	  <string id="Update_Mode_Adobe_Reader_Semi-automatic">Semi-automatic</string>
+	  <string id="Update_Mode_Adobe_Reader_Manual">Manual</string>
+	  <string id="Enable_Prompt_For_Upgrade">Enable Prompt For Upgrade</string>
+	  <string id="Enable_Prompt_For_Upgrade_Help">Specifies whether the application should prompt for upgrades to the next major version (for example, 10.0 to 11.0).
+
+If updates have been disabled (bUpdater = 0), then upgrades are also disabled. The feature also requires that the update settings are set to "automatic."
+0: Disable the ability of the application to automatically upgrade from to a higher major version.
+1: No effect.</string>
+	</stringTable>
+	<presentationTable>
+	  <presentation id="Log_Level">
+        <dropdownList refId="Log_Level_x32"
+		              defaultItem="0"
+					  noSort="true">Log level (x32 systems):</dropdownList>
+		<dropdownList refId="Log_Level_x64"
+		              defaultItem="0"
+					  noSort="true">Log level (x64 systems):</dropdownList>
+      </presentation>
+	  <presentation id="Time_that_Can_Elapse_without_a_Successful_Update_before_the_Watchdog_Dialog_Appears_Suggesting_the_User_Manually_Update">
+	    <text>Interval is entered in days</text>
+        <decimalTextBox refId="Time_that_Can_Elapse_without_a_Successful_Update_before_the_Watchdog_Dialog_Appears_Suggesting_the_User_Manually_Update_x32"
+                        spin="true"
+                        spinStep="1">Interval (x86 systems):</decimalTextBox>
+		<decimalTextBox refId="Time_that_Can_Elapse_without_a_Successful_Update_before_the_Watchdog_Dialog_Appears_Suggesting_the_User_Manually_Update_x64"
+                        spin="true"
+                        spinStep="1">Interval (x64 systems):</decimalTextBox>
+      </presentation>
+	  <presentation id="Update_Mode">
+        <dropdownList refId="Update_Mode_x32"
+		              defaultItem="1"
+					  noSort="true">Update mode (x86 systems):</dropdownList>
+		<dropdownList refId="Update_Mode_x64"
+		              defaultItem="1"
+					  noSort="true">Update mode (x64 systems):</dropdownList>
+      </presentation>
+	  <presentation id="Update_Mode_Adobe_Reader">
+        <dropdownList refId="Update_Mode_Adobe_Reader_x32"
+		              defaultItem="1"
+					  noSort="true">Update mode (x86 systems):</dropdownList>
+		<dropdownList refId="Update_Mode_Adobe_Reader_x64"
+		              defaultItem="1"
+					  noSort="true">Update mode (x64 systems):</dropdownList>
+      </presentation>
+	</presentationTable>
+  </resources>
+</policyDefinitionResources>

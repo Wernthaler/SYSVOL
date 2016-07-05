@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+Adobe AIR policies.
+Version history:
+06.02.2012: Initial version
+
+https://sourceforge.net/projects/customadmx/
+Created by Nov.
+Managed by Nov.-->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  revision="1.0" schemaVersion="1.0" 
+  xmlns=
+  "http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="Adobe_AIR_3" namespace="Custom.Policies.Custom.Adobe_Systems_Inc.Adobe_AIR.Adobe_AIR_3" />
+    <using prefix="Adobe_AIR" namespace="Custom.Policies.Custom.Adobe_Systems_Inc.Adobe_AIR" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_Adobe_AIR_3b0"
+                  displayName="$(string.SUPPORTED_Adobe_AIR_3b0)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="Adobe_AIR_3"
+              displayName="$(string.Adobe_AIR_3)"
+              explainText="$(string.Adobe_AIR_3_Help)">
+       <parentCategory ref="Adobe_AIR:Adobe_AIR" />
+    </category>
+	<category name="AIR_Configuration"
+              displayName="$(string.AIR_Configuration)"
+              explainText="$(string.AIR_Configuration_Help)">
+       <parentCategory ref="Adobe_AIR_3" />
+    </category>
+	</categories>
+  <policies>
+    <policy name="Prevent_Installation_of_AIR_Applications"
+            class="Machine"
+            displayName="$(string.Prevent_Installation_of_AIR_Applications)"
+            explainText="$(string.Prevent_Installation_of_AIR_Applications_Help)"
+            key="Software\Policies\Adobe\AIR"
+			valueName="AppInstallDisabled">
+      <parentCategory ref="AIR_Configuration" />
+      <supportedOn ref="SUPPORTED_Adobe_AIR_3b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Prevent_Installation_of_Untrusted_AIR_Applications"
+            class="Machine"
+            displayName="$(string.Prevent_Installation_of_Untrusted_AIR_Applications)"
+            explainText="$(string.Prevent_Installation_of_Untrusted_AIR_Applications_Help)"
+            key="Software\Policies\Adobe\AIR"
+			valueName="UntrustedAppInstallDisabled">
+      <parentCategory ref="AIR_Configuration" />
+      <supportedOn ref="SUPPORTED_Adobe_AIR_3b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Prevent_Automatic_Updates"
+            class="Machine"
+            displayName="$(string.Prevent_Automatic_Updates)"
+            explainText="$(string.Prevent_Automatic_Updates_Help)"
+            key="Software\Policies\Adobe\AIR"
+			valueName="UpdateDisabled">
+      <parentCategory ref="AIR_Configuration" />
+      <supportedOn ref="SUPPORTED_Adobe_AIR_3b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+  </policies>
+</policyDefinitions>

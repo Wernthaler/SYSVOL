@@ -1,0 +1,807 @@
+<policyDefinitions revision="1.0" schemaVersion="1.0">
+  <policyNamespaces>
+    <target prefix="fullarmor" namespace="FullArmor.Policies.50C48427_E059_4052_BB12_F2468756F4EE" />
+    <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+  </policyNamespaces>
+  <supersededAdm fileName="Mozilla.adm" />
+  <resources minRequiredRevision="1.0" />
+  <supportedOn>
+    <definitions>
+      <definition name="supported" displayName="$(string.supported)" />
+      <definition name="SUPPORTED_NotSpecified" displayName="$(string.ADMXMigrator_NoSupportedOn)" />
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="Mozilla" displayName="$(string.unknown_0)" />
+    <category name="Thunderbird" displayName="$(string.unknown_1)">
+      <parentCategory ref="Mozilla" />
+    </category>
+    <category name="lock_prefs" displayName="$(string.lock_prefs)">
+      <parentCategory ref="Thunderbird" />
+    </category>
+    <category name="default_prefs" displayName="$(string.default_prefs)">
+      <parentCategory ref="Thunderbird" />
+    </category>
+    <category name="certificates" displayName="$(string.certificates)">
+      <parentCategory ref="Thunderbird" />
+    </category>
+    <category name="Firefox" displayName="$(string.unknown_62)">
+      <parentCategory ref="Mozilla" />
+    </category>
+    <category name="lock_prefs_ff" displayName="$(string.lock_prefs_ff)">
+      <parentCategory ref="Firefox" />
+    </category>
+    <category name="default_prefs_ff" displayName="$(string.default_prefs_ff)">
+      <parentCategory ref="Firefox" />
+    </category>
+    <category name="certificates_ff" displayName="$(string.certificates_ff)">
+      <parentCategory ref="Firefox" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="proxy_type" class="Both" displayName="$(string.proxy_type)" explainText="$(string.proxy_type_explain)" presentation="$(presentation.proxy_type)" key="SOFTWARE\Policies\Thunderbird\LockPref">
+      <parentCategory ref="lock_prefs" />
+      <supportedOn ref="supported" />
+      <elements>
+        <enum id="proxy_type" valueName="network.proxy.type" required="true">
+          <item displayName="$(string.proxy_direct)">
+            <value>
+              <string>0</string>
+            </value>
+          </item>
+          <item displayName="$(string.proxy_pac)">
+            <value>
+              <string>4</string>
+            </value>
+          </item>
+          <item displayName="$(string.proxy_wpad)">
+            <value>
+              <string>2</string>
+            </value>
+          </item>
+          <item displayName="$(string.proxy_manual)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="proxy_settings" class="Both" displayName="$(string.proxy_settings)" explainText="$(string.proxy_settings_explain)" presentation="$(presentation.proxy_settings)" key="SOFTWARE\Policies\Thunderbird\LockPref">
+      <parentCategory ref="lock_prefs" />
+      <supportedOn ref="supported" />
+      <elements>
+        <text id="proxy_autoconfig_url" valueName="network.proxy.autoconfig_url" />
+        <text id="proxy_http" valueName="network.proxy.http" />
+        <decimal id="proxy_http_port" valueName="network.proxy.http_port" maxValue="65535" storeAsText="true" />
+        <text id="proxy_ssl" valueName="network.proxy.ssl" />
+        <decimal id="proxy_ssl_port" valueName="network.proxy.ssl_port" maxValue="65535" storeAsText="true" />
+        <text id="proxy_ftp" valueName="network.proxy.ftp" />
+        <decimal id="proxy_ftp_port" valueName="network.proxy.ftp_port" maxValue="65535" storeAsText="true" />
+        <text id="proxy_socks" valueName="network.proxy.socks" />
+        <decimal id="proxy_socks_port" valueName="network.proxy.socks_port" maxValue="65535" storeAsText="true" />
+        <decimal id="proxy_socks_ver" valueName="network.proxy.socks_version" minValue="4" maxValue="5" storeAsText="true" />
+        <text id="proxy_no_proxies_on" valueName="network.proxy.no_proxies_on" />
+      </elements>
+    </policy>
+    <policy name="abook_ldap" class="Both" displayName="$(string.abook_ldap)" explainText="$(string.abook_ldap_explain)" presentation="$(presentation.abook_ldap)" key="SOFTWARE\Policies\Thunderbird\LockPref">
+      <parentCategory ref="lock_prefs" />
+      <supportedOn ref="supported" />
+      <elements>
+        <text id="abook_ldap_uri" valueName="ldap_2.servers.GPOabook.uri" />
+        <text id="abook_ldap_description" valueName="ldap_2.servers.GPOabook.description" />
+        <decimal id="abook_ldap_limit" valueName="ldap_2.servers.GPOabook.maxHits" storeAsText="true" />
+        <text id="abook_ldap_filename" valueName="ldap_2.servers.GPOabook.filename" />
+        <boolean id="abook_ldap_useautocomplete" valueName="ldap_2.autoComplete.useDirectory" >
+			<trueValue>
+				<string>true</string>
+			</trueValue>
+			<falseValue>
+				<string>false</string>
+			</falseValue>
+		</boolean>
+        <text id="abook_ldap_autocomplete" valueName="ldap_2.autoComplete.directoryServer" />
+      </elements>
+    </policy>
+    <policy name="install_update" class="Both" displayName="$(string.install_update)" explainText="$(string.install_update_explain)" presentation="$(presentation.install_update)" key="SOFTWARE\Policies\Thunderbird\LockPref">
+      <parentCategory ref="lock_prefs" />
+      <supportedOn ref="supported" />
+	  <disabledList>
+		<item key="SOFTWARE\Policies\Thunderbird\LockPref" valueName="app.update.auto">
+			<value><string>false</string></value>
+		</item>
+		<item key="SOFTWARE\Policies\Thunderbird\LockPref" valueName="app.update.enabled">
+			<value><string>false</string></value>
+		</item>
+	  </disabledList>
+      <elements>
+        <boolean id="allow_autoupdate" valueName="app.update.auto" >
+			<trueValue>
+				<string>true</string>
+			</trueValue>
+			<falseValue>
+				<string>false</string>
+			</falseValue>
+		</boolean>
+        <boolean id="allow_update" valueName="app.update.enabled" >
+			<trueValue>
+				<string>true</string>
+			</trueValue>
+			<falseValue>
+				<string>false</string>
+			</falseValue>
+		</boolean>
+      </elements>
+    </policy>
+    <policy name="extensions" class="Both" displayName="$(string.extensions)" explainText="$(string.extensions_explain)" presentation="$(presentation.extensions)" key="SOFTWARE\Policies\Thunderbird\LockPref">
+      <parentCategory ref="lock_prefs" />
+      <supportedOn ref="supported" />
+      <elements>
+        <enum id="autoDisableScopes" valueName="extensions.autoDisableScopes" required="true">
+          <item displayName="$(string.autoDisableScopes_allow_all)">
+            <value>
+              <string>0</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_allow_app)">
+            <value>
+              <string>11</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_allow_allusers)">
+            <value>
+              <string>7</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_user_prof_dis)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_all_user_prof_dis)">
+            <value>
+              <string>2</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_app_dis)">
+            <value>
+              <string>4</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_all_users_dis)">
+            <value>
+              <string>8</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_all_dis)">
+            <value>
+              <string>15</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="sso" class="Both" displayName="$(string.sso)" explainText="$(string.sso_explain)" presentation="$(presentation.sso)" key="SOFTWARE\Policies\Thunderbird\LockPref">
+      <parentCategory ref="lock_prefs" />
+      <supportedOn ref="supported" />
+      <elements>
+        <text id="ntlm_auth_trusted_uris" valueName="network.automatic-ntlm-auth.trusted-uris" />
+        <boolean id="ntlm_auth_proxies" valueName="network.automatic-ntlm-auth.allow-proxies">
+			<trueValue>
+				<string>true</string>
+			</trueValue>
+			<falseValue>
+				<string>false</string>
+			</falseValue>
+		</boolean>
+        <text id="negotiate_auth_trusted_uris" valueName="network.negotiate-auth.trusted-uris" />
+      </elements>
+    </policy>
+    <policy name="additional_prefs" class="Both" displayName="$(string.additional_prefs)" explainText="$(string.additional_prefs_explain)" presentation="$(presentation.additional_prefs)" key="SOFTWARE\Policies\Thunderbird\LockPref">
+      <parentCategory ref="lock_prefs" />
+      <supportedOn ref="supported" />
+      <elements>
+        <list id="additional_prefs" explicitValue="true" />
+      </elements>
+    </policy>
+    <policy name="proxy_type_1" class="Both" displayName="$(string.proxy_type)" explainText="$(string.proxy_type_explain)" presentation="$(presentation.proxy_type_1)" key="SOFTWARE\Policies\Thunderbird\defaultPref">
+      <parentCategory ref="default_prefs" />
+      <supportedOn ref="supported" />
+      <elements>
+        <enum id="proxy_type" valueName="network.proxy.type" required="true">
+          <item displayName="$(string.proxy_direct)">
+            <value>
+              <string>0</string>
+            </value>
+          </item>
+          <item displayName="$(string.proxy_pac)">
+            <value>
+              <string>4</string>
+            </value>
+          </item>
+          <item displayName="$(string.proxy_wpad)">
+            <value>
+              <string>2</string>
+            </value>
+          </item>
+          <item displayName="$(string.proxy_manual)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="proxy_settings_1" class="Both" displayName="$(string.proxy_settings)" explainText="$(string.proxy_settings_explain)" presentation="$(presentation.proxy_settings_1)" key="SOFTWARE\Policies\Thunderbird\defaultPref">
+      <parentCategory ref="default_prefs" />
+      <supportedOn ref="supported" />
+      <elements>
+        <text id="proxy_autoconfig_url" valueName="network.proxy.autoconfig_url" />
+        <text id="proxy_http" valueName="network.proxy.http" />
+        <decimal id="proxy_http_port" valueName="network.proxy.http_port" maxValue="65535" storeAsText="true" />
+        <text id="proxy_ssl" valueName="network.proxy.ssl" />
+        <decimal id="proxy_ssl_port" valueName="network.proxy.ssl_port" maxValue="65535" storeAsText="true" />
+        <text id="proxy_ftp" valueName="network.proxy.ftp" />
+        <decimal id="proxy_ftp_port" valueName="network.proxy.ftp_port" maxValue="65535" storeAsText="true" />
+        <text id="proxy_socks" valueName="network.proxy.socks" />
+        <decimal id="proxy_socks_port" valueName="network.proxy.socks_port" maxValue="65535" storeAsText="true" />
+        <decimal id="proxy_socks_ver" valueName="network.proxy.socks_version" minValue="4" maxValue="5" storeAsText="true" />
+        <text id="proxy_no_proxies_on" valueName="network.proxy.no_proxies_on" />
+      </elements>
+    </policy>
+    <policy name="abook_ldap_1" class="Both" displayName="$(string.abook_ldap)" explainText="$(string.abook_ldap_explain)" presentation="$(presentation.abook_ldap_1)" key="SOFTWARE\Policies\Thunderbird\defaultPref">
+      <parentCategory ref="default_prefs" />
+      <supportedOn ref="supported" />
+      <elements>
+        <text id="abook_ldap_uri" valueName="ldap_2.servers.GPOabook.uri" />
+        <text id="abook_ldap_description" valueName="ldap_2.servers.GPOabook.description" />
+        <decimal id="abook_ldap_limit" valueName="ldap_2.servers.GPOabook.maxHits" storeAsText="true" />
+        <text id="abook_ldap_filename" valueName="ldap_2.servers.GPOabook.filename" />
+        <boolean id="abook_ldap_useautocomplete" valueName="ldap_2.autoComplete.useDirectory" >
+			<trueValue>
+				<string>true</string>
+			</trueValue>
+			<falseValue>
+				<string>false</string>
+			</falseValue>
+		</boolean>
+        <text id="abook_ldap_autocomplete" valueName="ldap_2.autoComplete.directoryServer" /> 
+      </elements>
+    </policy>
+    <policy name="install_update_1" class="Both" displayName="$(string.install_update)" explainText="$(string.install_update_explain)" presentation="$(presentation.install_update_1)" key="SOFTWARE\Policies\Thunderbird\defaultPref">
+      <parentCategory ref="default_prefs" />
+      <supportedOn ref="supported" />
+	  <disabledList>
+		<item key="SOFTWARE\Policies\Thunderbird\defaultPref" valueName="app.update.auto">
+			<value><string>false</string></value>
+		</item>
+		<item key="SOFTWARE\Policies\Thunderbird\defaultPref" valueName="app.update.enabled">
+			<value><string>false</string></value>
+		</item>
+	  </disabledList>
+      <elements>
+        <boolean id="allow_autoupdate" valueName="app.update.auto" >
+			<trueValue>
+				<string>true</string>
+			</trueValue>
+			<falseValue>
+				<string>false</string>
+			</falseValue>
+		</boolean>
+        <boolean id="allow_update" valueName="app.update.enabled" >
+			<trueValue>
+				<string>true</string>
+			</trueValue>
+			<falseValue>
+				<string>false</string>
+			</falseValue>
+		</boolean>
+      </elements>
+    </policy>
+    <policy name="extensions_1" class="Both" displayName="$(string.extensions)" explainText="$(string.extensions_explain)" presentation="$(presentation.extensions_1)" key="SOFTWARE\Policies\Thunderbird\defaultPref">
+      <parentCategory ref="default_prefs" />
+      <supportedOn ref="supported" />
+      <elements>
+        <enum id="autoDisableScopes" valueName="extensions.autoDisableScopes" required="true">
+          <item displayName="$(string.autoDisableScopes_allow_all)">
+            <value>
+              <string>0</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_allow_app)">
+            <value>
+              <string>11</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_allow_allusers)">
+            <value>
+              <string>7</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_user_prof_dis)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_all_user_prof_dis)">
+            <value>
+              <string>2</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_app_dis)">
+            <value>
+              <string>4</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_all_users_dis)">
+            <value>
+              <string>8</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_all_dis)">
+            <value>
+              <string>15</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="sso_1" class="Both" displayName="$(string.sso)" explainText="$(string.sso_explain)" presentation="$(presentation.sso_1)" key="SOFTWARE\Policies\Thunderbird\defaultPref">
+      <parentCategory ref="default_prefs" />
+      <supportedOn ref="supported" />
+      <elements>
+        <text id="ntlm_auth_trusted_uris" valueName="network.automatic-ntlm-auth.trusted-uris" />
+        <boolean id="ntlm_auth_proxies" valueName="network.automatic-ntlm-auth.allow-proxies" >
+			<trueValue>
+				<string>true</string>
+			</trueValue>
+			<falseValue>
+				<string>false</string>
+			</falseValue>
+		</boolean>
+        <text id="negotiate_auth_trusted_uris" valueName="network.negotiate-auth.trusted-uris" />
+      </elements>
+    </policy>
+    <policy name="additional_prefs_1" class="Both" displayName="$(string.additional_prefs)" explainText="$(string.additional_prefs_explain)" presentation="$(presentation.additional_prefs_1)" key="SOFTWARE\Policies\Thunderbird\defaultPref">
+      <parentCategory ref="default_prefs" />
+      <supportedOn ref="supported" />
+      <elements>
+        <list id="additional_prefs" explicitValue="true" />
+      </elements>
+    </policy>
+    <policy name="add_Certificate" class="Both" displayName="$(string.add_Certificate)" explainText="$(string.add_Certificate_explain)" presentation="$(presentation.add_Certificate)" key="SOFTWARE\Policies\Thunderbird\addCACerts">
+      <parentCategory ref="certificates" />
+      <supportedOn ref="supported" />
+      <elements>
+        <text id="Cert1" valueName="Cert1" maxLength="8196"/>
+        <text id="Cert2" valueName="Cert2" maxLength="8196"/>
+        <text id="Cert3" valueName="Cert3" maxLength="8196"/>
+        <text id="Cert4" valueName="Cert4" maxLength="8196"/>
+        <text id="Cert5" valueName="Cert5" maxLength="8196"/>
+        <text id="Cert6" valueName="Cert6" maxLength="8196"/>
+        <text id="Cert7" valueName="Cert7" maxLength="8196"/>
+        <text id="Cert8" valueName="Cert8" maxLength="8196"/>
+        <text id="Cert9" valueName="Cert9" maxLength="8196"/>
+        <text id="Cert10" valueName="Cert10" maxLength="8196"/>
+      </elements>
+    </policy>
+    <policy name="rm_Certificate" class="Both" displayName="$(string.rm_Certificate)" explainText="$(string.rm_Certificate_explain)" presentation="$(presentation.rm_Certificate)" key="SOFTWARE\Policies\Thunderbird\removeCACerts">
+      <parentCategory ref="certificates" />
+      <supportedOn ref="supported" />
+      <elements>
+        <text id="Cert1" valueName="Cert1" maxLength="8196"/>
+        <text id="Cert2" valueName="Cert2" maxLength="8196"/>
+        <text id="Cert3" valueName="Cert3" maxLength="8196"/>
+        <text id="Cert4" valueName="Cert4" maxLength="8196"/>
+        <text id="Cert5" valueName="Cert5" maxLength="8196"/>
+        <text id="Cert6" valueName="Cert6" maxLength="8196"/>
+        <text id="Cert7" valueName="Cert7" maxLength="8196"/>
+        <text id="Cert8" valueName="Cert8" maxLength="8196"/>
+        <text id="Cert9" valueName="Cert9" maxLength="8196"/>
+        <text id="Cert10" valueName="Cert10" maxLength="8196"/>
+      </elements>
+    </policy>
+    <policy name="proxy_type_2" class="Both" displayName="$(string.proxy_type)" explainText="$(string.proxy_type_explain)" presentation="$(presentation.proxy_type_2)" key="SOFTWARE\Policies\Firefox\LockPref">
+      <parentCategory ref="lock_prefs_ff" />
+      <supportedOn ref="supported" />
+      <elements>
+        <enum id="proxy_type" valueName="network.proxy.type" required="true">
+          <item displayName="$(string.proxy_direct)">
+            <value>
+              <string>0</string>
+            </value>
+          </item>
+          <item displayName="$(string.proxy_pac)">
+            <value>
+              <string>4</string>
+            </value>
+          </item>
+          <item displayName="$(string.proxy_wpad)">
+            <value>
+              <string>2</string>
+            </value>
+          </item>
+          <item displayName="$(string.proxy_manual)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="proxy_settings_2" class="Both" displayName="$(string.proxy_settings)" explainText="$(string.proxy_settings_explain)" presentation="$(presentation.proxy_settings_2)" key="SOFTWARE\Policies\Firefox\LockPref">
+      <parentCategory ref="lock_prefs_ff" />
+      <supportedOn ref="supported" />
+      <elements>
+        <text id="proxy_autoconfig_url" valueName="network.proxy.autoconfig_url" />
+        <text id="proxy_http" valueName="network.proxy.http" />
+        <decimal id="proxy_http_port" valueName="network.proxy.http_port" maxValue="65535" storeAsText="true" />
+        <text id="proxy_ssl" valueName="network.proxy.ssl" />
+        <decimal id="proxy_ssl_port" valueName="network.proxy.ssl_port" maxValue="65535" storeAsText="true" />
+        <text id="proxy_ftp" valueName="network.proxy.ftp" />
+        <decimal id="proxy_ftp_port" valueName="network.proxy.ftp_port" maxValue="65535" storeAsText="true" />
+        <text id="proxy_socks" valueName="network.proxy.socks" />
+        <decimal id="proxy_socks_port" valueName="network.proxy.socks_port" maxValue="65535" storeAsText="true" />
+        <decimal id="proxy_socks_ver" valueName="network.proxy.socks_version" minValue="4" maxValue="5" storeAsText="true" />
+        <text id="proxy_no_proxies_on" valueName="network.proxy.no_proxies_on" />
+      </elements>
+    </policy>
+    <policy name="install_update_2" class="Both" displayName="$(string.install_update)" explainText="$(string.install_update_explain)" presentation="$(presentation.install_update_2)" key="SOFTWARE\Policies\Firefox\LockPref">
+      <parentCategory ref="lock_prefs_ff" />
+      <supportedOn ref="supported" />
+	  <disabledList>
+		<item key="SOFTWARE\Policies\Firefox\LockPref" valueName="app.update.auto">
+			<value><string>false</string></value>
+		</item>
+		<item key="SOFTWARE\Policies\Firefox\LockPref" valueName="app.update.enabled">
+			<value><string>false</string></value>
+		</item>
+	  </disabledList>
+      <elements>
+        <boolean id="allow_autoupdate" valueName="app.update.auto" >
+			<trueValue>
+				<string>true</string>
+			</trueValue>
+			<falseValue>
+				<string>false</string>
+			</falseValue>
+		</boolean>
+        <boolean id="allow_update" valueName="app.update.enabled" >
+			<trueValue>
+				<string>true</string>
+			</trueValue>
+			<falseValue>
+				<string>false</string>
+			</falseValue>
+		</boolean>
+      </elements>
+    </policy>
+    <policy name="extensions_2" class="Both" displayName="$(string.extensions)" explainText="$(string.extensions_explain)" presentation="$(presentation.extensions_2)" key="SOFTWARE\Policies\Firefox\LockPref">
+      <parentCategory ref="lock_prefs_ff" />
+      <supportedOn ref="supported" />
+      <elements>
+        <enum id="autoDisableScopes" valueName="extensions.autoDisableScopes" required="true">
+          <item displayName="$(string.autoDisableScopes_allow_all)">
+            <value>
+              <string>0</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_allow_app)">
+            <value>
+              <string>11</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_allow_allusers)">
+            <value>
+              <string>7</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_user_prof_dis)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_all_user_prof_dis)">
+            <value>
+              <string>2</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_app_dis)">
+            <value>
+              <string>4</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_all_users_dis)">
+            <value>
+              <string>8</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_all_dis)">
+            <value>
+              <string>15</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="telemetry" class="Both" displayName="$(string.telemetry)" explainText="$(string.telemetry_explain)" presentation="$(presentation.telemetry)" key="SOFTWARE\Policies\Firefox\LockPref" valueName="toolkit.telemetry.enabled">
+      <parentCategory ref="lock_prefs_ff" />
+      <supportedOn ref="supported" />
+	  <enabledValue>
+		<string>true</string>
+	  </enabledValue>
+	  <disabledValue>
+		<string>false</string>
+	  </disabledValue>
+    </policy>
+    <policy name="homepage" class="Both" displayName="$(string.homepage)" explainText="$(string.homepage_explain)" presentation="$(presentation.homepage)" key="SOFTWARE\Policies\Firefox\LockPref">
+      <parentCategory ref="lock_prefs_ff" />
+      <supportedOn ref="supported" />
+      <elements>
+        <enum id="start_with" valueName="browser.startup.page" required="true">
+          <item displayName="$(string.start_blank_page)">
+            <value>
+              <string>0</string>
+            </value>
+          </item>
+          <item displayName="$(string.start_home_page)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+          <item displayName="$(string.start_last_visited)">
+            <value>
+              <string>2</string>
+            </value>
+          </item>
+          <item displayName="$(string.start_last_session)">
+            <value>
+              <string>3</string>
+            </value>
+          </item>
+        </enum>
+        <text id="homepage_address" valueName="browser.startup.homepage" />
+      </elements>
+    </policy>
+    <policy name="sso_2" class="Both" displayName="$(string.sso)" explainText="$(string.sso_explain)" presentation="$(presentation.sso_2)" key="SOFTWARE\Policies\Firefox\LockPref">
+      <parentCategory ref="lock_prefs_ff" />
+      <supportedOn ref="supported" />
+      <elements>
+        <text id="ntlm_auth_trusted_uris" valueName="network.automatic-ntlm-auth.trusted-uris" />
+        <boolean id="ntlm_auth_proxies" valueName="network.automatic-ntlm-auth.allow-proxies" >
+			<trueValue>
+				<string>true</string>
+			</trueValue>
+			<falseValue>
+				<string>false</string>
+			</falseValue>
+		</boolean>
+        <text id="negotiate_auth_trusted_uris" valueName="network.negotiate-auth.trusted-uris" />
+      </elements>
+    </policy>
+    <policy name="additional_prefs_2" class="Both" displayName="$(string.additional_prefs)" explainText="$(string.additional_prefs_explain)" presentation="$(presentation.additional_prefs_2)" key="SOFTWARE\Policies\Firefox\LockPref">
+      <parentCategory ref="lock_prefs_ff" />
+      <supportedOn ref="supported" />
+      <elements>
+        <list id="additional_prefs" explicitValue="true" />
+      </elements>
+    </policy>
+    <policy name="proxy_type_3" class="Both" displayName="$(string.proxy_type)" explainText="$(string.proxy_type_explain)" presentation="$(presentation.proxy_type_3)" key="SOFTWARE\Policies\Firefox\defaultPref">
+      <parentCategory ref="default_prefs_ff" />
+      <supportedOn ref="supported" />
+      <elements>
+        <enum id="proxy_type" valueName="network.proxy.type" required="true">
+          <item displayName="$(string.proxy_direct)">
+            <value>
+              <string>0</string>
+            </value>
+          </item>
+          <item displayName="$(string.proxy_pac)">
+            <value>
+              <string>4</string>
+            </value>
+          </item>
+          <item displayName="$(string.proxy_wpad)">
+            <value>
+              <string>2</string>
+            </value>
+          </item>
+          <item displayName="$(string.proxy_manual)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="proxy_settings_3" class="Both" displayName="$(string.proxy_settings)" explainText="$(string.proxy_settings_explain)" presentation="$(presentation.proxy_settings_3)" key="SOFTWARE\Policies\Firefox\defaultPref">
+      <parentCategory ref="default_prefs_ff" />
+      <supportedOn ref="supported" />
+      <elements>
+        <text id="proxy_autoconfig_url" valueName="network.proxy.autoconfig_url" />
+        <text id="proxy_http" valueName="network.proxy.http" />
+        <decimal id="proxy_http_port" valueName="network.proxy.http_port" maxValue="65535" storeAsText="true" />
+        <text id="proxy_ssl" valueName="network.proxy.ssl" />
+        <decimal id="proxy_ssl_port" valueName="network.proxy.ssl_port" maxValue="65535" storeAsText="true" />
+        <text id="proxy_ftp" valueName="network.proxy.ftp" />
+        <decimal id="proxy_ftp_port" valueName="network.proxy.ftp_port" maxValue="65535" storeAsText="true" />
+        <text id="proxy_socks" valueName="network.proxy.socks" />
+        <decimal id="proxy_socks_port" valueName="network.proxy.socks_port" maxValue="65535" storeAsText="true" />
+        <decimal id="proxy_socks_ver" valueName="network.proxy.socks_version" minValue="4" maxValue="5" storeAsText="true" />
+        <text id="proxy_no_proxies_on" valueName="network.proxy.no_proxies_on" />
+      </elements>
+    </policy>
+    <policy name="install_update_3" class="Both" displayName="$(string.install_update)" explainText="$(string.install_update_explain)" presentation="$(presentation.install_update_3)" key="SOFTWARE\Policies\Firefox\defaultPref">
+      <parentCategory ref="default_prefs_ff" />
+      <supportedOn ref="supported" />
+	  <disabledList>
+		<item key="SOFTWARE\Policies\Firefox\defaultPref" valueName="app.update.auto">
+			<value><string>false</string></value>
+		</item>
+		<item key="SOFTWARE\Policies\Firefox\defaultPref" valueName="app.update.enabled">
+			<value><string>false</string></value>
+		</item>
+	  </disabledList>
+      <elements>
+        <boolean id="allow_autoupdate" valueName="app.update.auto" >
+			<trueValue>
+				<string>true</string>
+			</trueValue>
+			<falseValue>
+				<string>false</string>
+			</falseValue>
+		</boolean>
+        <boolean id="allow_update" valueName="app.update.enabled" >
+			<trueValue>
+				<string>true</string>
+			</trueValue>
+			<falseValue>
+				<string>false</string>
+			</falseValue>
+		</boolean>
+      </elements>
+    </policy>
+    <policy name="extensions_3" class="Both" displayName="$(string.extensions)" explainText="$(string.extensions_explain)" presentation="$(presentation.extensions_3)" key="SOFTWARE\Policies\Firefox\defaultPref">
+      <parentCategory ref="default_prefs_ff" />
+      <supportedOn ref="supported" />
+      <elements>
+        <enum id="autoDisableScopes" valueName="extensions.autoDisableScopes" required="true">
+          <item displayName="$(string.autoDisableScopes_allow_all)">
+            <value>
+              <string>0</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_allow_app)">
+            <value>
+              <string>11</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_allow_allusers)">
+            <value>
+              <string>7</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_user_prof_dis)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_all_user_prof_dis)">
+            <value>
+              <string>2</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_app_dis)">
+            <value>
+              <string>4</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_all_users_dis)">
+            <value>
+              <string>8</string>
+            </value>
+          </item>
+          <item displayName="$(string.autoDisableScopes_all_dis)">
+            <value>
+              <string>15</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+    <policy name="telemetry_1" class="Both" displayName="$(string.telemetry)" explainText="$(string.telemetry_explain)" presentation="$(presentation.telemetry_1)" key="SOFTWARE\Policies\Firefox\defaultPref" valueName="toolkit.telemetry.enabled">
+      <parentCategory ref="default_prefs_ff" />
+      <supportedOn ref="supported" />
+	  <enabledValue>
+		<string>true</string>
+	  </enabledValue>
+	  <disabledValue>
+		<string>false</string>
+	  </disabledValue>
+    </policy>
+    <policy name="homepage_1" class="Both" displayName="$(string.homepage)" explainText="$(string.homepage_explain)" presentation="$(presentation.homepage_1)" key="SOFTWARE\Policies\Firefox\defaultPref">
+      <parentCategory ref="default_prefs_ff" />
+      <supportedOn ref="supported" />
+      <elements>
+        <enum id="start_with" valueName="browser.startup.page" required="true">
+          <item displayName="$(string.start_blank_page)">
+            <value>
+              <string>0</string>
+            </value>
+          </item>
+          <item displayName="$(string.start_home_page)">
+            <value>
+              <string>1</string>
+            </value>
+          </item>
+          <item displayName="$(string.start_last_visited)">
+            <value>
+              <string>2</string>
+            </value>
+          </item>
+          <item displayName="$(string.start_last_session)">
+            <value>
+              <string>3</string>
+            </value>
+          </item>
+        </enum>
+        <text id="homepage_address" valueName="browser.startup.homepage" />
+      </elements>
+    </policy>
+    <policy name="sso_3" class="Both" displayName="$(string.sso)" explainText="$(string.sso_explain)" presentation="$(presentation.sso_3)" key="SOFTWARE\Policies\Firefox\defaultPref">
+      <parentCategory ref="default_prefs_ff" />
+      <supportedOn ref="supported" />
+      <elements>
+        <text id="ntlm_auth_trusted_uris" valueName="network.automatic-ntlm-auth.trusted-uris" />
+        <boolean id="ntlm_auth_proxies" valueName="network.automatic-ntlm-auth.allow-proxies" >
+			<trueValue>
+				<string>true</string>
+			</trueValue>
+			<falseValue>
+				<string>false</string>
+			</falseValue>
+		</boolean>
+        <text id="negotiate_auth_trusted_uris" valueName="network.negotiate-auth.trusted-uris" />
+      </elements>
+    </policy>
+    <policy name="additional_prefs_3" class="Both" displayName="$(string.additional_prefs)" explainText="$(string.additional_prefs_explain)" presentation="$(presentation.additional_prefs_3)" key="SOFTWARE\Policies\Firefox\defaultPref">
+      <parentCategory ref="default_prefs_ff" />
+      <supportedOn ref="supported" />
+      <elements>
+        <list id="additional_prefs" explicitValue="true" />
+      </elements>
+    </policy>
+    <policy name="add_Certificate_1" class="Both" displayName="$(string.add_Certificate)" explainText="$(string.add_Certificate_explain)" presentation="$(presentation.add_Certificate_1)" key="SOFTWARE\Policies\Firefox\addCACerts">
+      <parentCategory ref="certificates_ff" />
+      <supportedOn ref="supported" />
+      <elements>
+        <text id="Cert1" valueName="Cert1" maxLength="8196"/>
+        <text id="Cert2" valueName="Cert2" maxLength="8196"/>
+        <text id="Cert3" valueName="Cert3" maxLength="8196"/>
+        <text id="Cert4" valueName="Cert4" maxLength="8196"/>
+        <text id="Cert5" valueName="Cert5" maxLength="8196"/>
+        <text id="Cert6" valueName="Cert6" maxLength="8196"/>
+        <text id="Cert7" valueName="Cert7" maxLength="8196"/>
+        <text id="Cert8" valueName="Cert8" maxLength="8196"/>
+        <text id="Cert9" valueName="Cert9" maxLength="8196"/>
+        <text id="Cert10" valueName="Cert10" maxLength="8196"/>		
+      </elements>
+    </policy>
+    <policy name="rm_Certificate_1" class="Both" displayName="$(string.rm_Certificate)" explainText="$(string.rm_Certificate_explain)" presentation="$(presentation.rm_Certificate_1)" key="SOFTWARE\Policies\Firefox\removeCACerts">
+      <parentCategory ref="certificates_ff" />
+      <supportedOn ref="supported" />
+      <elements>
+        <text id="Cert1" valueName="Cert1" maxLength="8196"/>
+        <text id="Cert2" valueName="Cert2" maxLength="8196"/>
+        <text id="Cert3" valueName="Cert3" maxLength="8196"/>
+        <text id="Cert4" valueName="Cert4" maxLength="8196"/>
+        <text id="Cert5" valueName="Cert5" maxLength="8196"/>
+        <text id="Cert6" valueName="Cert6" maxLength="8196"/>
+        <text id="Cert7" valueName="Cert7" maxLength="8196"/>
+        <text id="Cert8" valueName="Cert8" maxLength="8196"/>
+        <text id="Cert9" valueName="Cert9" maxLength="8196"/>
+        <text id="Cert10" valueName="Cert10" />
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

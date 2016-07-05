@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+Skype policies.
+Version history:
+[*] - changed
+[+] - added
+[-] - deleted
+
+22.03.2011: Initial version
+
+30.03.2011 v1.1:
+			[-]: "Disable Automatic Logout Confirmation Dialogue" policy
+			[+]: "Disable "Sign Out" Menu Item" policy
+
+01.04.2011 v1.2:
+			[*]: Changed description of Disable Dragonfly policy. Now it is known what this option effects
+			[*]: Fixed supportedOn properties of all policies. Now it is displayed right in Group Policy Editor
+
+02.07.2011 v1.3
+			[*]: Typo fixed. Miscellenious -> Miscellaneous. Thanks to Wichtel [oppitronic@users.sourceforge.net].
+
+https://sourceforge.net/projects/customadmx/
+Created by Nov.
+Managed by Nov.-->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  revision="1.3" schemaVersion="1.0" 
+  xmlns=
+  "http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="Skype" namespace="Custom.Policies.Custom.Skype_Ltd.Skype" />
+    <using prefix="Skype_Ltd" namespace="Custom.Policies.Custom.Skype_Ltd" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.3" />
+  <supportedOn>
+    <definitions>
+      <definition name="supported_skype_1b0"
+                  displayName="$(string.supported_skype_1b0)"/>
+	  <definition name="supported_skype_2b5"
+                  displayName="$(string.supported_skype_2b5)"/>
+	  <definition name="supported_skype_3b0"
+                  displayName="$(string.supported_skype_3b0)"/>
+	  <definition name="supported_skype_3b1"
+                  displayName="$(string.supported_skype_3b1)"/>
+	  <definition name="supported_skype_3b5"
+                  displayName="$(string.supported_skype_3b5)"/>
+	  <definition name="supported_skype_4b0"
+                  displayName="$(string.supported_skype_4b0)"/>
+	  <definition name="supported_skype_5b0"
+                  displayName="$(string.supported_skype_5b0)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="Skype"
+              displayName="$(string.Skype)"
+              explainText="$(string.Skype_Help)">
+       <parentCategory ref="Skype_Ltd:Skype_Ltd" />
+    </category>
+	<category name="Phone"
+              displayName="$(string.Phone)"
+              explainText="$(string.Phone_Help)">
+       <parentCategory ref="Skype" />
+    </category>
+	<category name="Functionality"
+              displayName="$(string.Functionality)"
+              explainText="$(string.Functionality_Help)">
+       <parentCategory ref="Phone" />
+    </category>
+	<category name="miscellaneous"
+              displayName="$(string.miscellaneous)"
+              explainText="$(string.miscellaneous_Help)">
+       <parentCategory ref="Phone" />
+    </category>
+	<category name="Network"
+              displayName="$(string.Network)"
+              explainText="$(string.Network_Help)">
+       <parentCategory ref="Phone" />
+    </category>
+  </categories>
+  <policies>
+	<policy name="Disable_Skype_Public_API"
+            class="Both"
+            displayName="$(string.Disable_Skype_Public_API)"
+            explainText="$(string.Disable_Skype_Public_API_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="DisableApi">
+      <parentCategory ref="miscellaneous" />
+	  <supportedOn ref="supported_skype_2b5" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Disable_File_Transfer"
+            class="Both"
+            displayName="$(string.Disable_File_Transfer)"
+            explainText="$(string.Disable_File_Transfer_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="DisableFileTransfer">
+      <parentCategory ref="Functionality" />
+	  <supportedOn ref="supported_skype_3b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Run_in_Memory-only_Mode"
+            class="Both"
+            displayName="$(string.Run_in_Memory-only_Mode)"
+            explainText="$(string.Run_in_Memory-only_Mode_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="MemoryOnly">
+      <parentCategory ref="miscellaneous" />
+	  <supportedOn ref="supported_skype_1b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Disable_Contacts_Backup_and_Restore_from_File"
+            class="Both"
+            displayName="$(string.Disable_Contacts_Backup_and_Restore_from_File)"
+            explainText="$(string.Disable_Contacts_Backup_and_Restore_from_File_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="DisableContactImport">
+      <parentCategory ref="Functionality" />
+	  <supportedOn ref="supported_skype_3b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Disable_New_Version_Checking"
+            class="Both"
+            displayName="$(string.Disable_New_Version_Checking)"
+            explainText="$(string.Disable_New_Version_Checking_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="DisableVersionCheck">
+      <parentCategory ref="miscellaneous" />
+	  <supportedOn ref="supported_skype_3b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Disable_Sounds_Import"
+            class="Both"
+            displayName="$(string.Disable_Sounds_Import)"
+            explainText="$(string.Disable_Sounds_Import_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="DisablePersonalise">
+      <parentCategory ref="Functionality" />
+	  <supportedOn ref="supported_skype_3b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Disable_Language_Editing"
+            class="Both"
+            displayName="$(string.Disable_Language_Editing)"
+            explainText="$(string.Disable_Language_Editing_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="DisableLanguageEdit">
+      <parentCategory ref="Functionality" />
+	  <supportedOn ref="supported_skype_3b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Port_Number_for_Incoming_Connections"
+            class="Both"
+            displayName="$(string.Port_Number_for_Incoming_Connections)"
+            explainText="$(string.Port_Number_for_Incoming_Connections_Help)"
+			presentation="$(presentation.Port_Number_for_Incoming_Connections)"
+            key="Software\Policies\Skype\Phone">
+      <parentCategory ref="Network" />
+	  <supportedOn ref="supported_skype_3b0" />
+	  <elements>
+        <decimal id="Port_Number_for_Incoming_Connections"
+                     valueName="ListenPort"
+                     minValue="1"
+					 maxValue="65535" />
+	  </elements>
+	</policy>
+	<policy name="Use_HTTP_and_HTTPS_as_Alternatives_for_Incoming_Connections"
+            class="Both"
+            displayName="$(string.Use_HTTP_and_HTTPS_as_Alternatives_for_Incoming_Connections)"
+            explainText="$(string.Use_HTTP_and_HTTPS_as_Alternatives_for_Incoming_Connections_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="ListenHTTPPorts">
+      <parentCategory ref="Network" />
+	  <supportedOn ref="supported_skype_3b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Disable_TCP_Incoming_Connections"
+            class="Both"
+            displayName="$(string.Disable_TCP_Incoming_Connections)"
+            explainText="$(string.Disable_TCP_Incoming_Connections_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="DisableTCPListen">
+      <parentCategory ref="Network" />
+	  <supportedOn ref="supported_skype_3b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Disable_UDP_Incoming_Connections"
+            class="Both"
+            displayName="$(string.Disable_UDP_Incoming_Connections)"
+            explainText="$(string.Disable_UDP_Incoming_Connections_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="DisableUDP">
+      <parentCategory ref="Network" />
+	  <supportedOn ref="supported_skype_3b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Prevent_Skype_to_Become_a_Supernode"
+            class="Both"
+            displayName="$(string.Prevent_Skype_to_Become_a_Supernode)"
+            explainText="$(string.Prevent_Skype_to_Become_a_Supernode_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="DisableSupernode">
+      <parentCategory ref="Network" />
+	  <supportedOn ref="supported_skype_3b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+    <policy name="Proxy_Server_Type"
+            class="Both"
+            displayName="$(string.Proxy_Server_Type)"
+            explainText="$(string.Proxy_Server_Type_Help)"
+            presentation="$(presentation.Proxy_Server_Type)"
+            key="Software\Policies\Skype\Phone">
+      <parentCategory ref="Network" />
+	  <supportedOn ref="supported_skype_3b0" />
+      <elements>
+        <enum id="Proxy_Server_Type"
+              key="Software\Policies\Skype\Phone"
+              valueName="ProxySetting"
+              required="true">
+          <item displayName="$(string.Proxy_Server_Type_Automatic_proxy_detection)">
+            <value>
+              <string>Automatic</string>
+            </value>
+          </item>
+          <item displayName="$(string.Proxy_Server_Type_Disabled)">
+            <value>
+              <string>Disabled</string>
+            </value>
+          </item>
+          <item displayName="$(string.Proxy_Server_Type_HTTPS)">
+            <value>
+              <string>HTTPS</string>
+            </value>
+          </item>
+		  <item displayName="$(string.Proxy_Server_Type_SOCKS5)">
+            <value>
+              <string>SOCKS5</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="Proxy_Server_Address"
+            class="Both"
+            displayName="$(string.Proxy_Server_Address)"
+            explainText="$(string.Proxy_Server_Address_Help)"
+            presentation="$(presentation.Proxy_Server_Address)"
+            key="Software\Policies\Skype\Phone">
+      <parentCategory ref="Network" />
+	  <supportedOn ref="supported_skype_3b0" />
+	  <elements>
+        <text id="Proxy_Server_Address"
+              key="Software\Policies\Skype\Phone"
+              valueName="ProxyAddress"
+              required="true" />
+      </elements>
+    </policy>
+	<policy name="Proxy_Server_Credentials"
+            class="Both"
+            displayName="$(string.Proxy_Server_Credentials)"
+            explainText="$(string.Proxy_Server_Credentials_Help)"
+            presentation="$(presentation.Proxy_Server_Credentials)"
+            key="Software\Policies\Skype\Phone">
+      <parentCategory ref="Network" />
+	  <supportedOn ref="supported_skype_3b0" />
+	  <elements>
+        <text id="Proxy_Server_Credentials_Username"
+              key="Software\Policies\Skype\Phone"
+              valueName="ProxyUsername"
+              required="true" />
+		<text id="Proxy_Server_Credentials_Password"
+              key="Software\Policies\Skype\Phone"
+              valueName="ProxyPassword"
+              required="true" />
+      </elements>
+    </policy>
+	<policy name="Web_Status"
+            class="Both"
+            displayName="$(string.Web_Status)"
+            explainText="$(string.Web_Status_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="WebStatus">
+      <parentCategory ref="Functionality" />
+	  <supportedOn ref="supported_skype_5b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Disable_Dragonfly"
+            class="Both"
+            displayName="$(string.Disable_Dragonfly)"
+            explainText="$(string.Disable_Dragonfly_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="DisableDragonfly">
+      <parentCategory ref="Functionality" />
+	  <supportedOn ref="supported_skype_3b5" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Disable_Sign_Out_Menu_Item"
+            class="Both"
+            displayName="$(string.Disable_Sign_Out_Menu_Item)"
+            explainText="$(string.Disable_Sign_Out_Menu_Item_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="DisableLogout">
+      <parentCategory ref="Functionality" />
+	  <supportedOn ref="supported_skype_4b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Disable_Premium_Services"
+            class="Both"
+            displayName="$(string.Disable_Premium_Services)"
+            explainText="$(string.Disable_Premium_Services_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="DisableMicropayments">
+      <parentCategory ref="Functionality" />
+	  <supportedOn ref="supported_skype_3b1" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Disable_Screen_Sharing"
+            class="Both"
+            displayName="$(string.Disable_Screen_Sharing)"
+            explainText="$(string.Disable_Screen_Sharing_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="DisableScreensharing">
+      <parentCategory ref="Functionality" />
+	  <supportedOn ref="supported_skype_5b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Disable_Skype_Access"
+            class="Both"
+            displayName="$(string.Disable_Skype_Access)"
+            explainText="$(string.Disable_Skype_Access_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="DisableSkypeAccess">
+      <parentCategory ref="Functionality" />
+	  <supportedOn ref="supported_skype_5b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Disable_Facebook_Integration"
+            class="Both"
+            displayName="$(string.Disable_Facebook_Integration)"
+            explainText="$(string.Disable_Facebook_Integration_Help)"
+            key="Software\Policies\Skype\Phone"
+			valueName="DisableChannel">
+      <parentCategory ref="Functionality" />
+	  <supportedOn ref="supported_skype_5b0" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Port_Range_for_Incoming_Connections"
+            class="Both"
+            displayName="$(string.Port_Range_for_Incoming_Connections)"
+            explainText="$(string.Port_Range_for_Incoming_Connections_Help)"
+			            presentation="$(presentation.Port_Range_for_Incoming_Connections)"
+            key="Software\Policies\Skype\Phone">
+      <parentCategory ref="Network" />
+	  <supportedOn ref="supported_skype_5b0" />
+	  <elements>
+        <decimal id="Port_Range_for_Incoming_Connections_Begin"
+                     valueName="ListenRangeBegin"
+                     minValue="1"
+					 maxValue="65535" />
+		<decimal id="Port_Range_for_Incoming_Connections_End"
+                     valueName="ListenRangeEnd"
+                     minValue="1"
+					 maxValue="65535" />
+      </elements>
+	</policy>
+  </policies>
+</policyDefinitions>

@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+Adobe Updater 1.0 policies.
+Version history:
+25.03.2011: Initial version
+
+01.04.2011 v1.1:
+			[*]: Fixed supportedOn properties of all policies. Now it is displayed right in Group Policy Editor
+
+https://sourceforge.net/projects/customadmx/
+Created by Nov.
+Managed by Nov.-->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  revision="1.1" schemaVersion="1.0" 
+  xmlns=
+  "http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="Adobe_Updater_1" namespace="Custom.Policies.Custom.Adobe_Systems_Inc.Adobe_Reader.Adobe_Updater_1" />
+    <using prefix="Adobe_Updater" namespace="Custom.Policies.Custom.Adobe_Systems_Inc.Adobe_Updater" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.1" />
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_Adobe_Updater_1b0"
+                  displayName="$(string.SUPPORTED_Adobe_Updater_1b0)"/>
+	  <definition name="SUPPORTED_Adobe_Updater_1b0_and_at_least_Adobe_Reader_10_1"
+                  displayName="$(string.SUPPORTED_Adobe_Updater_1b0_and_at_least_Adobe_Reader_10_1)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="Adobe_Updater_1"
+              displayName="$(string.Adobe_Updater_1)"
+              explainText="$(string.Adobe_Updater_1_Help)">
+       <parentCategory ref="Adobe_Updater:Adobe_Updater" />
+    </category>
+	<category name="Updater_Logging"
+              displayName="$(string.Updater_Logging)"
+              explainText="$(string.Updater_Logging_Help)">
+       <parentCategory ref="Adobe_Updater_1" />
+    </category>
+	<category name="Updater_Configuration"
+              displayName="$(string.Updater_Configuration)"
+              explainText="$(string.Updater_Configuration_Help)">
+       <parentCategory ref="Adobe_Updater_1" />
+    </category>
+	</categories>
+  <policies>
+    <policy name="Log_Level"
+            class="Machine"
+            displayName="$(string.Log_Level)"
+            explainText="$(string.Log_Level_Help)"
+			presentation="$(presentation.Log_Level)"
+            key="SOFTWARE\Adobe\Adobe ARM\1.0\ARM">
+      <parentCategory ref="Updater_Logging" />
+	  <supportedOn ref="SUPPORTED_Adobe_Updater_1b0" />
+      <elements>
+        <enum id="Log_Level_x32"
+              key="SOFTWARE\Adobe\Adobe ARM\1.0\ARM"
+              valueName="iLogLevel"
+              required="true">
+          <item displayName="$(string.Log_Level_Brief)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.Log_Level_Verbose)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+		<enum id="Log_Level_x64"
+              key="SOFTWARE\Wow6432Node\Adobe\Adobe ARM\1.0\ARM"
+              valueName="iLogLevel"
+              required="true">
+          <item displayName="$(string.Log_Level_Brief)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.Log_Level_Verbose)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+	</policy>
+	<policy name="Time_that_Can_Elapse_without_a_Successful_Update_before_the_Watchdog_Dialog_Appears_Suggesting_the_User_Manually_Update"
+            class="Machine"
+            displayName="$(string.Time_that_Can_Elapse_without_a_Successful_Update_before_the_Watchdog_Dialog_Appears_Suggesting_the_User_Manually_Update)"
+            explainText="$(string.Time_that_Can_Elapse_without_a_Successful_Update_before_the_Watchdog_Dialog_Appears_Suggesting_the_User_Manually_Update_Help)"
+            presentation="$(presentation.Time_that_Can_Elapse_without_a_Successful_Update_before_the_Watchdog_Dialog_Appears_Suggesting_the_User_Manually_Update)"
+            key="Software\Adobe\Adobe ARM\1.0\ARM">
+      <parentCategory ref="Updater_Configuration" />
+	  <supportedOn ref="SUPPORTED_Adobe_Updater_1b0" />
+	  <elements>
+        <decimal id="Time_that_Can_Elapse_without_a_Successful_Update_before_the_Watchdog_Dialog_Appears_Suggesting_the_User_Manually_Update_x32"
+                     valueName="iInterval"
+                     minValue="1" />
+		<decimal id="Time_that_Can_Elapse_without_a_Successful_Update_before_the_Watchdog_Dialog_Appears_Suggesting_the_User_Manually_Update_x64"
+					 key="Software\Wow6432Node\Adobe\Adobe ARM\1.0\ARM"
+                     valueName="iInterval"
+                     minValue="1" />
+	  </elements>
+    </policy>
+    <policy name="Update_Mode"
+            class="Machine"
+            displayName="$(string.Update_Mode)"
+            explainText="$(string.Update_Mode_Help)"
+			presentation="$(presentation.Update_Mode)"
+            key="SOFTWARE\Adobe\Adobe ARM\1.0\ARM">
+      <parentCategory ref="Updater_Configuration" />
+	  <supportedOn ref="SUPPORTED_Adobe_Updater_1b0" />
+      <elements>
+        <enum id="Update_Mode_x32"
+              key="SOFTWARE\Adobe\Adobe ARM\1.0\ARM"
+              valueName="iCheck"
+              required="true">
+          <item displayName="$(string.Update_Mode_Automatic)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+		  <item displayName="$(string.Update_Mode_Semi-automatic)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.Update_Mode_Manual)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+		<enum id="Update_Mode_x64"
+              key="SOFTWARE\Wow6432Node\Adobe\Adobe ARM\1.0\ARM"
+              valueName="iCheck"
+              required="true">
+          <item displayName="$(string.Update_Mode_Automatic)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+		  <item displayName="$(string.Update_Mode_Semi-automatic)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.Update_Mode_Manual)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+	</policy>
+	<policy name="Update_Mode_Adobe_Reader"
+            class="Machine"
+            displayName="$(string.Update_Mode_Adobe_Reader)"
+            explainText="$(string.Update_Mode_Adobe_Reader_Help)"
+			presentation="$(presentation.Update_Mode_Adobe_Reader)"
+            key="SOFTWARE\Adobe\Adobe ARM\1.0\ARM">
+      <parentCategory ref="Updater_Configuration" />
+	  <supportedOn ref="SUPPORTED_Adobe_Updater_1b0_and_at_least_Adobe_Reader_10_1" />
+      <elements>
+        <enum id="Update_Mode_Adobe_Reader_x32"
+              key="SOFTWARE\Adobe\Adobe ARM\1.0\ARM"
+              valueName="iCheckReader"
+              required="true">
+          <item displayName="$(string.Update_Mode_Adobe_Reader_Automatic)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+		  <item displayName="$(string.Update_Mode_Adobe_Reader_Semi-automatic)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.Update_Mode_Adobe_Reader_Manual)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+		<enum id="Update_Mode_Adobe_Reader_x64"
+              key="SOFTWARE\Wow6432Node\Adobe\Adobe ARM\1.0\ARM"
+              valueName="iCheckReader"
+              required="true">
+          <item displayName="$(string.Update_Mode_Adobe_Reader_Automatic)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+		  <item displayName="$(string.Update_Mode_Adobe_Reader_Semi-automatic)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+          <item displayName="$(string.Update_Mode_Adobe_Reader_Manual)">
+            <value>
+              <decimal value="3" />
+            </value>
+          </item>
+        </enum>
+      </elements>
+	</policy>
+	<policy name="Enable_Prompt_For_Upgrade"
+            class="Machine"
+            displayName="$(string.Enable_Prompt_For_Upgrade)"
+            explainText="$(string.Enable_Prompt_For_Upgrade_Help)"
+            key="SOFTWARE\Adobe\Adobe ARM\1.0\ARM"
+			valueName="iDisablePromptForUpgrade">
+      <parentCategory ref="Updater_Configuration" />
+	  <supportedOn ref="SUPPORTED_Adobe_Updater_1b0_and_at_least_Adobe_Reader_10_1_2" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	  <enabledList>
+	    <item key="SOFTWARE\Wow6432Node\Adobe\Adobe ARM\1.0\ARM"
+		      valueName="iDisablePromptForUpgrade">
+	      <value>
+		    <decimal value="1" />
+		  </value>
+		</item>
+	  </enabledList>
+	  <disabledList>
+	    <item key="SOFTWARE\Wow6432Node\Adobe\Adobe ARM\1.0\ARM"
+		      valueName="iDisablePromptForUpgrade">
+	      <value>
+		    <decimal value="0" />
+		  </value>
+		</item>
+	  </disabledList>
+	</policy>
+  </policies>
+</policyDefinitions>

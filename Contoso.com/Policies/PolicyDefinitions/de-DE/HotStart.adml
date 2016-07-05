@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Anzeigenamen hier eingeben</displayName>
+  <description>Beschreibung hier eingeben</description>
+  <resources>
+    <stringTable>
+      <string id="HOTSTART">Windows HotStart</string>
+      <string id="NoHotStart">Windows HotStart deaktivieren</string>
+      <string id="NoHotStart_Explain">Mit dieser Richtlinieneinstellung können Sie festlegen, ob Anwendungen mithilfe von HotStart-Schaltflächen gestartet werden dürfen.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren, können Anwendungen nicht mithilfe von HotStart-Schaltflächen gestartet werden.
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, können Anwendungen mithilfe von HotStart-Schaltflächen gestartet werden.</string>
+    </stringTable>
+  </resources>
+</policyDefinitionResources>

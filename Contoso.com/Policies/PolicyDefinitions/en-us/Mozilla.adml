@@ -1,0 +1,546 @@
+<policyDefinitionResources revision="1.0" schemaVersion="1.0">
+  <displayName>
+  </displayName>
+  <description>
+  </description>
+  <resources>
+    <stringTable>
+      <string id="unknown_0">Mozilla</string>
+      <string id="unknown_1">Thunderbird</string>
+      <string id="unknown_62">Firefox</string>
+      <string id="sso">Single sign-on</string>
+      <string id="sso_explain">By default, Mozilla does not send data to the server for NTLM authentication and NEGOTIATE.
+To change this behavior, set the domains of enterprise servers you can transfer user credentials for SSO.</string>
+      <string id="ntlm_auth_proxies">Automatically authenticate with proxy servers</string>
+      <string id="ntlm_auth_trusted_uris">A comma and space delimited list of URLs that are allowed to automatically authenticate via NTLM</string>
+      <string id="negotiate_auth_trusted_uris">A comma and space delimited list of URLs that are allowed to automatically authenticate via SPNEGO</string>
+      <string id="start_blank_page">Start with blank page</string>
+      <string id="start_home_page">Start with specified homepage</string>
+      <string id="start_last_visited">Start with last visited page</string>
+      <string id="start_last_session">Restore last session</string>
+      <string id="homepage_address">Homepage URL</string>
+      <string id="homepage">Homepage</string>
+      <string id="homepage_explain">Homepage related settings</string>
+      <string id="start_with">Startup behavior</string>
+      <string id="proxy_type">Proxy configuration type</string>
+      <string id="proxy_type_explain">To retrieve data, Mozilla can be configured to route its requests through another server.
+Users may choose to use a specific automatic proxy configuration file, to automatically detect the network’s proxy settings, or manually configure their proxy settings. This preference controls what kind of proxy to use. </string>
+      <string id="proxy_settings">Proxy settings</string>
+      <string id="proxy_settings_explain">Proxy settings.
+If you chose proxy auto configuration, you need configure autoconfiguration URL.
+
+Host and port proxy setting work only if you chose manual proxy condifuration type.</string>
+      <string id="proxy_autoconfig_url">Automatic Proxy Configuration URL</string>
+      <string id="proxy_http">HTTP proxy host</string>
+      <string id="proxy_http_port">HTTP proxy port</string>
+      <string id="proxy_ssl">HTTPS proxy host</string>
+      <string id="proxy_ssl_port">HTTPS proxy port</string>
+      <string id="proxy_ftp">FTP proxy host</string>
+      <string id="proxy_ftp_port">FTP proxy port</string>
+      <string id="proxy_socks">SOCKS proxy host</string>
+      <string id="proxy_socks_port">SOCKS proxy port</string>
+      <string id="proxy_socks_ver">SOCKS proxy version</string>
+      <string id="proxy_no_proxies_on">Proxy Exceptions</string>
+      <string id="proxy_direct">Direct connection to the internet</string>
+      <string id="proxy_pac">Auto-detect proxy settings</string>
+      <string id="proxy_wpad">Automatic proxy configuration URL</string>
+      <string id="proxy_manual">Manual proxy configuration</string>
+      <string id="install_update">Install and Update</string>
+      <string id="install_update_explain">You can disable or enable Mozilla automatic updates.
+
+You can disable or enable Mozilla application updates.</string>
+      <string id="allow_update">Allow application update</string>
+      <string id="allow_autoupdate">Allow application automatic update</string>
+      <string id="extensions">Extensions settings</string>
+      <string id="extensions_explain">In some circumstances you may want Mozilla to ignore the additional plugin install locations.
+
+More ingormation about plugin install locations you can get here: https://developer.mozilla.org/en-US/Add-ons/Installing_extensions</string>
+      <string id="autoDisableScopes">Allowed extensions locations</string>
+      <string id="autoDisableScopes_allow_all">Allow extensions from all places</string>
+      <string id="autoDisableScopes_allow_app">Allow only extensions installed and owned by Application</string>
+      <string id="autoDisableScopes_allow_allusers">Allow only extensions installed for all users</string>
+      <string id="autoDisableScopes_user_prof_dis">Disable extensions in current user profile</string>
+      <string id="autoDisableScopes_all_user_prof_dis">Disable extensions in all current user profiles</string>
+      <string id="autoDisableScopes_app_dis">Disable extensions installed and owned by Application</string>
+      <string id="autoDisableScopes_all_users_dis">Disable extensions installed for all users</string>
+      <string id="autoDisableScopes_all_dis">Disable extensions in any places</string>
+      <string id="telemetry">Mozilla telemetry</string>
+      <string id="telemetry_explain">It's helpful for Mozilla's engineers to be able to measure how Firefox behaves in the real world. The Telemetry feature provides this capability by sending performance and usage info to Mozilla. As you use Firefox, Telemetry measures and collects non-personal information, such as performance, hardware, usage and customizations. It then sends this information to Mozilla on a daily basis and we use it to improve Firefox.
+
+In some corporate installations there is a need to disable this feature.</string>
+      <string id="abook_ldap">LDAP address book</string>
+      <string id="abook_ldap_explain">This policy provide corporate LDAP address book configuration.</string>
+      <string id="abook_ldap_uri">LDAP server URL (see RFC 2255) to retrive abook records</string>
+      <string id="abook_ldap_limit">LDAP records query limit</string>
+      <string id="abook_ldap_description">Name for this abook</string>
+      <string id="abook_ldap_filename">Filename to store this abook</string>
+      <string id="abook_ldap_autocomplete">LDAP abook to use with autocomplete (to use this abook fill ldap_2.servers.GPOabook)</string>
+      <string id="abook_ldap_useautocomplete">Use abook autocomplete from LDAP</string>
+      <string id="add_Certificate">Add CA certificate to user profile storage</string>
+      <string id="add_Certificate_explain">If you need add corporate CA certificate to Mozilla user profile storage, you need create key with name of certificate and value certificate data in base64.
+Cetrificate will be added permanently.</string>
+      <string id="add_cert_list">Add CA Certificates</string>
+      <string id="rm_Certificate">Remove CA certificate from user profile storage</string>
+      <string id="rm_Certificate_explain">If you need remove some certificate from Mozilla user profile storage, you need create key with name of certificate and value certificate data in base64.</string>
+      <string id="rm_cert_list">Remove CA Certificates</string>
+      <string id="additional_prefs">Configure advanced Mozilla preferences</string>
+      <string id="additional_prefs_explain">In this policy you can set any Mozilla preference.
+Simply set preference name and it's value.</string>
+      <string id="supported">Any Mozilla application, supported by GPO plugin</string>
+      <string id="lock_prefs">Lock Prefs</string>
+      <string id="default_prefs">Default Prefs</string>
+      <string id="certificates">Certificates manage</string>
+      <string id="lock_prefs_ff">Lock Prefs</string>
+      <string id="default_prefs_ff">Default Prefs</string>
+      <string id="certificates_ff">Certificates manage</string>
+      <string id="ADMXMigrator_UnresolvedString">ADMX Migrator encountered a string that is not present in the source ADM string table.</string>
+      <string id="ADMXMigrator_NoSupportedOn">ADMX Migrator encountered a policy that does not have a supportedOn value.</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="proxy_type">
+        <dropdownList refId="proxy_type" defaultItem="0">Proxy configuration type</dropdownList>
+      </presentation>
+      <presentation id="proxy_settings">
+        <textBox refId="proxy_autoconfig_url">
+          <label>Automatic Proxy Configuration URL</label>
+          <defaultValue>http://wpad/wpad.dat</defaultValue>
+        </textBox>
+        <textBox refId="proxy_http">
+          <label>HTTP proxy host</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <decimalTextBox refId="proxy_http_port" defaultValue="3128">HTTP proxy port</decimalTextBox>
+        <textBox refId="proxy_ssl">
+          <label>HTTPS proxy host</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <decimalTextBox refId="proxy_ssl_port" defaultValue="3128">HTTPS proxy port</decimalTextBox>
+        <textBox refId="proxy_ftp">
+          <label>FTP proxy host</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <decimalTextBox refId="proxy_ftp_port" defaultValue="3128">FTP proxy port</decimalTextBox>
+        <textBox refId="proxy_socks">
+          <label>SOCKS proxy host</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <decimalTextBox refId="proxy_socks_port" defaultValue="3128">SOCKS proxy port</decimalTextBox>
+        <decimalTextBox refId="proxy_socks_ver" defaultValue="5">SOCKS proxy version</decimalTextBox>
+        <textBox refId="proxy_no_proxies_on">
+          <label>Proxy Exceptions</label>
+          <defaultValue>localhost, 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="abook_ldap">
+        <textBox refId="abook_ldap_uri">
+          <label>LDAP server URL (see RFC 2255) to retrive abook records</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="abook_ldap_description">
+          <label>Name for this abook</label>
+          <defaultValue>Corporate Addressbook</defaultValue>
+        </textBox>
+        <decimalTextBox refId="abook_ldap_limit" defaultValue="100">LDAP records query limit</decimalTextBox>
+        <textBox refId="abook_ldap_filename">
+          <label>Filename to store this abook</label>
+          <defaultValue>CorpAbook.mab</defaultValue>
+        </textBox>
+        <checkBox refId="abook_ldap_useautocomplete">Use abook autocomplete from LDAP</checkBox>
+        <textBox refId="abook_ldap_autocomplete">
+          <label>LDAP abook to use with autocomplete (to use this abook fill ldap_2.servers.GPOabook)</label>
+          <defaultValue>ldap_2.servers.GPOabook</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="install_update">
+        <checkBox refId="allow_autoupdate" defaultChecked="true">Allow application automatic update</checkBox>
+        <checkBox refId="allow_update" defaultChecked="true">Allow application update</checkBox>
+      </presentation>
+      <presentation id="extensions">
+        <dropdownList refId="autoDisableScopes" defaultItem="0">Allowed extensions locations</dropdownList>
+      </presentation>
+      <presentation id="sso">
+        <textBox refId="ntlm_auth_trusted_uris">
+          <label>A comma and space delimited list of URLs that are allowed to automatically authenticate via NTLM</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <checkBox refId="ntlm_auth_proxies">Automatically authenticate with proxy servers</checkBox>
+        <textBox refId="negotiate_auth_trusted_uris">
+          <label>A comma and space delimited list of URLs that are allowed to automatically authenticate via SPNEGO</label>
+          <defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="additional_prefs">
+        <listBox refId="additional_prefs">Configure advanced Mozilla preferences</listBox>
+      </presentation>
+      <presentation id="proxy_type_1">
+        <dropdownList refId="proxy_type" defaultItem="0">Proxy configuration type</dropdownList>
+      </presentation>
+      <presentation id="proxy_settings_1">
+        <textBox refId="proxy_autoconfig_url">
+          <label>Automatic Proxy Configuration URL</label>
+          <defaultValue>http://wpad/wpad.dat</defaultValue>
+        </textBox>
+        <textBox refId="proxy_http">
+          <label>HTTP proxy host</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <decimalTextBox refId="proxy_http_port" defaultValue="3128">HTTP proxy port</decimalTextBox>
+        <textBox refId="proxy_ssl">
+          <label>HTTPS proxy host</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <decimalTextBox refId="proxy_ssl_port" defaultValue="3128">HTTPS proxy port</decimalTextBox>
+        <textBox refId="proxy_ftp">
+          <label>FTP proxy host</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <decimalTextBox refId="proxy_ftp_port" defaultValue="3128">FTP proxy port</decimalTextBox>
+        <textBox refId="proxy_socks">
+          <label>SOCKS proxy host</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <decimalTextBox refId="proxy_socks_port" defaultValue="3128">SOCKS proxy port</decimalTextBox>
+        <decimalTextBox refId="proxy_socks_ver" defaultValue="5">SOCKS proxy version</decimalTextBox>
+        <textBox refId="proxy_no_proxies_on">
+          <label>Proxy Exceptions</label>
+          <defaultValue>localhost, 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="abook_ldap_1">
+        <textBox refId="abook_ldap_uri">
+          <label>LDAP server URL (see RFC 2255) to retrive abook records</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="abook_ldap_description">
+          <label>Name for this abook</label>
+          <defaultValue>Corporate Addressbook</defaultValue>		  
+        </textBox>
+        <decimalTextBox refId="abook_ldap_limit" defaultValue="100">LDAP records query limit</decimalTextBox>
+        <textBox refId="abook_ldap_filename">
+          <label>Filename to store this abook</label>
+		  <defaultValue>CorpAbook.mab</defaultValue>
+        </textBox>
+        <checkBox refId="abook_ldap_useautocomplete">Use abook autocomplete from LDAP</checkBox>
+        <textBox refId="abook_ldap_autocomplete">
+          <label>LDAP abook to use with autocomplete (to use this abook fill ldap_2.servers.GPOabook)</label>
+		  <defaultValue>ldap_2.servers.GPOabook</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="install_update_1">
+        <checkBox refId="allow_autoupdate" defaultChecked="true">Allow application automatic update</checkBox>
+        <checkBox refId="allow_update" defaultChecked="true">Allow application update</checkBox>
+      </presentation>
+      <presentation id="extensions_1">
+        <dropdownList refId="autoDisableScopes" defaultItem="0">Allowed extensions locations</dropdownList>
+      </presentation>
+      <presentation id="sso_1">
+        <textBox refId="ntlm_auth_trusted_uris">
+          <label>A comma and space delimited list of URLs that are allowed to automatically authenticate via NTLM</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <checkBox refId="ntlm_auth_proxies">Automatically authenticate with proxy servers</checkBox>
+        <textBox refId="negotiate_auth_trusted_uris">
+          <label>A comma and space delimited list of URLs that are allowed to automatically authenticate via SPNEGO</label>
+          <defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="additional_prefs_1">
+        <listBox refId="additional_prefs">Configure advanced Mozilla preferences</listBox>
+      </presentation>
+      <presentation id="add_Certificate">
+        <textBox refId="Cert1">
+          <label>Cert1</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert2">
+          <label>Cert2</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert3">
+          <label>Cert3</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert4">
+          <label>Cert4</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert5">
+          <label>Cert5</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert6">
+          <label>Cert6</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert7">
+          <label>Cert7</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert8">
+          <label>Cert8</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert9">
+          <label>Cert9</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert10">
+          <label>Cert10</label>
+          <defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="rm_Certificate">
+        <textBox refId="Cert1">
+          <label>Cert1</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert2">
+          <label>Cert2</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert3">
+          <label>Cert3</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert4">
+          <label>Cert4</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert5">
+          <label>Cert5</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert6">
+          <label>Cert6</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert7">
+          <label>Cert7</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert8">
+          <label>Cert8</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert9">
+          <label>Cert9</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert10">
+          <label>Cert10</label>
+          <defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="proxy_type_2">
+        <dropdownList refId="proxy_type" defaultItem="0">Proxy configuration type</dropdownList>
+      </presentation>
+      <presentation id="proxy_settings_2">
+        <textBox refId="proxy_autoconfig_url">
+          <label>Automatic Proxy Configuration URL</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="proxy_http">
+          <label>HTTP proxy host</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <decimalTextBox refId="proxy_http_port" defaultValue="3128">HTTP proxy port</decimalTextBox>
+        <textBox refId="proxy_ssl">
+          <label>HTTPS proxy host</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <decimalTextBox refId="proxy_ssl_port" defaultValue="3128">HTTPS proxy port</decimalTextBox>
+        <textBox refId="proxy_ftp">
+          <label>FTP proxy host</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <decimalTextBox refId="proxy_ftp_port" defaultValue="3128">FTP proxy port</decimalTextBox>
+        <textBox refId="proxy_socks">
+          <label>SOCKS proxy host</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <decimalTextBox refId="proxy_socks_port" defaultValue="3128">SOCKS proxy port</decimalTextBox>
+        <decimalTextBox refId="proxy_socks_ver" defaultValue="5">SOCKS proxy version</decimalTextBox>
+        <textBox refId="proxy_no_proxies_on">
+          <label>Proxy Exceptions</label>
+          <defaultValue>localhost, 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="install_update_2">
+        <checkBox refId="allow_autoupdate">Allow application automatic update</checkBox>
+        <checkBox refId="allow_update">Allow application update</checkBox>
+      </presentation>
+      <presentation id="extensions_2">
+        <dropdownList refId="autoDisableScopes" defaultItem="0">Allowed extensions locations</dropdownList>
+      </presentation>
+      <presentation id="telemetry" />
+      <presentation id="homepage">
+        <dropdownList refId="start_with" defaultItem="3">Startup behavior</dropdownList>
+        <textBox refId="homepage_address">
+          <label>Homepage URL</label>
+          <defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="sso_2">
+        <textBox refId="ntlm_auth_trusted_uris">
+          <label>A comma and space delimited list of URLs that are allowed to automatically authenticate via NTLM</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <checkBox refId="ntlm_auth_proxies">Automatically authenticate with proxy servers</checkBox>
+        <textBox refId="negotiate_auth_trusted_uris">
+          <label>A comma and space delimited list of URLs that are allowed to automatically authenticate via SPNEGO</label>
+          <defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="additional_prefs_2">
+        <listBox refId="additional_prefs">Configure advanced Mozilla preferences</listBox>
+      </presentation>
+      <presentation id="proxy_type_3">
+        <dropdownList refId="proxy_type" defaultItem="0">Proxy configuration type</dropdownList>
+      </presentation>
+      <presentation id="proxy_settings_3">
+        <textBox refId="proxy_autoconfig_url">
+          <label>Automatic Proxy Configuration URL</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="proxy_http">
+          <label>HTTP proxy host</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <decimalTextBox refId="proxy_http_port" defaultValue="3128">HTTP proxy port</decimalTextBox>
+        <textBox refId="proxy_ssl">
+          <label>HTTPS proxy host</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <decimalTextBox refId="proxy_ssl_port" defaultValue="3128">HTTPS proxy port</decimalTextBox>
+        <textBox refId="proxy_ftp">
+          <label>FTP proxy host</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <decimalTextBox refId="proxy_ftp_port" defaultValue="3128">FTP proxy port</decimalTextBox>
+        <textBox refId="proxy_socks">
+          <label>SOCKS proxy host</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <decimalTextBox refId="proxy_socks_port" defaultValue="3128">SOCKS proxy port</decimalTextBox>
+        <decimalTextBox refId="proxy_socks_ver" defaultValue="5">SOCKS proxy version</decimalTextBox>
+        <textBox refId="proxy_no_proxies_on">
+          <label>Proxy Exceptions</label>
+          <defaultValue>localhost, 127.0.0.1, 192.168.0.0/16, 10.0.0.0/8</defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="install_update_3">
+        <checkBox refId="allow_autoupdate">Allow application automatic update</checkBox>
+        <checkBox refId="allow_update">Allow application update</checkBox>
+      </presentation>
+      <presentation id="extensions_3">
+        <dropdownList refId="autoDisableScopes" defaultItem="0">Allowed extensions locations</dropdownList>
+      </presentation>
+      <presentation id="telemetry_1" />
+      <presentation id="homepage_1">
+        <dropdownList refId="start_with" defaultItem="3">Startup behavior</dropdownList>
+        <textBox refId="homepage_address">
+          <label>Homepage URL</label>
+          <defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="sso_3">
+        <textBox refId="ntlm_auth_trusted_uris">
+          <label>A comma and space delimited list of URLs that are allowed to automatically authenticate via NTLM</label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <checkBox refId="ntlm_auth_proxies">Automatically authenticate with proxy servers</checkBox>
+        <textBox refId="negotiate_auth_trusted_uris">
+          <label>A comma and space delimited list of URLs that are allowed to automatically authenticate via SPNEGO</label>
+          <defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="additional_prefs_3">
+        <listBox refId="additional_prefs">Configure advanced Mozilla preferences</listBox>
+      </presentation>
+      <presentation id="add_Certificate_1">
+        <textBox refId="Cert1">
+          <label>Cert 1 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert2">
+          <label>Cert 2 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert3">
+          <label>Cert 3 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert4">
+          <label>Cert 4 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert5">
+          <label>Cert 5 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert6">
+          <label>Cert 6 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert7">
+          <label>Cert 7 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert8">
+          <label>Cert 8 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert9">
+          <label>Cert 9 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert10">
+          <label>Cert 10</label>
+          <defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+      <presentation id="rm_Certificate_1">
+        <textBox refId="Cert1">
+          <label>Cert 1 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert2">
+          <label>Cert 2 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert3">
+          <label>Cert 3 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert4">
+          <label>Cert 4 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert5">
+          <label>Cert 5 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert6">
+          <label>Cert 6 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert7">
+          <label>Cert 7 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert8">
+          <label>Cert 8 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert9">
+          <label>Cert 9 </label>
+          <defaultValue></defaultValue>
+        </textBox>
+        <textBox refId="Cert10">
+          <label>Cert 10</label>
+          <defaultValue></defaultValue>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

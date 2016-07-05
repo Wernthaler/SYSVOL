@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns=
+   "http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions"
+   revision="1.0" schemaVersion="1.0">
+  <displayName>Adobe Reader X policies file</displayName>
+  <description>This file contains the Adobe Reader X policies.</description>
+  <resources>
+    <stringTable>
+	  <string id="SUPPORTED_Adobe_AIR_3b0">Adobe AIR 3.0</string>
+	  <string id="Adobe_AIR_3">Adobe AIR 3.0</string>
+	  <string id="Adobe_AIR_3_Help">Contains Adobe AIR 3.0 specific configuration settings.</string>
+	  <string id="AIR_Configuration">Adobe AIR Configuration</string>
+	  <string id="AIR_Configuration_Help">Contains Adobe AIR Configuration settings.</string>
+	  <string id="Prevent_Installation_of_AIR_Applications">Prevent installation of AIR applications</string>
+	  <string id="Prevent_Installation_of_AIR_Applications_Help">Prevents installation of AIR applications.
+
+If not specified or disabled, installation of AIR applications is allowed. However, users still need system privileges to install to the application’s destination directory. Also, if system policy prohibits installation via Windows Installer (MSI), that policy is also respected by AIR.
+
+Even if installation of AIR applications is allowed, the following restrictions are observed: a user needs to have administrative privileges.</string>
+	  <string id="Prevent_Installation_of_Untrusted_AIR_Applications">Prevent installation of untrusted AIR applications</string>
+	  <string id="Prevent_Installation_of_Untrusted_AIR_Applications_Help">Prevents installation of untrusted AIR applications.
+
+If not specified or disabled, installation of untrusted AIR applications is allowed. However, users still need system privileges to install to the application’s destination directory.
+
+An AIR application is trusted when it has been signed with a certificate that is trusted, or which chains to a certificate that is trusted on the installation computer. For more information, see “Code signing” in the Adobe AIR Security white paper: http://www.adobe.com/go/learn_AIR_security_wp_en</string>
+	  <string id="Prevent_Automatic_Updates">Prevent automatic updates</string>
+	  <string id="Prevent_Automatic_Updates_Help">Prevents automatic updates.
+
+If not specified or disabled, automatic updates of the runtime are allowed (when required by an AIR application) or when an update becomes available via the background update mechanism. However, users still need system privileges to install to the application’s destination directory.
+
+Even if automatic updates are not prevented through this setting, the user needs to have administrative privileges for automatic updates of the runtime to proceed.</string>
+	</stringTable>
+  </resources>
+</policyDefinitionResources>

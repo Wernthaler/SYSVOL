@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns=
+   "http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions"
+   revision="1.0" schemaVersion="1.0">
+  <displayName>Microsoft Windows Network settings policies file</displayName>
+  <description>This file contains the Microsoft Windows Network settings policies.</description>
+  <resources>
+    <stringTable>
+	  <string id="Microsoft_Windows_Network">Network</string>
+	  <string id="Microsoft_Windows_Network_Help">Contains Microsoft Windows Network specific configuration settings.</string>
+	  <string id="Offline_Files">Offline Files</string>
+	  <string id="Offline_Files_Help">Contains Network specific configuration settings.</string>
+	  <string id="SUPPORTED_At_least_Windows_Vista">At least Windows Vista</string>
+	  <string id="Offline_Files_Conflicts_Auto_Resolving_Policy">Offline Files Conflicts Auto Resolving Policy</string>
+	  <string id="Offline_Files_Conflicts_Auto_Resolving_Policy_Help">Lists network shares addresses and corresponding offline files conflicts auto resolving policies.
+
+To specify an offline files conflicts auto resolving policies:
+1) In value name specify the network share address for which you want the policy to be applied
+2) In value specify an offline files conflicts auto resolving policy according to a table below:
+0 - No resolution. The conflict is unresolved. This allows the conflict to be processed by other handlers in the system.
+1 - Keep the local state. This overwrites the remote copy with the local copy's contents. If the local copy was deleted, this deletes the remote copy on the server.
+2 - Keep the remote state. This overwrites the local copy with the remote copy's contents. If the remote copy was deleted, this deletes the local copy in the Offline Files cache.
+3 - Keeps both copies. Note that this resolution is valid only for sync conflict states where both the server and client copies exist and where at least one of the items is a file. This resolution type is not available when one of the items has been deleted or both items are directories.
+4 - Retains the state of the latest operation as determined by last-change times of the items in conflict. If the local item was deleted, the time of deletion is used for comparison.
+5 - Write an entry to the sync conflict log and perform no further attempts at resolving the conflict. The interactive user will resolve the conflict through Sync Center at a later time.
+6 - Do not resolve the conflict. Do not record an entry in the sync conflict log
+7 - Cancel the synchronization operation
+
+For example, if you need to keep the local state in conflicts occuring in synchronization with \\servername1\docs share, while keeping the remote state in conflicts occuring in synchronization with \\servername2.domain.local\Archive\ share, you would have to create two policies for each share as follows:
+First policy:
+Value name:\\servername1\docs
+Value data:1
+
+Second policy:
+Value name:\\servername2.domain.local\Archive\
+Value data:2
+
+Note: you can read more regarding this issue here: http://blog.stealthpuppy.com/windows/configuring-an-automatic-resolution-policy-for-offline-files-in-windows-7/</string>
+	</stringTable>
+	<presentationTable>
+	  <presentation id="Offline_Files_Conflicts_Auto_Resolving_Policy">
+        <listBox refId="Offline_Files_Conflicts_Auto_Resolving_Policy">Offline files conflicts auto resolving policy.</listBox>
+	  </presentation>
+	</presentationTable>
+  </resources>
+</policyDefinitionResources>

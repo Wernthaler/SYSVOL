@@ -1,0 +1,1906 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+7-Zip policies.
+Version history:
+[*] - changed
+[+] - added
+[-] - deleted
+
+22.03.2011: Initial version
+
+24.03.2011 v1.1:
+			[*]: 7-Zip Dictionary Size policy was changed in order to support all compression methods, not just LZMA and LZMA2
+			[*]: 7-Zip Word Size policy was changed in order to support all compression methods, not just LZMA and LZMA2
+			[+]: ZIP Dictionary Size policy
+			[*]: ZIP Word Size policy was changed in order to support all compression methods
+
+01.04.2011 v1.2:
+			[*]: Fixed supportedOn properties of all policies. Now it is displayed right in Group Policy Editor
+
+https://sourceforge.net/projects/customadmx/
+Created by Nov.
+Managed by Nov.-->
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  revision="1.2" schemaVersion="1.0" 
+  xmlns=
+  "http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="7-Zip" namespace="Custom.Policies.Custom.Igor_Pavlov.7-Zip" />
+    <using prefix="Igor_Pavlov" namespace="Custom.Policies.Custom.Igor_Pavlov" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.2" />
+  <supportedOn>
+    <definitions>
+      <definition name="SUPPORTED_7-Zip_v9b20"
+                  displayName="$(string.SUPPORTED_7-Zip_v9b20)"/>
+    </definitions>
+  </supportedOn>
+  <categories>
+    <category name="7-Zip"
+              displayName="$(string.7-Zip)"
+              explainText="$(string.7-Zip_Help)">
+      <parentCategory ref="Igor_Pavlov:Igor_Pavlov" />
+    </category>
+	<category name="Compression"
+              displayName="$(string.Compression)"
+              explainText="$(string.Compression_Help)">
+      <parentCategory ref="7-Zip" />
+    </category>
+	<category name="Compression_7-Zip"
+              displayName="$(string.Compression_7-Zip)"
+              explainText="$(string.Compression_7-Zip_Help)">
+      <parentCategory ref="Compression" />
+    </category>
+	<category name="Compression_bzip2"
+              displayName="$(string.Compression_bzip2)"
+              explainText="$(string.Compression_bzip2_Help)">
+      <parentCategory ref="Compression" />
+    </category>
+	<category name="Compression_gzip"
+              displayName="$(string.Compression_gzip)"
+              explainText="$(string.Compression_gzip_Help)">
+      <parentCategory ref="Compression" />
+    </category>
+	<category name="Compression_tar"
+              displayName="$(string.Compression_tar)"
+              explainText="$(string.Compression_tar_Help)">
+      <parentCategory ref="Compression" />
+    </category>
+	<category name="Compression_wim"
+              displayName="$(string.Compression_wim)"
+              explainText="$(string.Compression_wim_Help)">
+      <parentCategory ref="Compression" />
+    </category>
+	<category name="Compression_xz"
+              displayName="$(string.Compression_xz)"
+              explainText="$(string.Compression_xz_Help)">
+      <parentCategory ref="Compression" />
+    </category>
+	<category name="Compression_Zip"
+              displayName="$(string.Compression_Zip)"
+              explainText="$(string.Compression_Zip_Help)">
+      <parentCategory ref="Compression" />
+    </category>
+	<category name="Extraction"
+              displayName="$(string.Extraction)"
+              explainText="$(string.Extraction_Help)">
+      <parentCategory ref="7-Zip" />
+    </category>
+	<category name="System_Integration"
+              displayName="$(string.System_Integration)"
+              explainText="$(string.System_Integration_Help)">
+      <parentCategory ref="7-Zip" />
+    </category>
+	<category name="File_Manager"
+              displayName="$(string.File_Manager)"
+              explainText="$(string.File_Manager_Help)">
+      <parentCategory ref="7-Zip" />
+    </category>
+	<category name="File_Manager_Editor"
+              displayName="$(string.File_Manager_Editor)"
+              explainText="$(string.File_Manager_Editor_Help)">
+      <parentCategory ref="File_Manager" />
+    </category>
+	<category name="File_Manager_Settings"
+              displayName="$(string.File_Manager_Settings)"
+              explainText="$(string.File_Manager_Settings_Help)">
+      <parentCategory ref="File_Manager" />
+    </category>
+	<category name="File_Manager_View"
+              displayName="$(string.File_Manager_View)"
+              explainText="$(string.File_Manager_View_Help)">
+      <parentCategory ref="File_Manager" />
+    </category>
+  </categories>
+  <policies>
+    <policy name="Archive_Format"
+            class="User"
+            displayName="$(string.Archive_Format)"
+            explainText="$(string.Archive_Format_Help)"
+            presentation="$(presentation.Archive_Format)"
+            key="Software\7-Zip\Compression">
+      <parentCategory ref="Compression" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+      <elements>
+        <enum id="Archive_Format"
+              key="Software\7-Zip\Compression"
+              valueName="Archiver"
+              required="true">
+          <item displayName="$(string.Archive_Format_7z)">
+            <value>
+			  <string>7z</string>
+			</value>
+          </item>
+          <item displayName="$(string.Archive_Format_bzip2)">
+            <value>
+			  <string>bzip2</string>
+			</value>
+          </item>
+		  <item displayName="$(string.Archive_Format_gzip)">
+            <value>
+			  <string>gzip</string>
+			</value>
+          </item>
+		  <item displayName="$(string.Archive_Format_tar)">
+            <value>
+			  <string>tar</string>
+			</value>
+          </item>
+		  <item displayName="$(string.Archive_Format_wim)">
+            <value>
+			  <string>wim</string>
+			</value>
+          </item>
+		  <item displayName="$(string.Archive_Format_xz)">
+            <value>
+			  <string>xz</string>
+			</value>
+          </item>
+		  <item displayName="$(string.Archive_Format_zip)">
+            <value>
+			  <string>zip</string>
+			</value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="Encrypt_File_Names"
+            class="User"
+            displayName="$(string.Encrypt_File_Names)"
+            explainText="$(string.Encrypt_File_Names_Help)"
+            key="Software\7-Zip\Compression"
+			valueName="EncryptHeaders">
+      <parentCategory ref="Compression" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Compression_Show_Password"
+            class="User"
+            displayName="$(string.Compression_Show_Password)"
+            explainText="$(string.Compression_Show_Password_Help)"
+            key="Software\7-Zip\Compression"
+			valueName="ShowPassword">
+      <parentCategory ref="Compression" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="7z_Compression_Level"
+            class="User"
+            displayName="$(string.7z_Compression_Level)"
+            explainText="$(string.7z_Compression_Level_Help)"
+            presentation="$(presentation.7z_Compression_Level)"
+            key="Software\7-Zip\Compression\Option\7z">
+      <parentCategory ref="Compression_7z" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+      <elements>
+        <enum id="7z_Compression_Level"
+              key="Software\7-Zip\Compression\Option\7z"
+              valueName="Level"
+              required="true">
+          <item displayName="$(string.7z_Compression_Level_Store)">
+            <value>
+			  <decimal value="0" />
+			</value>
+          </item>
+          <item displayName="$(string.7z_Compression_Level_Fastest)">
+            <value>
+			  <decimal value="1" />
+			</value>
+          </item>
+		  <item displayName="$(string.7z_Compression_Level_Fast)">
+            <value>
+			  <decimal value="3" />
+			</value>
+          </item>
+          <item displayName="$(string.7z_Compression_Level_Normal)">
+            <value>
+			  <decimal value="5" />
+			</value>
+          </item>
+          <item displayName="$(string.7z_Compression_Level_Maximum)">
+            <value>
+			  <decimal value="7" />
+			</value>
+          </item>
+          <item displayName="$(string.7z_Compression_Level_Ultra)">
+            <value>
+			  <decimal value="9" />
+			</value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="7z_Compression_Method"
+            class="User"
+            displayName="$(string.7z_Compression_Method)"
+            explainText="$(string.7z_Compression_Method_Help)"
+            presentation="$(presentation.7z_Compression_Method)"
+            key="Software\7-Zip\Compression\Option\7z">
+      <parentCategory ref="Compression_7z" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+      <elements>
+        <enum id="7z_Compression_Method"
+              key="Software\7-Zip\Compression\Option\7z"
+              valueName="Method"
+              required="true">
+          <item displayName="$(string.7z_Compression_Method_LZMA)">
+            <value>
+			  <string>LZMA</string>
+			</value>
+          </item>
+          <item displayName="$(string.7z_Compression_Method_LZMA2)">
+            <value>
+			  <string>LZMA2</string>
+			</value>
+          </item>
+		  <item displayName="$(string.7z_Compression_Method_PPMd)">
+            <value>
+			  <string>PPMd</string>
+			</value>
+          </item>
+		  <item displayName="$(string.7z_Compression_Method_BZip2)">
+            <value>
+			  <string>BZip2</string>
+			</value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="7z_Dictionary_Size"
+            class="User"
+            displayName="$(string.7z_Dictionary_Size)"
+            explainText="$(string.7z_Dictionary_Size_Help)"
+            presentation="$(presentation.7z_Dictionary_Size)"
+            key="Software\7-Zip\Compression\Option\7z">
+      <parentCategory ref="Compression_7z" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <decimal id="7z_Dictionary_Size"
+                 valueName="Dictionary" />
+	  </elements>
+    </policy>
+	<policy name="7z_Word_Size"
+            class="User"
+            displayName="$(string.7z_Word_Size)"
+            explainText="$(string.7z_Word_Size_Help)"
+            presentation="$(presentation.7z_Word_Size)"
+            key="Software\7-Zip\Compression\Option\7z">
+      <parentCategory ref="Compression_7z" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <decimal id="7z_Word_Size"
+                 valueName="Order" />
+	  </elements>
+    </policy>
+	<policy name="7z_Solid_Block_Size"
+            class="User"
+            displayName="$(string.7z_Solid_Block_Size)"
+            explainText="$(string.7z_Solid_Block_Size_Help)"
+            presentation="$(presentation.7z_Solid_Block_Size)"
+            key="Software\7-Zip\Compression\Option\7z">
+      <parentCategory ref="Compression_7z" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+      <elements>
+        <enum id="7z_Solid_Block_Size"
+              key="Software\7-Zip\Compression\Option\7z"
+              valueName="BlockSize"
+              required="true">
+          <item displayName="$(string.7z_Solid_Block_Size_Non-solid)">
+            <value>
+			  <decimal value="0" />
+			</value>
+          </item>
+          <item displayName="$(string.7z_Solid_Block_Size_1_MB)">
+            <value>
+			  <decimal value="20" />
+			</value>
+          </item>
+		  <item displayName="$(string.7z_Solid_Block_Size_2_MB)">
+            <value>
+			  <decimal value="21" />
+			</value>
+          </item>
+          <item displayName="$(string.7z_Solid_Block_Size_4_MB)">
+            <value>
+			  <decimal value="22" />
+			</value>
+          </item>
+          <item displayName="$(string.7z_Solid_Block_Size_8_MB)">
+            <value>
+			  <decimal value="23" />
+			</value>
+          </item>
+          <item displayName="$(string.7z_Solid_Block_Size_16_MB)">
+            <value>
+			  <decimal value="24" />
+			</value>
+          </item>
+		  <item displayName="$(string.7z_Solid_Block_Size_32_MB)">
+            <value>
+			  <decimal value="25" />
+			</value>
+          </item>
+          <item displayName="$(string.7z_Solid_Block_Size_64_MB)">
+            <value>
+			  <decimal value="26" />
+			</value>
+          </item>
+		  <item displayName="$(string.7z_Solid_Block_Size_128_MB)">
+            <value>
+			  <decimal value="27" />
+			</value>
+          </item>
+          <item displayName="$(string.7z_Solid_Block_Size_256_MB)">
+            <value>
+			  <decimal value="28" />
+			</value>
+          </item>
+          <item displayName="$(string.7z_Solid_Block_Size_512_MB)">
+            <value>
+			  <decimal value="29" />
+			</value>
+          </item>
+          <item displayName="$(string.7z_Solid_Block_Size_1_GB)">
+            <value>
+			  <decimal value="30" />
+			</value>
+          </item>
+		  <item displayName="$(string.7z_Solid_Block_Size_2_GB)">
+            <value>
+			  <decimal value="31" />
+			</value>
+          </item>
+          <item displayName="$(string.7z_Solid_Block_Size_4_GB)">
+            <value>
+			  <decimal value="32" />
+			</value>
+          </item>
+		  <item displayName="$(string.7z_Solid_Block_Size_8_GB)">
+            <value>
+			  <decimal value="33" />
+			</value>
+          </item>
+          <item displayName="$(string.7z_Solid_Block_Size_16_GB)">
+            <value>
+			  <decimal value="34" />
+			</value>
+          </item>
+		  <item displayName="$(string.7z_Solid_Block_Size_32_GB)">
+            <value>
+			  <decimal value="35" />
+			</value>
+          </item>
+          <item displayName="$(string.7z_Solid_Block_Size_64_GB)">
+            <value>
+			  <decimal value="36" />
+			</value>
+          </item>
+		  <item displayName="$(string.7z_Solid_Block_Size_Solid)">
+            <value>
+			  <decimal value="64" />
+			</value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="7z_Number_of_CPU_Threads"
+            class="User"
+            displayName="$(string.7z_Number_of_CPU_Threads)"
+            explainText="$(string.7z_Number_of_CPU_Threads_Help)"
+            presentation="$(presentation.7z_Number_of_CPU_Threads)"
+            key="Software\7-Zip\Compression\Option\7z">
+      <parentCategory ref="Compression_7z" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <decimal id="7z_Number_of_CPU_Threads"
+                 valueName="NumThreads" />
+	  </elements>
+    </policy>
+	<policy name="7z_Parameters"
+            class="User"
+            displayName="$(string.7z_Parameters)"
+            explainText="$(string.7z_Parameters_Help)"
+            presentation="$(presentation.7z_Parameters)"
+            key="Software\7-Zip\Compression\Option\7z">
+      <parentCategory ref="Compression_7z" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <text id="7z_Parameters"
+              key="Software\7-Zip\Compression\Option\7z"
+              valueName="Options"
+              required="true" />
+	  </elements>
+    </policy>
+	<policy name="bzip2_Compression_Level"
+            class="User"
+            displayName="$(string.bzip2_Compression_Level)"
+            explainText="$(string.bzip2_Compression_Level_Help)"
+            presentation="$(presentation.bzip2_Compression_Level)"
+            key="Software\7-Zip\Compression\Option\bzip2">
+      <parentCategory ref="Compression_bzip2" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+      <elements>
+        <enum id="bzip2_Compression_Level"
+              key="Software\7-Zip\Compression\Option\bzip2"
+              valueName="Level"
+              required="true">
+          <item displayName="$(string.bzip2_Compression_Level_Fastest)">
+            <value>
+			  <decimal value="1" />
+			</value>
+          </item>
+		  <item displayName="$(string.bzip2_Compression_Level_Fast)">
+            <value>
+			  <decimal value="3" />
+			</value>
+          </item>
+          <item displayName="$(string.bzip2_Compression_Level_Normal)">
+            <value>
+			  <decimal value="5" />
+			</value>
+          </item>
+          <item displayName="$(string.bzip2_Compression_Level_Maximum)">
+            <value>
+			  <decimal value="7" />
+			</value>
+          </item>
+          <item displayName="$(string.bzip2_Compression_Level_Ultra)">
+            <value>
+			  <decimal value="9" />
+			</value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="bzip2_Dictionary_Size"
+            class="User"
+            displayName="$(string.bzip2_Dictionary_Size)"
+            explainText="$(string.bzip2_Dictionary_Size_Help)"
+            presentation="$(presentation.bzip2_Dictionary_Size)"
+            key="Software\7-Zip\Compression\Option\bzip2">
+      <parentCategory ref="Compression_bzip2" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <enum id="bzip2_Dictionary_Size"
+              key="Software\7-Zip\Compression\Option\bzip2"
+              valueName="Dictionary"
+              required="true">
+          <item displayName="$(string.bzip2_Dictionary_Size_100_KB)">
+            <value>
+			  <decimal value="102400" />
+			</value>
+          </item>
+          <item displayName="$(string.bzip2_Dictionary_Size_200_KB)">
+            <value>
+			  <decimal value="204800" />
+			</value>
+          </item>
+		  <item displayName="$(string.bzip2_Dictionary_Size_300_KB)">
+            <value>
+			  <decimal value="307200" />
+			</value>
+          </item>
+		  <item displayName="$(string.bzip2_Dictionary_Size_400_KB)">
+            <value>
+			  <decimal value="409600" />
+			</value>
+          </item>
+		  <item displayName="$(string.bzip2_Dictionary_Size_500_KB)">
+            <value>
+			  <decimal value="512000" />
+			</value>
+          </item>
+		  <item displayName="$(string.bzip2_Dictionary_Size_600_KB)">
+            <value>
+			  <decimal value="614400" />
+			</value>
+          </item>
+		  <item displayName="$(string.bzip2_Dictionary_Size_700_KB)">
+            <value>
+			  <decimal value="716800" />
+			</value>
+          </item>
+		  <item displayName="$(string.bzip2_Dictionary_Size_800_KB)">
+            <value>
+			  <decimal value="819200" />
+			</value>
+          </item>
+		  <item displayName="$(string.bzip2_Dictionary_Size_900_KB)">
+            <value>
+			  <decimal value="921600" />
+			</value>
+          </item>
+		</enum>
+      </elements>
+    </policy>
+	<policy name="bzip2_Number_of_CPU_Threads"
+            class="User"
+            displayName="$(string.bzip2_Number_of_CPU_Threads)"
+            explainText="$(string.bzip2_Number_of_CPU_Threads_Help)"
+            presentation="$(presentation.bzip2_Number_of_CPU_Threads)"
+            key="Software\7-Zip\Compression\Option\bzip2">
+      <parentCategory ref="Compression_bzip2" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <decimal id="bzip2_Number_of_CPU_Threads"
+                 valueName="NumThreads" />
+	  </elements>
+    </policy>
+	<policy name="bzip2_Parameters"
+            class="User"
+            displayName="$(string.bzip2_Parameters)"
+            explainText="$(string.bzip2_Parameters_Help)"
+            presentation="$(presentation.bzip2_Parameters)"
+            key="Software\7-Zip\Compression\Option\bzip2">
+      <parentCategory ref="Compression_bzip2" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <text id="bzip2_Parameters"
+              key="Software\7-Zip\Compression\Option\bzip2"
+              valueName="Options"
+              required="true" />
+	  </elements>
+    </policy>
+	<policy name="gzip_Compression_Level"
+            class="User"
+            displayName="$(string.gzip_Compression_Level)"
+            explainText="$(string.gzip_Compression_Level_Help)"
+            presentation="$(presentation.gzip_Compression_Level)"
+            key="Software\7-Zip\Compression\Option\gzip">
+      <parentCategory ref="Compression_gzip" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+      <elements>
+        <enum id="gzip_Compression_Level"
+              key="Software\7-Zip\Compression\Option\gzip"
+              valueName="Level"
+              required="true">
+          <item displayName="$(string.gzip_Compression_Level_Fastest)">
+            <value>
+			  <decimal value="1" />
+			</value>
+          </item>
+		  <item displayName="$(string.gzip_Compression_Level_Fast)">
+            <value>
+			  <decimal value="3" />
+			</value>
+          </item>
+          <item displayName="$(string.gzip_Compression_Level_Normal)">
+            <value>
+			  <decimal value="5" />
+			</value>
+          </item>
+          <item displayName="$(string.gzip_Compression_Level_Maximum)">
+            <value>
+			  <decimal value="7" />
+			</value>
+          </item>
+          <item displayName="$(string.gzip_Compression_Level_Ultra)">
+            <value>
+			  <decimal value="9" />
+			</value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="gzip_Word_Size"
+            class="User"
+            displayName="$(string.gzip_Word_Size)"
+            explainText="$(string.gzip_Word_Size_Help)"
+            presentation="$(presentation.gzip_Word_Size)"
+            key="Software\7-Zip\Compression\Option\gzip">
+      <parentCategory ref="Compression_gzip" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <enum id="gzip_Word_Size"
+              key="Software\7-Zip\Compression\Option\gzip"
+              valueName="Order"
+              required="true">
+          <item displayName="$(string.gzip_Word_Size_8)">
+            <value>
+			  <decimal value="8" />
+			</value>
+          </item>
+          <item displayName="$(string.gzip_Word_Size_12)">
+            <value>
+			  <decimal value="12" />
+			</value>
+          </item>
+		  <item displayName="$(string.gzip_Word_Size_16)">
+            <value>
+			  <decimal value="16" />
+			</value>
+          </item>
+		  <item displayName="$(string.gzip_Word_Size_24)">
+            <value>
+			  <decimal value="24" />
+			</value>
+          </item>
+		  <item displayName="$(string.gzip_Word_Size_32)">
+            <value>
+			  <decimal value="32" />
+			</value>
+          </item>
+		  <item displayName="$(string.gzip_Word_Size_48)">
+            <value>
+			  <decimal value="48" />
+			</value>
+          </item>
+		  <item displayName="$(string.gzip_Word_Size_64)">
+            <value>
+			  <decimal value="64" />
+			</value>
+          </item>
+		  <item displayName="$(string.gzip_Word_Size_96)">
+            <value>
+			  <decimal value="96" />
+			</value>
+          </item>
+		  <item displayName="$(string.gzip_Word_Size_128)">
+            <value>
+			  <decimal value="128" />
+			</value>
+          </item>
+		  <item displayName="$(string.gzip_Word_Size_192)">
+            <value>
+			  <decimal value="192" />
+			</value>
+          </item>
+		  <item displayName="$(string.gzip_Word_Size_256)">
+            <value>
+			  <decimal value="256" />
+			</value>
+          </item>
+		  <item displayName="$(string.gzip_Word_Size_258)">
+            <value>
+			  <decimal value="258" />
+			</value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="gzip_Parameters"
+            class="User"
+            displayName="$(string.gzip_Parameters)"
+            explainText="$(string.gzip_Parameters_Help)"
+            presentation="$(presentation.gzip_Parameters)"
+            key="Software\7-Zip\Compression\Option\gzip">
+      <parentCategory ref="Compression_gzip" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <text id="gzip_Parameters"
+              key="Software\7-Zip\Compression\Option\gzip"
+              valueName="Options"
+              required="true" />
+	  </elements>
+    </policy>
+	<policy name="tar_Parameters"
+            class="User"
+            displayName="$(string.tar_Parameters)"
+            explainText="$(string.tar_Parameters_Help)"
+            presentation="$(presentation.tar_Parameters)"
+            key="Software\7-Zip\Compression\Option\tar">
+      <parentCategory ref="Compression_tar" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <text id="tar_Parameters"
+              key="Software\7-Zip\Compression\Option\tar"
+              valueName="Options"
+              required="true" />
+	  </elements>
+    </policy>
+	<policy name="wim_Parameters"
+            class="User"
+            displayName="$(string.wim_Parameters)"
+            explainText="$(string.wim_Parameters_Help)"
+            presentation="$(presentation.wim_Parameters)"
+            key="Software\7-Zip\Compression\Option\wim">
+      <parentCategory ref="Compression_wim" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <text id="wim_Parameters"
+              key="Software\7-Zip\Compression\Option\wim"
+              valueName="Options"
+              required="true" />
+	  </elements>
+    </policy>
+	<policy name="xz_Compression_Level"
+            class="User"
+            displayName="$(string.xz_Compression_Level)"
+            explainText="$(string.xz_Compression_Level_Help)"
+            presentation="$(presentation.xz_Compression_Level)"
+            key="Software\7-Zip\Compression\Option\xz">
+      <parentCategory ref="Compression_xz" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+      <elements>
+        <enum id="xz_Compression_Level"
+              key="Software\7-Zip\Compression\Option\xz"
+              valueName="Level"
+              required="true">
+          <item displayName="$(string.xz_Compression_Level_Fastest)">
+            <value>
+			  <decimal value="1" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Compression_Level_Fast)">
+            <value>
+			  <decimal value="3" />
+			</value>
+          </item>
+          <item displayName="$(string.xz_Compression_Level_Normal)">
+            <value>
+			  <decimal value="5" />
+			</value>
+          </item>
+          <item displayName="$(string.xz_Compression_Level_Maximum)">
+            <value>
+			  <decimal value="7" />
+			</value>
+          </item>
+          <item displayName="$(string.xz_Compression_Level_Ultra)">
+            <value>
+			  <decimal value="9" />
+			</value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="xz_Dictionary_Size"
+            class="User"
+            displayName="$(string.xz_Dictionary_Size)"
+            explainText="$(string.xz_Dictionary_Size_Help)"
+            presentation="$(presentation.xz_Dictionary_Size)"
+            key="Software\7-Zip\Compression\Option\xz">
+      <parentCategory ref="Compression_xz" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <enum id="xz_Dictionary_Size"
+              key="Software\7-Zip\Compression\Option\xz"
+              valueName="Dictionary"
+              required="true">
+          <item displayName="$(string.xz_Dictionary_Size_64_KB)">
+            <value>
+			  <decimal value="65536" />
+			</value>
+          </item>
+          <item displayName="$(string.xz_Dictionary_Size_1_MB)">
+            <value>
+			  <decimal value="1048576" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Dictionary_Size_2_MB)">
+            <value>
+			  <decimal value="2097152" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Dictionary_Size_3_MB)">
+            <value>
+			  <decimal value="3145728" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Dictionary_Size_4_MB)">
+            <value>
+			  <decimal value="4194304" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Dictionary_Size_6_MB)">
+            <value>
+			  <decimal value="6291456" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Dictionary_Size_8_MB)">
+            <value>
+			  <decimal value="8388608" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Dictionary_Size_12_MB)">
+            <value>
+			  <decimal value="12582912" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Dictionary_Size_16_MB)">
+            <value>
+			  <decimal value="16777216" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Dictionary_Size_24_MB)">
+            <value>
+			  <decimal value="25165824" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Dictionary_Size_32_MB)">
+            <value>
+			  <decimal value="33554432" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Dictionary_Size_48_MB)">
+            <value>
+			  <decimal value="50331648" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Dictionary_Size_64_MB)">
+            <value>
+			  <decimal value="67108864" />
+			</value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="xz_Word_Size"
+            class="User"
+            displayName="$(string.xz_Word_Size)"
+            explainText="$(string.xz_Word_Size_Help)"
+            presentation="$(presentation.xz_Word_Size)"
+            key="Software\7-Zip\Compression\Option\xz">
+      <parentCategory ref="Compression_xz" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <enum id="xz_Word_Size"
+              key="Software\7-Zip\Compression\Option\xz"
+              valueName="Order"
+              required="true">
+          <item displayName="$(string.xz_Word_Size_8)">
+            <value>
+			  <decimal value="8" />
+			</value>
+          </item>
+          <item displayName="$(string.xz_Word_Size_12)">
+            <value>
+			  <decimal value="12" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Word_Size_16)">
+            <value>
+			  <decimal value="16" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Word_Size_24)">
+            <value>
+			  <decimal value="24" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Word_Size_32)">
+            <value>
+			  <decimal value="32" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Word_Size_48)">
+            <value>
+			  <decimal value="48" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Word_Size_64)">
+            <value>
+			  <decimal value="64" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Word_Size_96)">
+            <value>
+			  <decimal value="96" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Word_Size_128)">
+            <value>
+			  <decimal value="128" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Word_Size_192)">
+            <value>
+			  <decimal value="192" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Word_Size_256)">
+            <value>
+			  <decimal value="256" />
+			</value>
+          </item>
+		  <item displayName="$(string.xz_Word_Size_273)">
+            <value>
+			  <decimal value="273" />
+			</value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="xz_Number_of_CPU_Threads"
+            class="User"
+            displayName="$(string.xz_Number_of_CPU_Threads)"
+            explainText="$(string.xz_Number_of_CPU_Threads_Help)"
+            presentation="$(presentation.xz_Number_of_CPU_Threads)"
+            key="Software\7-Zip\Compression\Option\xz">
+      <parentCategory ref="Compression_xz" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <decimal id="xz_Number_of_CPU_Threads"
+                 valueName="NumThreads" />
+	  </elements>
+    </policy>
+	<policy name="xz_Parameters"
+            class="User"
+            displayName="$(string.xz_Parameters)"
+            explainText="$(string.xz_Parameters_Help)"
+            presentation="$(presentation.xz_Parameters)"
+            key="Software\7-Zip\Compression\Option\xz">
+      <parentCategory ref="Compression_xz" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <text id="xz_Parameters"
+              key="Software\7-Zip\Compression\Option\xz"
+              valueName="Options"
+              required="true" />
+	  </elements>
+    </policy>
+	<policy name="zip_Compression_Level"
+            class="User"
+            displayName="$(string.zip_Compression_Level)"
+            explainText="$(string.zip_Compression_Level_Help)"
+            presentation="$(presentation.zip_Compression_Level)"
+            key="Software\7-Zip\Compression\Option\zip">
+      <parentCategory ref="Compression_zip" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+      <elements>
+        <enum id="zip_Compression_Level"
+              key="Software\7-Zip\Compression\Option\zip"
+              valueName="Level"
+              required="true">
+          <item displayName="$(string.zip_Compression_Level_Store)">
+            <value>
+			  <decimal value="0" />
+			</value>
+          </item>
+          <item displayName="$(string.zip_Compression_Level_Fastest)">
+            <value>
+			  <decimal value="1" />
+			</value>
+          </item>
+		  <item displayName="$(string.zip_Compression_Level_Fast)">
+            <value>
+			  <decimal value="3" />
+			</value>
+          </item>
+          <item displayName="$(string.zip_Compression_Level_Normal)">
+            <value>
+			  <decimal value="5" />
+			</value>
+          </item>
+          <item displayName="$(string.zip_Compression_Level_Maximum)">
+            <value>
+			  <decimal value="7" />
+			</value>
+          </item>
+          <item displayName="$(string.zip_Compression_Level_Ultra)">
+            <value>
+			  <decimal value="9" />
+			</value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="zip_Compression_Method"
+            class="User"
+            displayName="$(string.zip_Compression_Method)"
+            explainText="$(string.zip_Compression_Method_Help)"
+            presentation="$(presentation.zip_Compression_Method)"
+            key="Software\7-Zip\Compression\Option\zip">
+      <parentCategory ref="Compression_zip" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+      <elements>
+        <enum id="zip_Compression_Method"
+              key="Software\7-Zip\Compression\Option\zip"
+              valueName="Method"
+              required="true">
+		  <item displayName="$(string.zip_Compression_Method_Deflate)">
+            <value>
+			  <string>Deflate</string>
+			</value>
+          </item>
+		  <item displayName="$(string.zip_Compression_Method_Deflate64)">
+            <value>
+			  <string>Deflate64</string>
+			</value>
+          </item>
+          <item displayName="$(string.zip_Compression_Method_BZip2)">
+            <value>
+			  <string>BZip2</string>
+			</value>
+          </item>
+		  <item displayName="$(string.zip_Compression_Method_LZMA)">
+            <value>
+			  <string>LZMA</string>
+			</value>
+          </item>
+		  <item displayName="$(string.zip_Compression_Method_PPMd)">
+            <value>
+			  <string>PPMd</string>
+			</value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="zip_Dictionary_Size"
+            class="User"
+            displayName="$(string.zip_Dictionary_Size)"
+            explainText="$(string.zip_Dictionary_Size_Help)"
+            presentation="$(presentation.zip_Dictionary_Size)"
+            key="Software\7-Zip\Compression\Option\zip">
+      <parentCategory ref="Compression_zip" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <decimal id="zip_Dictionary_Size"
+                 valueName="Dictionary" />
+	  </elements>
+    </policy>
+	<policy name="zip_Word_Size"
+            class="User"
+            displayName="$(string.zip_Word_Size)"
+            explainText="$(string.zip_Word_Size_Help)"
+            presentation="$(presentation.zip_Word_Size)"
+            key="Software\7-Zip\Compression\Option\zip">
+      <parentCategory ref="Compression_zip" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <decimal id="zip_Word_Size"
+                 valueName="Order" />
+	  </elements>
+    </policy>
+	<policy name="zip_Number_of_CPU_Threads"
+            class="User"
+            displayName="$(string.zip_Number_of_CPU_Threads)"
+            explainText="$(string.zip_Number_of_CPU_Threads_Help)"
+            presentation="$(presentation.zip_Number_of_CPU_Threads)"
+            key="Software\7-Zip\Compression\Option\zip">
+      <parentCategory ref="Compression_zip" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <decimal id="zip_Number_of_CPU_Threads"
+                 valueName="NumThreads" />
+	  </elements>
+    </policy>
+	<policy name="zip_Parameters"
+            class="User"
+            displayName="$(string.zip_Parameters)"
+            explainText="$(string.zip_Parameters_Help)"
+            presentation="$(presentation.zip_Parameters)"
+            key="Software\7-Zip\Compression\Option\zip">
+      <parentCategory ref="Compression_zip" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <text id="zip_Parameters"
+              key="Software\7-Zip\Compression\Option\zip"
+              valueName="Options"
+              required="true" />
+	  </elements>
+    </policy>
+	<policy name="zip_Encryption_Method"
+            class="User"
+            displayName="$(string.zip_Encryption_Method)"
+            explainText="$(string.zip_Encryption_Method_Help)"
+            presentation="$(presentation.zip_Encryption_Method)"
+            key="Software\7-Zip\Compression\Option\zip">
+      <parentCategory ref="Compression_zip" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <enum id="zip_Encryption_Method"
+              key="Software\7-Zip\Compression\Option\zip"
+              valueName="EncryptionMethod"
+              required="true">
+          <item displayName="$(string.zip_Encryption_Method_ZipCrypto)">
+            <value>
+			  <string>ZipCrypto</string>
+			</value>
+          </item>
+          <item displayName="$(string.zip_Encryption_Method_AES-256)">
+            <value>
+			  <string>AES256</string>
+			</value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="Path_Mode"
+            class="User"
+            displayName="$(string.Path_Mode)"
+            explainText="$(string.Path_Mode_Help)"
+            presentation="$(presentation.Path_Mode)"
+            key="Software\7-Zip\Extraction">
+      <parentCategory ref="Exctraction" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <enum id="Path_Mode"
+              key="Software\7-Zip\Extraction"
+              valueName="ExtractMode"
+              required="true">
+          <item displayName="$(string.Path_Mode_Full_Pathnames)">
+            <value>
+			  <decimal value="1" />
+			</value>
+          </item>
+          <item displayName="$(string.Path_Mode_No_Pathnames)">
+            <value>
+			  <decimal value="2" />
+			</value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="Overwrite_Mode"
+            class="User"
+            displayName="$(string.Overwrite_Mode)"
+            explainText="$(string.Overwrite_Mode_Help)"
+            presentation="$(presentation.Overwrite_Mode)"
+            key="Software\7-Zip\Extraction">
+      <parentCategory ref="Exctraction" />
+	  <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <enum id="Overwrite_Mode"
+              key="Software\7-Zip\Extraction"
+              valueName="OverwriteMode"
+              required="true">
+          <item displayName="$(string.Overwrite_Mode_Ask_befor_Overwriting)">
+            <value>
+			  <decimal value="0" />
+			</value>
+          </item>
+          <item displayName="$(string.Overwrite_Mode_Overwrite_without_Prompt)">
+            <value>
+			  <decimal value="1" />
+			</value>
+          </item>
+		   <item displayName="$(string.Overwrite_Mode_Skip_Existing_Files)">
+            <value>
+			  <decimal value="2" />
+			</value>
+          </item>
+          <item displayName="$(string.Overwrite_Mode_Auto_Rename)">
+            <value>
+			  <decimal value="3" />
+			</value>
+          </item>
+		   <item displayName="$(string.Overwrite_Mode_Auto_Rename_Existing_Files)">
+            <value>
+			  <decimal value="4" />
+			</value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="Extraction_Show_Password"
+            class="User"
+            displayName="$(string.Extraction_Show_Password)"
+            explainText="$(string.Extraction_Show_Password_Help)"
+            key="Software\7-Zip\Extraction"
+			valueName="ShowPassword">
+      <parentCategory ref="Extraction" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Cascaded_Context_Menu"
+            class="User"
+            displayName="$(string.Cascaded_Context_Menu)"
+            explainText="$(string.Cascaded_Context_Menu_Help)"
+            key="Software\7-Zip\Options"
+			valueName="CascadedMenu">
+      <parentCategory ref="System_Integration" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Context_Menu_Items"
+            class="User"
+            displayName="$(string.Context_Menu_Items)"
+            explainText="$(string.Context_Menu_Items_Help)"
+			presentation="$(presentation.Context_Menu_Items)"
+            key="Software\7-Zip\Options">
+      <parentCategory ref="System_Integration" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <decimal id="Context_Menu_Items"
+                 valueName="ContextMenu"
+                 maxValue="16247" />
+	  </elements>
+	</policy>
+	<policy name="Working_Folder"
+            class="User"
+            displayName="$(string.Working_Folder)"
+            explainText="$(string.Working_Folder_Help)"
+			presentation="$(presentation.Working_Folder)"
+            key="Software\7-Zip\Options">
+      <parentCategory ref="System_Integration" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <enum id="Working_Folder"
+              key="Software\7-Zip\Options"
+              valueName="WorkDirType"
+              required="true">
+          <item displayName="$(string.Working_Folder_System_Temp_Folder)">
+            <value>
+              <decimal value="0" />
+            </value>
+          </item>
+          <item displayName="$(string.Working_Folder_Current)">
+            <value>
+              <decimal value="1" />
+            </value>
+          </item>
+          <item displayName="$(string.Working_Folder_Specified)">
+            <value>
+              <decimal value="2" />
+            </value>
+          </item>
+        </enum>
+	  </elements>
+	</policy>
+	<policy name="Specified_Working_Folder"
+            class="User"
+            displayName="$(string.Specified_Working_Folder)"
+            explainText="$(string.Specified_Working_Folder_Help)"
+			presentation="$(presentation.Specified_Working_Folder)"
+            key="Software\7-Zip\Options">
+      <parentCategory ref="System_Integration" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <elements>
+        <text id="Specified_Working_Folder" 
+                 valueName="WorkDirPath" 
+                  required="true" />
+	  </elements>
+	</policy>
+	<policy name="Use_for_Removable_Drives_Only"
+            class="User"
+            displayName="$(string.Use_for_Removable_Drives_Only)"
+            explainText="$(string.Use_for_Removable_Drives_Only_Help)"
+            key="Software\7-Zip\Options"
+			valueName="CascadedMenu">
+      <parentCategory ref="System_Integration" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Editor_Path"
+            class="User"
+            displayName="$(string.Editor_Path)"
+            explainText="$(string.Editor_Path_Help)"
+			presentation="$(presentation.Editor_Path)"
+            key="Software\7-Zip\FM"
+            valueName="Editor">
+      <parentCategory ref="File_Manager_Editor" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+      <disabledValue>
+	    <delete />
+      </disabledValue>
+	  <elements>
+        <text id="Editor_Path" 
+              valueName="Editor" 
+              required="true" />
+	  </elements>
+	</policy>
+	<policy name="Diff_Path"
+            class="User"
+            displayName="$(string.Diff_Path)"
+            explainText="$(string.Diff_Path_Help)"
+			presentation="$(presentation.Diff_Path)"
+            key="Software\7-Zip\FM"
+            valueName="Diff">
+      <parentCategory ref="File_Manager_Editor" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+      <disabledValue>
+	    <delete />
+      </disabledValue>
+	  <elements>
+        <text id="Diff_Path" 
+              valueName="Diff" 
+              required="true" />
+	  </elements>
+	</policy>
+	<policy name="Show_Dots_Item"
+            class="User"
+            displayName="$(string.Show_Dots_Item)"
+            explainText="$(string.Show_Dots_Item_Help)"
+            key="Software\7-Zip\FM"
+			valueName="ShowDots">
+      <parentCategory ref="File_Manager_Settings" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Show_Real_File_Icons"
+            class="User"
+            displayName="$(string.Show_Real_File_Icons)"
+            explainText="$(string.Show_Real_File_Icons_Help)"
+            key="Software\7-Zip\FM"
+			valueName="ShowRealFileIcons">
+      <parentCategory ref="File_Manager_Settings" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Show_System_Menu"
+            class="User"
+            displayName="$(string.Show_System_Menu)"
+            explainText="$(string.Show_System_Menu_Help)"
+            key="Software\7-Zip\FM"
+			valueName="ShowSystemMenu">
+      <parentCategory ref="File_Manager_Settings" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Full_Row_Select"
+            class="User"
+            displayName="$(string.Full_Row_Select)"
+            explainText="$(string.Full_Row_Select_Help)"
+            key="Software\7-Zip\FM"
+			valueName="FullRow">
+      <parentCategory ref="File_Manager_Settings" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Show_Grid_Lines"
+            class="User"
+            displayName="$(string.Show_Grid_Lines)"
+            explainText="$(string.Show_Grid_Lines_Help)"
+            key="Software\7-Zip\FM"
+			valueName="ShowGrid">
+      <parentCategory ref="File_Manager_Settings" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Single-click_to_Open_an_Item"
+            class="User"
+            displayName="$(string.Single-click_to_Open_an_Item)"
+            explainText="$(string.Single-click_to_Open_an_Item_Help)"
+            key="Software\7-Zip\FM"
+			valueName="SingleClick">
+      <parentCategory ref="File_Manager_Settings" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Alternate_Selection_Mode"
+            class="User"
+            displayName="$(string.Alternate_Selection_Mode)"
+            explainText="$(string.Alternate_Selection_Mode_Help)"
+            key="Software\7-Zip\FM"
+			valueName="AlternativeSelection">
+      <parentCategory ref="File_Manager_Settings" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+	<policy name="Use_Large_Memory_Pages"
+            class="User"
+            displayName="$(string.Use_Large_Memory_Pages)"
+            explainText="$(string.Use_Large_Memory_Pages_Help)"
+            key="Software\7-Zip"
+			valueName="LargePages">
+      <parentCategory ref="File_Manager_Settings" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+	  <enabledValue>
+        <decimal value="1" />
+	  </enabledValue>
+	  <disabledValue>
+	    <decimal value="0" />
+	  </disabledValue>
+	</policy>
+    <policy name="Language"
+            class="User"
+            displayName="$(string.Language)"
+            explainText="$(string.Language_Help)"
+            presentation="$(presentation.Language)"
+            key="Software\7-Zip">
+      <parentCategory ref="File_Manager_Settings" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+      <elements>
+        <enum id="Language"
+              key="Software\7-Zip"
+              valueName="Lang"
+              required="true">
+          <item displayName="$(string.Language_Afrikaans)">
+            <value>
+              <string>af</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Albanian)">
+            <value>
+              <string>sq</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Arabic)">
+            <value>
+              <string>ar</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Armenian)">
+            <value>
+              <string>hy</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Asturian)">
+            <value>
+              <string>ast</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Azeri)">
+            <value>
+              <string>az</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Bangla)">
+            <value>
+              <string>bn</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Bashkir)">
+            <value>
+              <string>ba</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Basque)">
+            <value>
+              <string>eu</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Belarusian)">
+            <value>
+              <string>be</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Breton)">
+            <value>
+              <string>br</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Bulgarian)">
+            <value>
+              <string>bg</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Catalan)">
+            <value>
+              <string>ca</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Chinese_Simplified)">
+            <value>
+              <string>zh-cn</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Chinese_Traditional)">
+            <value>
+              <string>zh-tw</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Croatian)">
+            <value>
+              <string>hr</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Czech)">
+            <value>
+              <string>cs</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Danish)">
+            <value>
+              <string>da</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Dutch)">
+            <value>
+              <string>nl</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_English)">
+            <value>
+              <string>-</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Esperanto)">
+            <value>
+              <string>eo</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Estonian)">
+            <value>
+              <string>et</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Extremaduran)">
+            <value>
+              <string>ext</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Farsi)">
+            <value>
+              <string>fa</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Finnish)">
+            <value>
+              <string>fi</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_French)">
+            <value>
+              <string>fr</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Frisian)">
+            <value>
+              <string>fy</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Friulian)">
+            <value>
+              <string>fur</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Galician)">
+            <value>
+              <string>gl</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Georgian)">
+            <value>
+              <string>ka</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_German)">
+            <value>
+              <string>de</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Greek)">
+            <value>
+              <string>el</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Gujarati_Indian)">
+            <value>
+              <string>gu</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Hebrew)">
+            <value>
+              <string>he</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Hindi_Indian)">
+            <value>
+              <string>hi</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Hungarian)">
+            <value>
+              <string>hu</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Icelandic)">
+            <value>
+              <string>is</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Ido)">
+            <value>
+              <string>io</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Indonesian)">
+            <value>
+              <string>id</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Italian)">
+            <value>
+              <string>it</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Japanese)">
+            <value>
+              <string>ja</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Kazakh)">
+            <value>
+              <string>kk</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Korean)">
+            <value>
+              <string>ko</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Kurdish_-_Sorani)">
+            <value>
+              <string>ku-ckb</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Kurdish)">
+            <value>
+              <string>ku</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Latvian)">
+            <value>
+              <string>lv</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Lithuanian)">
+            <value>
+              <string>lt</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Macedonian)">
+            <value>
+              <string>mk</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Malay)">
+            <value>
+              <string>ms</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Marathi)">
+            <value>
+              <string>mr</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Mongolian)">
+            <value>
+              <string>mn</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Nepali)">
+            <value>
+              <string>ne</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Norwegian_Bokmal)">
+            <value>
+              <string>nb</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Norwegian_Nynorsk)">
+            <value>
+              <string>nn</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Pashto)">
+            <value>
+              <string>ps</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Polish)">
+            <value>
+              <string>pl</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Portuguese_Brazil)">
+            <value>
+              <string>pt-br</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Portuguese_Standard)">
+            <value>
+              <string>pt</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Punjabi_Indian)">
+            <value>
+              <string>pa-in</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Romanian)">
+            <value>
+              <string>ro</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Russian)">
+            <value>
+              <string>ru</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Sanskrit_Indian)">
+            <value>
+              <string>sa</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Serbian_-_Cyrillic)">
+            <value>
+              <string>sr-spc</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Serbian_-_Latin)">
+            <value>
+              <string>sr-spl</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Sinhala)">
+            <value>
+              <string>si</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Slovak)">
+            <value>
+              <string>sk</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Slovenian)">
+            <value>
+              <string>sl</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Spanish)">
+            <value>
+              <string>es</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Swedish)">
+            <value>
+              <string>sv</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Tamil)">
+            <value>
+              <string>ta</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Tatar)">
+            <value>
+              <string>tt</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Thai)">
+            <value>
+              <string>th</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Turkish)">
+            <value>
+              <string>tr</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Ukrainian)">
+            <value>
+              <string>uk</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Uyghur)">
+            <value>
+              <string>ug</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Uzbek)">
+            <value>
+              <string>uz</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Valencian)">
+            <value>
+              <string>va</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Vietnamese)">
+            <value>
+              <string>vi</string>
+            </value>
+          </item>
+          <item displayName="$(string.Language_Welsh)">
+            <value>
+              <string>cy</string>
+            </value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+	<policy name="List_Mode"
+            class="User"
+            displayName="$(string.List_Mode)"
+            explainText="$(string.List_Mode_Help)"
+            presentation="$(presentation.List_Mode)"
+            key="Software\7-Zip\FM">
+      <parentCategory ref="File_Manager_View" />
+      <supportedOn ref="SUPPORTED_7-Zip_v9b20" />
+      <elements>
+        <enum id="List_Mode"
+              key="Software\7-Zip\FM"
+              valueName="ListMode"
+              required="true">
+          <item displayName="$(string.List_Mode_Large_Icons)">
+            <value>
+			  <decimal value="768" />
+			</value>
+          </item>
+           <item displayName="$(string.List_Mode_Small_Icons)">
+            <value>
+			  <decimal value="769" />
+			</value>
+          </item>
+           <item displayName="$(string.List_Mode_List)">
+            <value>
+			  <decimal value="770" />
+			</value>
+          </item>
+           <item displayName="$(string.List_Mode_Details)">
+            <value>
+			  <decimal value="771" />
+			</value>
+          </item>
+        </enum>
+      </elements>
+    </policy>
+  </policies>
+</policyDefinitions>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions" revision="1.0" schemaVersion="1.0">
+	<displayName>Vorbelegung Internet Explorer Suchanbieterliste</displayName>
+	<description>Vorbelegung Internet Explorer Suchanbieterliste mit Google, Bing und Wikipedia</description>
+	<resources>
+		<stringTable>
+			<string id="PopulateSearchProviderList">Vorbelegung Internet Explorer Suchanbieterliste mit Google, Bing und Wikipedia</string>
+			<string id="IE_Explain_PopulateSearchProviderList">Durch diese Richtlinieneinstellung wird eine Liste der Suchanbieter (Google, Bing und Wikipedia) erstellt, die im Internet Explorer in der Suchanbieterliste angezeigt wird.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren und wenn die Gruppenrichtlinieneinstellung: "Suchanbieter auf spezielle Liste einschraenken" aktiviert ist, wird diese Liste die einzige Liste, die in der Internet Explorer Suchanbieterliste angezeigt wird. Wenn die Gruppenrichtlinieneinstellung: "Der Suchanbieterliste des Benutzers eine spezielle Suchanbieterliste hinzufuegen" aktiviert ist, wird diese Liste auf der Liste der Suchanbieter des Benutzers hinzugefuegt.
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, haben Benutzer voellige Freiheit, ihre eigene Suchanbieter-Liste zu erstellen.</string>
+		</stringTable>
+	</resources>
+</policyDefinitionResources>
