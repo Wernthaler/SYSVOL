@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Files clsid="{215B2E53-57CE-475c-80FE-9EEC14635851}"><File clsid="{50BE44C8-567A-4ed1-B1D0-9234FE1F38AF}" name="deployment.config" status="deployment.config" image="1" bypassErrors="1" changed="2016-07-04 17:27:52" uid="{280B20E8-6639-452B-A768-B316C581C37F}"><Properties action="R" fromPath="\\Server2012R2\SYSVOL\FESL.local\Java\deployment.config" targetPath="%WINDIR%\Sun\Java\Deployment\deployment.config" readOnly="0" archive="1" hidden="0" suppress="1"/></File>
+	<File clsid="{50BE44C8-567A-4ed1-B1D0-9234FE1F38AF}" name="deployment.properties" status="deployment.properties" image="1" changed="2016-07-04 17:29:50" uid="{068C1E5A-9683-4DF9-96CC-2BAA1CC8C65D}"><Properties action="R" fromPath="\\Server2012R2\SYSVOL\FESL.local\Java\deployment.properties" targetPath="%WINDIR%\Sun\Java\Deployment\deployment.properties" readOnly="0" archive="1" hidden="0" suppress="1"/></File>
+</Files>

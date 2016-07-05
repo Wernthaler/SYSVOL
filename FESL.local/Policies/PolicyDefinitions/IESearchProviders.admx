@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+	<policyNamespaces>
+		<target prefix="search" namespace="Microsoft.Policies.search" />
+		<using prefix="inetres" namespace="Microsoft.Policies.InternetExplorer" />
+	</policyNamespaces>
+	<resources minRequiredRevision="1.0" />
+	<policies>
+		<policy name="PopulateSearchProviderList_1" class="User" displayName="$(string.PopulateSearchProviderList)" explainText="$(string.IE_Explain_PopulateSearchProviderList)"  key="Software\Policies\Microsoft\Internet Explorer\SearchScopes">
+			<parentCategory ref="inetres:InternetExplorer" />
+			<supportedOn ref="inetres:SUPPORTED_IE7Vista"/>
+			<enabledList>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes" valueName="Version">
+					<value>
+						<decimal value="4" />
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{00000000-0000-0000-0000-000000000000}" valueName="DisplayName">
+					<value>
+						<string>Google</string>
+					</value>	
+				</item>	
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{00000000-0000-0000-0000-000000000000}" valueName="FaviconURL">
+					<value>
+						<string>http://www.google.com/favicon.ico</string>
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{00000000-0000-0000-0000-000000000000}" valueName="ShowSearchSuggestions">
+					<value>
+						<decimal value="1" />
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{00000000-0000-0000-0000-000000000000}" valueName="URL">
+					<value>
+						<string>https://www.google.com/search?q={searchTerms}&amp;sourceid=ie7&amp;rls=com.microsoft:{language}:{referrer:source}&amp;ie={inputEncoding?}&amp;oe={outputEncoding?}</string>
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{00000000-0000-0000-0000-000000000000}" valueName="SuggestionsURL">
+					<value>
+						<string>https://www.google.com/complete/search?q={searchTerms}&amp;client=ie8&amp;mw={ie:maxWidth}&amp;sh={ie:sectionHeight}&amp;rh={ie:rowHeight}&amp;inputencoding={inputEncoding}&amp;outputencoding={outputEncoding}</string>
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{11111111-1111-1111-1111-111111111111}" valueName="DisplayName">
+					<value>
+						<string>Bing</string>
+					</value>	
+				</item>	
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{11111111-1111-1111-1111-111111111111}" valueName="FaviconURL">
+					<value>
+						<string>http://www.bing.com/favicon.ico</string>
+					</value>	
+				</item>	
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{11111111-1111-1111-1111-111111111111}" valueName="ShowSearchSuggestions">
+					<value>
+						<decimal value="1" />
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{11111111-1111-1111-1111-111111111111}" valueName="URL">
+					<value>
+						<string>http://www.bing.com/search?q={searchTerms}&amp;src=IE-SearchBox&amp;FORM=IESR02</string>
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{11111111-1111-1111-1111-111111111111}" valueName="SuggestionsURL">
+					<value>
+						<string>http://api.bing.com/qsml.aspx?query={searchTerms}&amp;maxwidth={ie:maxWidth}&amp;rowheight={ie:rowHeight}&amp;sectionHeight={ie:sectionHeight}&amp;FORM=IESS02&amp;market={language}</string>
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{22222222-2222-2222-2222-222222222222}" valueName="DisplayName">
+					<value>
+						<string>Wikipedia (de)</string>
+					</value>	
+				</item>	
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{22222222-2222-2222-2222-222222222222}" valueName="FaviconURL">
+					<value>
+						<string>http://de.wikipedia.org/favicon.ico</string>
+					</value>	
+				</item>	
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{22222222-2222-2222-2222-222222222222}" valueName="ShowSearchSuggestions">
+					<value>
+						<decimal value="1" />
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{22222222-2222-2222-2222-222222222222}" valueName="URL">
+					<value>
+						<string>http://de.wikipedia.org/w/index.php?title=Spezial:Suche&amp;search={searchTerms}</string>
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{22222222-2222-2222-2222-222222222222}" valueName="SuggestionsURL">
+					<value>
+						<string>http://de.wikipedia.org/w/api.php?action=opensearch&amp;format=xml&amp;search={searchTerms}&amp;namespace=0</string>
+					</value>
+				</item>
+			</enabledList>
+		</policy>
+		<policy name="PopulateSearchProviderList_2" class="Machine" displayName="$(string.PopulateSearchProviderList)" explainText="$(string.IE_Explain_PopulateSearchProviderList)" key="Software\Policies\Microsoft\Internet Explorer\SearchScopes">
+			<parentCategory ref="inetres:InternetExplorer" />
+			<supportedOn ref="inetres:SUPPORTED_IE7Vista"/>
+			<enabledList>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes" valueName="Version">
+					<value>
+						<decimal value="4" />
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{00000000-0000-0000-0000-000000000000}" valueName="DisplayName">
+					<value>
+						<string>Google</string>
+					</value>	
+				</item>	
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{00000000-0000-0000-0000-000000000000}" valueName="FaviconURL">
+					<value>
+						<string>http://www.google.com/favicon.ico</string>
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{00000000-0000-0000-0000-000000000000}" valueName="ShowSearchSuggestions">
+					<value>
+						<decimal value="1" />
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{00000000-0000-0000-0000-000000000000}" valueName="URL">
+					<value>
+						<string>https://www.google.com/search?q={searchTerms}&amp;sourceid=ie7&amp;rls=com.microsoft:{language}:{referrer:source}&amp;ie={inputEncoding?}&amp;oe={outputEncoding?}</string>
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{00000000-0000-0000-0000-000000000000}" valueName="SuggestionsURL">
+					<value>
+						<string>https://www.google.com/complete/search?q={searchTerms}&amp;client=ie8&amp;mw={ie:maxWidth}&amp;sh={ie:sectionHeight}&amp;rh={ie:rowHeight}&amp;inputencoding={inputEncoding}&amp;outputencoding={outputEncoding}</string>
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{11111111-1111-1111-1111-111111111111}" valueName="DisplayName">
+					<value>
+						<string>Bing</string>
+					</value>	
+				</item>	
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{11111111-1111-1111-1111-111111111111}" valueName="FaviconURL">
+					<value>
+						<string>http://www.bing.com/favicon.ico</string>
+					</value>	
+				</item>	
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{11111111-1111-1111-1111-111111111111}" valueName="ShowSearchSuggestions">
+					<value>
+						<decimal value="1" />
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{11111111-1111-1111-1111-111111111111}" valueName="URL">
+					<value>
+						<string>http://www.bing.com/search?q={searchTerms}&amp;src=IE-SearchBox&amp;FORM=IESR02</string>
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{11111111-1111-1111-1111-111111111111}" valueName="SuggestionsURL">
+					<value>
+						<string>http://api.bing.com/qsml.aspx?query={searchTerms}&amp;maxwidth={ie:maxWidth}&amp;rowheight={ie:rowHeight}&amp;sectionHeight={ie:sectionHeight}&amp;FORM=IESS02&amp;market={language}</string>
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{22222222-2222-2222-2222-222222222222}" valueName="DisplayName">
+					<value>
+						<string>Wikipedia (de)</string>
+					</value>	
+				</item>	
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{22222222-2222-2222-2222-222222222222}" valueName="FaviconURL">
+					<value>
+						<string>http://de.wikipedia.org/favicon.ico</string>
+					</value>	
+				</item>	
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{22222222-2222-2222-2222-222222222222}" valueName="ShowSearchSuggestions">
+					<value>
+						<decimal value="1" />
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{22222222-2222-2222-2222-222222222222}" valueName="URL">
+					<value>
+						<string>http://de.wikipedia.org/w/index.php?title=Spezial:Suche&amp;search={searchTerms}</string>
+					</value>
+				</item>
+				<item key="Software\Policies\Microsoft\Internet Explorer\SearchScopes\{22222222-2222-2222-2222-222222222222}" valueName="SuggestionsURL">
+					<value>
+						<string>http://de.wikipedia.org/w/api.php?action=opensearch&amp;format=xml&amp;search={searchTerms}&amp;namespace=0</string>
+					</value>
+				</item>
+			</enabledList>
+		</policy> 
+	</policies>
+</policyDefinitions>

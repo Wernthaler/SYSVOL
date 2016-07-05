@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Anzeigenamen hier eingeben</displayName>
+  <description>Beschreibung hier eingeben</description>
+  <resources>
+    <stringTable>
+      <string id="AccountingEnabled">Kontoführung für WSRM aktivieren</string>
+      <string id="AccountingEnabled_Explain">Mit dieser Einstellung wird das Kontoführungsfeature aktiviert oder deaktiviert.
+
+Wenn Sie diese Einstellung aktivieren, startet der Windows-Systemressourcen-Manager (WSRM) die Kontoführung für verschiedene Nutzungsstatistiken der Prozesse.
+
+Wenn Sie diese Einstellung deaktivieren, wird die Protokollierung der Nutzungsstatistiken der Prozesse durch WSRM beendet.
+
+Wenn Sie diese Einstellung nicht konfigurieren, können die Benutzer angeben, ob die Kontoführung aktiviert oder deaktiviert werden muss.
+
+Standardmäßig ist die Kontoführung der Prozesse deaktiviert.
+
+Die Kontoführungsdatenbank stellt eine Schnittstelle bereit, mit der Sie sowohl die Daten in der Datenbank als auch die physikalische Größe der Datenbank verwalten können. Die Verwaltung von Datenbankinformationen umfasst die Suche relevanter Informationen und deren effiziente Strukturierung. Die physikalische Datenbankgröße muss regelmäßig überprüft werden, da der Windows-Systemressourcen-Manager weiterhin Kontoführungsinformationen darin speichert, sofern er nicht anders konfiguriert wurde. Dadurch wächst die Datenbank kontinuierlich an. Zur Verwaltung der Datenbankgröße können Sie Kontoführungsdaten zur späteren Verwendung archivieren oder sie aus der Datenbank löschen.
+
+Mithilfe von Kontoführungsdaten können Sie die Ressourcennutzung überwachen, die tatsächliche und erwartete Leistung vergleichen, beurteilen, ob die physikalischen Ressourcen des Computers für die geplanten Aufgaben ausreichend sind, und die Grundlage für Ausgleichsbuchungen schaffen.
+</string>
+      <string id="EmailIds">E-Mail-IDs festlegen, an die Benachrichtigungen gesendet werden</string>
+      <string id="EmailIds_Explain">Mit dieser Einstellung weisen Sie die E-Mail-Adresse(n) zu, an die Benachrichtigungen gesendet werden. Verwenden Sie ein Semikolon (;) als Trennzeichen zwischen mehreren E-Mail-Adressen.
+
+Wenn Sie diese Einstellung aktivieren, sendet der Windows-Systemressourcen-Manager (WSRM) Benachrichtigungen an die angegebene(n) Adresse(n).
+
+Wenn Sie diese Einstellung deaktivieren, werden keine E-Mail-Adressen festgelegt (Standardwert).
+
+Wenn Sie diese Einstellung nicht konfigurieren, können die Benutzer E-Mail-Adressen für den Empfang von Benachrichtigungen angeben. Dieser Wert kann entweder ein E-Mail-Alias oder eine E-Mail-Adresse einschließlich Domänenname (z. B. jemand@example.com) sein.
+
+An diese E-Mail-Adressen werden Benachrichtigungen über Ereignisse gesendet, die für den Benachrichtigungsdienst ausgewählt wurden.
+
+Hinweis: Damit Benachrichtigungen empfangen werden können, muss im Ereignisprotokoll die Benachrichtigungseinstellung aktiviert sein. Wenn Sie eine Liste der Ereignisse anzeigen möchten, klicken Sie auf "Fehler", "Warnung" oder "Informationen" und anschließend auf "OK". Wenn Sie "Fehler", "Warnung" oder "Informationen" markieren, werden alle Ereignisse in der entsprechenden Kategorie einbezogen.</string>
+      <string id="KeyName_Explain">Mit dieser Einstellung aktivieren Sie die Kontoführungs- und/oder Benachrichtigungseigenschaften von WSRM über Gruppenrichtlinieneinstellungen.</string>
+      <string id="RecordWriteInterval">Zeitintervall in Minuten für die Protokollierung von Kontoführungsdaten festlegen</string>
+      <string id="RecordWriteInterval_Explain">Mit dieser Einstellung legen Sie fest, dass das Kontoführungsfeature Daten auf dem Kontoführungsserver im angegebenen Zeitintervall protokolliert.
+
+Wenn Sie diese Einstellung aktivieren, legt der Windows-Systemressourcen-Manager (WSRM) den angegebenen Wert als Kontoführungsintervall fest.
+
+Wenn Sie diese Einstellung deaktivieren, wird der Standardwert (10 Minuten) festgelegt.
+
+Wenn Sie diese Einstellung nicht konfigurieren, kann ein Kontoführungsintervall vom Benutzer angegeben werden.
+
+Geben Sie einen Wert zwischen 2 und 60.000 Minuten an. Der Standardwert beträgt 10 Minuten. Dies ist der optimale Wert, wenn zahlreiche Remoteserver Daten protokollieren. Wenn Sie für einen Server in einem Netzwerk mit mehr als 20 Computern, die Daten remote protokollieren, ein Schreibintervall für Kontoführungsdatensätze von weniger als 10 Minuten angeben, kann dies Leistungseinbußen zur Folge haben.
+
+Hinweis: Je höher die Anzahl der Computer im Netzwerk, desto länger sollte das Schreibintervall für Kontoführungsdatensätze sein, um eine Netzwerküberlastung zu vermeiden.</string>
+      <string id="SMTPServer">SMTP-Server für den Versand von Benachrichtigungen festlegen</string>
+      <string id="SMTPServerConfiguration_Explain">Mit dieser Einstellung weisen Sie die Adresse des SMTP-Servers zu, der Benachrichtigungen versendet.
+
+Wenn Sie diese Einstellung aktivieren, legt der Windows-Systemressourcen-Manager (WSRM) den angegebenen Wert für den SMTP-Server fest.
+
+Wenn Sie diese Einstellung deaktivieren, wird kein SMTP-Server festgelegt (Standardwert).
+
+Wenn Sie diese Einstellung nicht konfigurieren, kann ein SMTP-Server vom Benutzer angegeben werden.
+
+Als Wert ist der NetBIOS-Name oder der vollqualifizierte Domänenname des SMTP-Servers (Simple Mail Transfer Protocol) zulässig. Dieser Server enthält die E-Mail-Adressen, die für den Empfang von Benachrichtigungen konfiguriert wurden.
+
+Hinweis: Damit E-Mail-Benachrichtigungen empfangen werden können, muss im Ereignisprotokoll die Benachrichtigungseinstellung aktiviert sein. Wenn Sie eine Liste der Ereignisse anzeigen möchten, klicken Sie auf "Fehler", "Warnung" oder "Informationen" und anschließend auf "OK". Wenn Sie "Fehler", "Warnung" oder "Informationen" markieren, werden alle Ereignisse in der entsprechenden Kategorie einbezogen.</string>
+      <string id="WSRM">Windows-Systemressourcen-Manager</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="EmailIds">
+        <textBox refId="EmailIdsConfiguration">
+          <label>E-Mail-IDs</label>
+          <defaultValue/>
+        </textBox>
+      </presentation>
+      <presentation id="RecordWriteInterval">
+        <decimalTextBox refId="Write_Interval" defaultValue="10">Protokollierungsintervall für die Kontoführung (2-60.000 Minuten) </decimalTextBox>
+      </presentation>
+      <presentation id="SMTPServer">
+        <textBox refId="SMTPServerConfiguration">
+          <label>Adresse des SMTP-Servers eingeben</label>
+          <defaultValue/>
+        </textBox>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>

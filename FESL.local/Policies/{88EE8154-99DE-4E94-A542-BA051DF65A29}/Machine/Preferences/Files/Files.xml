@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Files clsid="{215B2E53-57CE-475c-80FE-9EEC14635851}"><File clsid="{50BE44C8-567A-4ed1-B1D0-9234FE1F38AF}" name="FlashPlayer Configfile (x32)" status="mms.cfg" image="1" bypassErrors="1" changed="2016-07-04 17:09:36" uid="{60190DB5-7C97-4B56-BC89-9A1AB9B02677}"><Properties action="R" fromPath="\\Server2012R2\SYSVOL\FESL.local\Adobe\FlashPlayer\mms.cfg" targetPath="%WINDIR%\System32\Macromed\Flash\mms.cfg" readOnly="0" archive="1" hidden="0" suppress="1"/></File>
+	<File clsid="{50BE44C8-567A-4ed1-B1D0-9234FE1F38AF}" name="FlashPlayer Configfile (x64)" status="mms.cfg" image="1" bypassErrors="1" changed="2016-07-04 17:10:58" uid="{E5831676-12D8-40C4-9101-7634087C6D3C}"><Properties action="R" fromPath="\\Server2012R2\SYSVOL\FESL.local\Adobe\FlashPlayer\mms.cfg" targetPath="%WINDIR%\SysWOW64\Macromed\Flash\mms.cfg" readOnly="0" archive="1" hidden="0" suppress="1"/></File>
+</Files>

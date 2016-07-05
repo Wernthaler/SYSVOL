@@ -1,0 +1,64 @@
+{
+  "cckVersion": "2.1.2",
+  "name": "Holz Fesl GmbH",
+  "description": "Anpassungen Mozilla Firefox fuer Firma Holz Fesl GmbH",
+  "version": "20160703",
+  "outputDirectory": "C:\\Dokumente und Einstellungen\\Admin\\Eigene Dateien",
+  "homePage": "http://www.fesl.at",
+  "titlemodifier": "Holz Fesl GmbH",
+  "extension": {
+    "id": "holzfesl-cck@extensions.fesl.local",
+    "name": "Holz Fesl GmbH",
+    "description": "Anpassungen Mozilla Firefox fuer Firma Holz Fesl GmbH",
+    "homepageURL": "http://www.fesl.at",
+    "filename": "holzfesl-cck@extensions.fesl.local"
+  },
+  "lockHomePage": true,
+  "noWelcomePage": true,
+  "noUpgradePage": true,
+  "removeDeveloperTools": true,
+  "displayBookmarksToolbar": true,
+  "removeSmartBookmarks": true,
+  "removeDefaultBookmarks": true,
+  "dontCheckDefaultBrowser": true,
+  "disableCrashReporter": true,
+  "disableTelemetry": true,
+  "disableFirefoxHealthReportUpload": true,
+  "disableFirefoxHealthReport": true,
+  "disableFirefoxUpdates": true,
+  "network": {
+    "proxyAutologin": true,
+    "proxyType": 5
+  },
+  "dontShowRights": true,
+  "disablePDFjs": true,
+  "disableWebApps": true,
+  "disableHello": true,
+  "disableSharePage": true,
+  "disableHeartbeat": true,
+  "disablePocket": true,
+  "id": "HolzFesl-20160703",
+  "addons": [
+    "S:\\Mozilla\\Firefox\\GPO\\ADMX\\Firefox-Extension\\Firefox_Inst_Dir\\Browser\\Extentions\\gpo@extensions.org.xpi"
+  ],
+  "defaultSearchEngine": "Google",
+  "bookmarks": {
+    "toolbar": [
+      {
+        "name": "Holz Fesl GmbH",
+        "location": "http://www.fesl.at"
+      }
+    ],
+    "menu": [
+      {
+        "name": "Holz Fesl GmbH",
+        "location": "http://www.fesl.at"
+      }
+    ]
+  },
+  "certs": {
+    "override": [
+      "Fesl.local"
+    ]
+  }
+}

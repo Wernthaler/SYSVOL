@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  revision="1.0" schemaVersion="1.0" 
+  xmlns=
+  "http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <policyNamespaces>
+    <target prefix="Microsoft_Windows" namespace="Custom.Policies.Custom.Microsoft_Corp.Microsoft_Windows" />
+    <using prefix="Microsoft_Corp" namespace="Custom.Policies.Custom.Microsoft_Corp" />
+  </policyNamespaces>
+  <resources minRequiredRevision="1.0" />
+  <categories>
+    <category name="Microsoft_Windows"
+              displayName="$(string.Microsoft_Windows)"
+              explainText="$(string.Microsoft_Windows_Help)">
+       <parentCategory ref="Microsoft_Corp:Microsoft_Corp" />
+    </category>
+  </categories>
+</policyDefinitions>

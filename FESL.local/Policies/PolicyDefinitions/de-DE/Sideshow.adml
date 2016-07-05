@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2006 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Anzeigenamen hier eingeben</displayName>
+  <description>Beschreibung hier eingeben</description>
+  <resources>
+    <stringTable>
+      <string id="DeleteDataOnLogoff">Daten von Geräten, auf denen Microsoft-Firmware ausgeführt wird, löschen, wenn sich ein Benutzer vom Computer abmeldet</string>
+      <string id="DeleteDataOnLogoff_Explain">Durch diese Richtlinieneinstellung werden alle Daten, die auf mit Windows SideShow kompatiblen Geräten gespeichert sind (auf denen Microsoft-Firmware ausgeführt wird) gelöscht, wenn sich ein Benutzer vom Computer abmeldet. Dies ist eine Sicherheitsmaßnahme, die jedoch die Nützlichkeit der Geräte erheblich einschränkt.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren, werden alle Daten gelöscht, die auf Geräten gespeichert sind, auf denen Microsoft-Firmware ausgeführt wird, wenn sich ein Benutzer vom Computer abmeldet. Die Daten werden erneut an das Gerät gesendet, wenn sich der Benutzer erneut anmeldet.
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, werden die Daten nicht von diesen Geräten gelöscht, wenn sich Benutzer vom Computer abmelden. Die Benutzer können diese Einstellung in der Windows SideShow-Systemsteuerung aktivieren.
+
+Hinweis: Geräte, auf denen keine Microsoft-Firmware ausgeführt wird, sind nicht von dieser Richtlinieneinstellung betroffen.</string>
+      <string id="DisableWindowsSideShow">Windows SideShow deaktivieren</string>
+      <string id="DisableWindowsSideShow_Explain">Durch diese Richtlinieneinstellung wird Windows SideShow deaktiviert.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren, wird die Windows SideShow-Systemsteuerung deaktiviert, und Daten von mit Windows SideShow kompatiblen Minianwendungen werden nicht an angeschlossene Geräte gesendet. 
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, ist Windows SideShow standardmäßig aktiviert.</string>
+      <string id="DisableAutoWake">Automatisches Reaktivieren deaktivieren</string>
+      <string id="DisableAutoWake_Explain">Durch diese Richtlinieneinstellung wird die Option zur periodischen Reaktivierung des Computers zur Aktualisierung von Informationen auf Windows SideShow-kompatiblen Geräten deaktiviert.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren, ist die Option zur automatischen Reaktivierung des Computers in der Windows SideShow-Systemsteuerung nicht verfügbar.
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, ist die Option zur automatischen Reaktivierung des Computers in der Windows SideShow-Systemsteuerung verfügbar. Die Option ist jedoch standardmäßig deaktiviert.
+
+Hinweis: Die Informationen auf Windows SideShow-kompatiblen Geräten werden nur aktualisiert, wenn der Computer eingeschaltet und aktiv ist.</string>
+      <string id="PINTimeout_10Minutes">10 Minuten</string>
+      <string id="PINTimeout_1Minute">1 Minute</string>
+      <string id="PINTimeout_2Minutes">2 Minuten</string>
+      <string id="PINTimeout_30Minutes">30 Minuten</string>
+      <string id="PINTimeout_5Minutes">5 Minuten</string>
+      <string id="PINTimeout_Never">Nie</string>
+      <string id="PINTimeout_WhenScreenIsOff">Wenn der Bildschirm ausgeschaltet wird</string>
+      <string id="SetPIN">PIN anfordern, um auf Daten auf Geräten mit Microsoft-Firmware zuzugreifen</string>
+      <string id="SetPIN_Explain">Bei dieser Richtlinieneinstellung müssen Benutzer eine Standard-PIN (Personal Identification Number, Geheimzahl) eingeben, um das Gerät nach einer angegebenen Dauer ohne Aktivität (Zeitüberschreitungsdauer) zu entsperren und auf Daten zugreifen zu können. Diese Einstellung betrifft Windows SideShow-kompatible Geräte, auf denen Microsoft-Firmware ausgeführt wird.
+
+Wenn Sie diese Richtlinieneinstellung aktivieren, müssen Benutzer die Standard-PIN eingeben, um das Gerät nach der angegebenen Zeitüberschreitungsdauer zu entsperren und auf Daten zugreifen zu können.
+
+Hinweis: Benutzer können die PIN and die Zeitüberschreitungsdauer auf der Seite für die Geräteeinstellungen in der Windows SideShow-Systemsteuerung ändern.
+
+Wenn Sie diese Richtlinieneinstellung deaktivieren oder nicht konfigurieren, müssen Benutzer keine Standard-PIN eingeben, um das Gerät nach der angegebenen Zeitüberschreitungsdauer zu entsperren und auf Daten zugreifen zu können. Die Benutzer haben jedoch die Möglichkeit, in der Windows SideShow-Systemsteuerung die PIN-Sperrung zu aktivieren und die Zeitüberschreitungsdauer zu ändern.
+
+Hinweis: Geräte, auf denen keine Microsoft-Firmware ausgeführt wird, sind nicht von dieser Richtlinieneinstellung betroffen.
+
+Hinweis: Die vorgegebenen Zeitlimits lauten u. a.: Nach 1 Minute, Nach 2 Minuten, Nach 5 Minuten, Nach 10 Minuten, Nach 30 Minuten, Wenn der Bildschirm ausgeschaltet wird, Nie.</string>
+      <string id="SideShow">Windows SideShow</string>
+    </stringTable>
+    <presentationTable>
+      <presentation id="SetPIN_1">
+        <decimalTextBox refId="PINNumber" defaultValue="9999" spinStep="0">4-stellige PIN</decimalTextBox>
+        <dropdownList refId="PINTimeout" noSort="true" defaultItem="0">Zeitüberschreitungswert</dropdownList>
+      </presentation>
+      <presentation id="SetPIN_2">
+        <text>Standard-PIN, die ein Benutzer eingeben muss, um auf Daten auf</text>
+        <text>SideShow-kompatiblen Geräten zuzugreifen, auf denen Microsoft-Firmware ausgeführt wird.</text>
+        <decimalTextBox refId="PINNumber" defaultValue="9999" spinStep="0">4-stellige PIN</decimalTextBox>
+        <text>Zeitdauer, die SideShow-kompatible Geräte, auf denen Microsoft-</text>
+        <text>Firmware ausgeführt wird, inaktiv sein können, bevor das Gerät gesperrt wird.</text>
+        <dropdownList refId="PINTimeout" noSort="true" defaultItem="0">Zeitüberschreitungswert</dropdownList>
+      </presentation>
+    </presentationTable>
+  </resources>
+</policyDefinitionResources>
